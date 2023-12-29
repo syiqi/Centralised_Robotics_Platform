@@ -1,6 +1,6 @@
 # CRP
  MARii's Centralised Robotics Plaform <br>
-To run on localhost device, make sure Laravel, Composer, Node.js..etc are installed <br>
+To run on localhost device, make sure Laravel, Composer, Node.js, Vite..etc are installed or run on cmd/terminal<br>
 Follow the official installation guide on Laravel's website documentation <br>
 
 
