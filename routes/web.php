@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProviderController;
-use App\Http\Controllers\RobotUserController;
+use App\Http\Controllers\MinistryController;
+use App\Http\Controllers\AssociationController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +33,12 @@ Route::get('/dashboard', function () {
 
 Route::resource('users', ProfileController::class);
 
+Route::resource('ministries', MinistryController::class);
+
+Route::resource('companies', CompanyController::class);
+
 Route::resource('associations', AssociationController::class);
+
 
 
 Route::middleware('auth')->group(function () {

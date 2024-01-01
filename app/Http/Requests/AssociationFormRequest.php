@@ -45,23 +45,6 @@ class AssociationFormRequest extends FormRequest
             'natureOfActivity'=> strip_tags($this['natureOfActivity']),
             'mainCategory'=> strip_tags($this['mainCategory']),
             'subCategory'=> strip_tags($this['subCategory']),
-
-
-            // 'providerName'=> strip_tags($this['providerName']),
-            // 'providerEmail'=> strip_tags($this['providerEmail']),
-            // 'providerPhoneNo'=> strip_tags($this['providerPhoneNo']),
-            // 'registerNo'=> strip_tags($this['registerNo']),
-            // 'providerDescription'=> strip_tags($this['providerDescription']),
-            // 'providerWare'=>json_encode($this['providerWare']),
-            // 'providerSpecialization'=> strip_tags($this['providerSpecialization']),
-            // 'providerCategory'=>json_encode($this['providerCategory']),
-            // 'providerURL'=> strip_tags($this['providerURL']),
-            // 'providerRobotType'=>json_encode($this['providerRobotType']),
-            // 'providerAddress'=> strip_tags($this['providerAddress']),
-            // 'providerCity'=> strip_tags($this['providerCity']),
-            // 'providerState'=> strip_tags($this['providerState']),
-            // 'providerPostcode'=> strip_tags($this['providerPostcode']),
-            // 'providerCountry'=> strip_tags($this['providerCountry']),
         ]);
     }
 }

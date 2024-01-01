@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\OrganizationFormRequest;
 use App\Http\Requests\AssociationFormRequest;
 use App\Models\Organization;
 use App\Models\Association;

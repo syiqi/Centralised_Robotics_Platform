@@ -53,7 +53,7 @@
                         <x-dropdown-link :href="route('associations.create')">
                             {{ __('Association') }}
                         </x-dropdown-link>
-                        <x-dropdown-link>
+                        <x-dropdown-link :href="route('ministries.create')">
                             {{ __('Ministry') }}
                         </x-dropdown-link>
         
