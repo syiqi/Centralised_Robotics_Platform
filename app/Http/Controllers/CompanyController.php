@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
 use Illuminate\Http\Request;
+use App\Http\Requests\CompanyFormRequest;
+use App\Models\Company;
+use App\Models\Organization;
 
 class CompanyController extends Controller
 {
@@ -21,14 +23,41 @@ class CompanyController extends Controller
     public function create()
     {
         //
+        return view('organizations.companies.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CompanyFormRequest $request)
     {
         //
+        $data = $request->validated();
+        $organization = Organization::create([
+            'name' => $data['name'],
+            'phoneNo' =>$data['phoneNo'],
+            'email' =>$data['email'],
+            'website' =>$data['website'],
+            'category' =>$data['category'],
+    
+         ]);
+
+         Company::create([
+            'id' => $organization['id'],
+            'registrationNo' =>$data['registrationNo'],
+            'companyMainSector' =>$data['companyMainSector'],
+            'primaryMSIC2008' =>$data['primaryMSIC2008'],
+            'secondaryMSIC2008' =>$data['secondaryMSIC2008'],
+            'tertiaryyMSIC2008' =>$data['tertiaryyMSIC2008'],
+            'natureOfActivity' =>$data['natureOfActivity'],
+            'financeYearCalendar' =>$data['financeYearCalendar'],
+            'latestRevenue' =>$data['latestRevenue'],
+            'latestNoEmployee' =>$data['latestNoEmployee'],
+            'staEcosystem' =>$data['staEcosystem'],
+            'productAndService' =>$data['productAndService'],
+        ]);
+        
+        return redirect()->route('companies.create');
     }
 
     /**

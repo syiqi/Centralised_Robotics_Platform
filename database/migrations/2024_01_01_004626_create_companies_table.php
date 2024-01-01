@@ -15,7 +15,16 @@ return new class extends Migration
             $table->bigInteger('id')->unsigned()->index()->primary();
             $table->foreign('id')->references('id')->on('organizations')->onDelete('cascade');
             $table->string('registrationNo');
-
+            $table->string('companyMainSector');
+            $table->string('primaryMSIC2008');
+            $table->string('secondaryMSIC2008');
+            $table->string('tertiaryMSIC2008');
+            $table->string('natureOfActivity');
+            $table->date('financeYearCalendar');
+            $table->double('latestRevenue');
+            $table->int('latestNoEmployee');
+            $table->string('staEcosystem');
+            $table->string('productAndService');
             $table->timestamps();
         });
     }
