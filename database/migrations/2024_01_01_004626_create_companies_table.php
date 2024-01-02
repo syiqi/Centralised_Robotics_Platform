@@ -14,17 +14,17 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->bigInteger('id')->unsigned()->index()->primary();
             $table->foreign('id')->references('id')->on('organizations')->onDelete('cascade');
-            $table->string('registrationNo');
-            $table->string('companyMainSector');
-            $table->string('primaryMSIC2008');
-            $table->string('secondaryMSIC2008');
-            $table->string('tertiaryMSIC2008');
-            $table->string('natureOfActivity');
-            $table->date('financeYearCalendar');
-            $table->double('latestRevenue');
-            $table->int('latestNoEmployee');
-            $table->string('staEcosystem');
-            $table->string('productAndService');
+            $table->string('registrationNo')->nullable();
+            $table->string('companyMainSector')->nullable();
+            $table->string('primaryMSIC2008')->nullable();
+            $table->string('secondaryMSIC2008')->nullable();
+            $table->string('tertiaryMSIC2008')->nullable();
+            $table->string('natureOfActivity')->nullable();
+            $table->date('financeYearCalendar')->nullable();
+            $table->double('latestRevenue')->nullable();
+            $table->integer('latestNoEmployee')->nullable();
+            $table->string('staEcosystem')->nullable();
+            $table->string('productAndService')->nullable();
             $table->timestamps();
         });
     }

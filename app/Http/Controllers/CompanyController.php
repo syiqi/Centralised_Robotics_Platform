@@ -41,14 +41,30 @@ class CompanyController extends Controller
             'category' =>$data['category'],
     
          ]);
-
+         // Change to an SQL Acceptable\Approriate\Standardized Value
+         if($data['companyMainSector']=="null"){
+            $data['companyMainSector']=NULL;
+         }
+         if($data['staEcosystem']=="null"){
+            $data['staEcosystem']=NULL;
+         }
+        if($data['financeYearCalendar']==""){
+         $data['financeYearCalendar']=NULL;
+         }
+         if($data['latestRevenue']==""){
+            $data['latestRevenue']=NULL;
+            }
+            if($data['latestNoEmployee']==""){
+                $data['latestNoEmployee']=NULL;
+                }
+        // echo var_dump($data);
          Company::create([
             'id' => $organization['id'],
             'registrationNo' =>$data['registrationNo'],
             'companyMainSector' =>$data['companyMainSector'],
             'primaryMSIC2008' =>$data['primaryMSIC2008'],
             'secondaryMSIC2008' =>$data['secondaryMSIC2008'],
-            'tertiaryyMSIC2008' =>$data['tertiaryyMSIC2008'],
+            'tertiaryMSIC2008' =>$data['tertiaryMSIC2008'],
             'natureOfActivity' =>$data['natureOfActivity'],
             'financeYearCalendar' =>$data['financeYearCalendar'],
             'latestRevenue' =>$data['latestRevenue'],

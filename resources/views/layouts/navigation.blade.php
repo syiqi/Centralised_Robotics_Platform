@@ -47,7 +47,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link>
+                        <x-dropdown-link :href="route('companies.create')">
                             {{ __('Company') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('associations.create')">

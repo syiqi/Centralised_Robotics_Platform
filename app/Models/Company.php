@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    public function organizations(): BelongsTo
+    {
+        return $this->belongsTo(Organizations::class);
+    }
 }
