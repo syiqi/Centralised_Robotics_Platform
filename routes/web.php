@@ -39,6 +39,9 @@ Route::resource('companies', CompanyController::class);
 
 Route::resource('associations', AssociationController::class);
 
+Route::resource('personells', PersonellController::class);
+
+Route::resource('workplaces', WorkplaceController::class);
 
 
 Route::middleware('auth')->group(function () {
