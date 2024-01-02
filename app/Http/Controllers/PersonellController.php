@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PersonellFormRequest;
 use App\Models\Personell;
 use Illuminate\Http\Request;
+
+class PersonellController extends Controller
+{
+    /**
      * Display a listing of the resource.
      */
     public function index()
