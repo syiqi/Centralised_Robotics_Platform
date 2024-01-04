@@ -43,6 +43,10 @@ Route::resource('personells', PersonellController::class);
 
 Route::resource('workplaces', WorkplaceController::class);
 
+Route::get('/organizations/create', function () {
+    return view('organizations.create');
+})->name('organizations.create');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
