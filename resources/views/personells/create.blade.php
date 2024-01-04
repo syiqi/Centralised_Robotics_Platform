@@ -1,4 +1,12 @@
 
+@php
+use App\Models\Organization;
+@endphp
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
 <x-app-layout>
 
 <div>
@@ -8,12 +16,25 @@
             <label class="text-white" for="personName"> Name </label>
             <input type="text" id="personName" name="personName" value="{{ old('personName')}}">
         </div>
-                <div>
-            <label class="text-white" for="mainCategory"> Main Category</label>
-            <select id="mainCategory" name="mainCategory">
-            <option value="">Unknown</option>
-            <option value="Political">Political</option>
+        <div>
+            <label class="text-white" for="organizationID"> Organization Name </label>
+            <select class="organization-select-input" id="organizationID" name="organizationID">
+                <option value="">Unemployed</option>
+            @foreach(Organization::all() as $organization)
+                <option value="{{$organization['id']}}">{{$organization['name']}}</option>
+            @endforeach
             </select>
+            <script type="text/javascript">
+
+            $(document).ready(function() {
+                $('.organization-select-input').select2();
+
+            });
+
+        </script>
+        </div>
+        <div>
+        <a href="route(">...Create a new one</a>
         </div>
         <div>
             <label class="text-white" for="personJobTitle"> Job Title </label>
@@ -40,68 +61,12 @@
             <label class="text-white" for="personNumber"> Phone No </label>
             <input type="tel" id="personNumber" name="personNumber">
         </div>
+        
         <div>
             <button class="text-white" type="submit">Submit</button>    
         </div>
 
-    </form>
-
-    @push('style')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<style>
-    span.select2.select2-container.select2-container--classic{
-        width: 100% !important;
-    }
-</style>
-@endpush
-
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    Laravel 9 Dropdown With Search Example  -  Laravelia                
-                </div>
-                 <div class="card-body">                    
-                    <form class="w-px-500 p-3 p-md-3" action="" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row mb-3">
-                            <label class="col-sm-3 col-form-label">Framework</label>
-                            <div class="col-sm-9 mt-3">
-                                <select class="js-example-basic-single" name="Framework">
-                                    <option value="CakePHP">Cake PHP</option>
-                                    <option value="Laravel">Laravel</option>
-                                    <option value="Symphony">Symphony</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label class="col-sm-3 col-form-label"></label>
-                            <div class="col-sm-9">
-                                <button type="submit" class="btn btn-success btn-block text-white">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-@push('script')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-$(document).ready(function(){
-    $('.js-example-basic-single').select2({
-        theme: "classic"
-    });
-});
-</script>
-@endpush
-    
+    </form>    
 
 </div>
 
