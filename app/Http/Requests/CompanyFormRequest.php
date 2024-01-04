@@ -27,6 +27,7 @@ class CompanyFormRequest extends FormRequest
             'email'=>'nullable',
             'website'=>'nullable',
             'category'=>'nullable',
+
             'registrationNo' => 'nullable',
             'companyMainSector'=>'nullable',
             'primaryMSIC2008'=>'nullable',
@@ -38,6 +39,13 @@ class CompanyFormRequest extends FormRequest
             'latestNoEmployee'=>'nullable',
             'staEcosystem'=>'nullable',
             'productAndService'=>'nullable',
+
+            'address'=>'nullable',
+            'city'=>'nullable',
+            'state' => 'nullable',
+            'postCode'=>'nullable',
+            'country'=>'nullable',
+            'workplaceCategory'=>'nullable',
         ];
     }
 
@@ -48,6 +56,7 @@ class CompanyFormRequest extends FormRequest
             'email'=> strip_tags($this['email']),
             'website'=> strip_tags($this['website']),
             'category'=> strip_tags($this['category']),
+
             'registrationNo'=> strip_tags($this['registrationNo']),
             'companyMainSector'=> json_encode($this['companyMainSector']),
             'primaryMSIC2008'=> strip_tags($this['primaryMSIC2008']),
@@ -59,6 +68,13 @@ class CompanyFormRequest extends FormRequest
             'latestNoEmployee'=> strip_tags($this['latestNoEmployee']),
             'staEcosystem'=> json_encode($this['staEcosystem']),
             'productAndService'=> strip_tags($this['productAndService']),
+
+            'address'=> strip_tags($this['address']),
+            'city'=> strip_tags($this['city']),
+            'state' => strip_tags($this['state']),
+            'postCode'=> strip_tags($this['postCode']),
+            'country'=> strip_tags($this['country']),
+            'workplaceCategory'=> strip_tags($this['workplaceCategory']),
         ]);
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\AssociationFormRequest;
 use App\Models\Organization;
 use App\Models\Association;
+use App\Models\Workplace;
 
 
 class AssociationController extends Controller
@@ -51,6 +52,19 @@ class AssociationController extends Controller
             'mainCategory' =>$data['mainCategory'],
             'subCategory' =>$data['subCategory'],
         ]);
+
+        if($data['address']!=NULL | $data['address']!=""){
+
+        Workplace::create([
+            'organizationID' => $organization['id'],
+            'address'=>$data['address'],
+            'city'=> $data['city'],
+            'state' => $data['state'],
+            'postCode'=>$data['postCode'],
+            'country'=> $data['country'],
+            'workplaceCategory'=> $data['workplaceCategory'],
+        ]);
+        }
         
         return redirect()->route('associations.create');
     }

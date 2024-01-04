@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\MinistryFormRequest;
 use App\Models\Organization;
 use App\Models\Ministry;
+use App\Models\Workplace;
 
 class MinistryController extends Controller
 {
@@ -45,6 +46,19 @@ class MinistryController extends Controller
         Ministry::create([
             'id' => $organization['id'],
         ]);
+
+        if($data['address']!=NULL | $data['address']!=""){
+
+            Workplace::create([
+                'organizationID' => $organization['id'],
+                'address'=>$data['address'],
+                'city'=> $data['city'],
+                'state' => $data['state'],
+                'postCode'=>$data['postCode'],
+                'country'=> $data['country'],
+                'workplaceCategory'=> $data['workplaceCategory'],
+            ]);
+            }
         
         return redirect()->route('ministries.create');
     }

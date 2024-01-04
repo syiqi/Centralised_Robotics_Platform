@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CompanyFormRequest;
 use App\Models\Company;
 use App\Models\Organization;
+use App\Models\Workplace;
 
 class CompanyController extends Controller
 {
@@ -72,6 +73,19 @@ class CompanyController extends Controller
             'staEcosystem' =>$data['staEcosystem'],
             'productAndService' =>$data['productAndService'],
         ]);
+
+        if($data['address']!=NULL | $data['address']!=""){
+
+            Workplace::create([
+                'organizationID' => $organization['id'],
+                'address'=>$data['address'],
+                'city'=> $data['city'],
+                'state' => $data['state'],
+                'postCode'=>$data['postCode'],
+                'country'=> $data['country'],
+                'workplaceCategory'=> $data['workplaceCategory'],
+            ]);
+            }
         
         return redirect()->route('companies.create');
     }

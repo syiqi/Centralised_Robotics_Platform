@@ -27,10 +27,18 @@ class AssociationFormRequest extends FormRequest
             'email'=>'nullable',
             'website'=>'nullable',
             'category'=>'nullable',
+
             'registrationNo' => 'nullable',
             'natureOfActivity'=>'nullable',
             'mainCategory'=>'nullable',
             'subCategory'=>'nullable',
+
+            'address'=>'nullable',
+            'city'=>'nullable',
+            'state' => 'nullable',
+            'postCode'=>'nullable',
+            'country'=>'nullable',
+            'workplaceCategory'=>'nullable',
         ];
     }
 
@@ -41,10 +49,18 @@ class AssociationFormRequest extends FormRequest
             'email'=> strip_tags($this['email']),
             'website'=> strip_tags($this['website']),
             'category'=> strip_tags($this['category']),
+
             'registrationNo'=> strip_tags($this['registrationNo']),
             'natureOfActivity'=> strip_tags($this['natureOfActivity']),
             'mainCategory'=> strip_tags($this['mainCategory']),
             'subCategory'=> strip_tags($this['subCategory']),
+
+            'address'=> strip_tags($this['address']),
+            'city'=> strip_tags($this['city']),
+            'state' => strip_tags($this['state']),
+            'postCode'=> strip_tags($this['postCode']),
+            'country'=> strip_tags($this['country']),
+            'workplaceCategory'=> strip_tags($this['workplaceCategory']),
         ]);
     }
 }

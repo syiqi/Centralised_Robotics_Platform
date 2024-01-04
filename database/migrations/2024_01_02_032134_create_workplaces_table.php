@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('workplaces', function (Blueprint $table) {
             $table->id();
-            $table->string('address');
-            $table->string('city');
-            $table->string('state');
-            $table->string('postCode');
-            $table->string('country');
-            $table->char('workplaceCategory');
-            $table->bigInteger('organizationID')->unsigned();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('postCode')->nullable();
+            $table->string('country')->nullable();
+            $table->char('workplaceCategory')->nullable();
+            $table->bigInteger('organizationID')->nullable()->unsigned();
             $table->foreign('organizationID')->references('id')->on('organizations')->onDelete('cascade');
             $table->timestamps();
         });
