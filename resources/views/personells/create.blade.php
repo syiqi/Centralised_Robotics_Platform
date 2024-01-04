@@ -14,7 +14,7 @@ use App\Models\Organization;
         @csrf
         <div>
             <label class="text-white" for="personName"> Name </label>
-            <input type="text" id="personName" name="personName" value="{{ old('personName')}}">
+            <input type="text" id="personName" name="personName" value="{{ old('personName')}}" required>
         </div>
         <div>
             <label class="text-white" for="organizationID"> Organization Name </label>
@@ -34,7 +34,7 @@ use App\Models\Organization;
         </script>
         </div>
         <div>
-        <a href="route(">...Create a new one</a>
+        <a href="route('')">...Create a new one</a>
         </div>
         <div>
             <label class="text-white" for="personJobTitle"> Job Title </label>

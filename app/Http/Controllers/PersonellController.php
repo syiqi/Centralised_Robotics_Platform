@@ -29,12 +29,16 @@ class PersonellController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PersonellFormRequest $request)
     {
         //
         $data = $request->validated();
-         
+        if($data['organizationID']==""){
+            $data['organizationID']=NULL;
+         }
         Personell::create($data);
+
+        return redirect()->route('personells.create');
 
     }
 

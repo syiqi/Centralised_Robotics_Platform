@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('personDeptDiv')->nullable();
             $table->string('personEmail')->nullable();
             $table->string('personNumber')->nullable();
-            $table->bigInteger('organizationID')->unsigned();
+            $table->bigInteger('organizationID')->nullable()->unsigned();
             $table->foreign('organizationID')->references('id')->on('organizations')->onDelete('cascade');
             $table->timestamps();
         });

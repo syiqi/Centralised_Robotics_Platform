@@ -21,5 +21,17 @@ class Organization extends Model
     {
         return $this->hasMany(Ministry::class);
     }
+    public function company(): HasMany
+    {
+        return $this->hasMany(Company::class);
+    }
+    public function personell(): HasMany
+    {
+        return $this->hasMany(Personell::class);
+    }
+    public function workplace(): HasMany
+    {
+        return $this->hasMany(Workplace::class);
+    }
     
 }
