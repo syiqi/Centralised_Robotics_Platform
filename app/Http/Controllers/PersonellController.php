@@ -11,11 +11,36 @@ class PersonellController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+    // public function index()
+    // {
+    //     //
+    //     return view('personells.index', [
+    //         'personells'=> Personell::orderby('updated_at','desc')->paginate(20)
+    //     ]);
+    // }
 
+    public function index(Request $request)
+    {
+        $query = Personell::query();
+
+        // Search
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $query->where('personName', 'like', "%$searchTerm%")
+                  ->orWhere('personEmail', 'like', "%$searchTerm%");
+            // Add other fields as needed
+        }
+
+        // Sort
+        $sortBy = $request->input('sort_by', 'id');
+        $sortOrder = $request->input('sort_order', 'asc');
+        $query->orderBy($sortBy, $sortOrder);
+
+        $personell = $query->paginate(20); // Adjust the pagination as needed
+
+        return view('personells.index', compact('personell', 'sortBy', 'sortOrder'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      */
