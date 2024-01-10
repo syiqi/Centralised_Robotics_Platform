@@ -47,8 +47,9 @@ use App\Models\Organization;
             <input type="text" id="personDeptDiv" name="personDeptDiv">
         </div>
         <div>
-            <label class="text-white" for="personPosition"> Main Category</label>
+            <label class="text-white" for="personPosition"> Position</label>
             <select id="personPosition" name="personPosition">
+            <option value="">Unemployed</option>
             <option value="Staff">Staff Level</option>
             <option value="E">Executive Level(E-Level)</option>
             <option value="M">Managerial Level(M-Level)</option>

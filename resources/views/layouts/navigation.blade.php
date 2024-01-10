@@ -22,7 +22,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Association') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('ministries.index')" :active="request()->routeIs('ministries.index')">
                         {{ __('Ministry') }}
                     </x-nav-link>
                     <x-nav-link :href="route('personells.index')" :active="request()->routeIs('personells.index')">

@@ -8,14 +8,37 @@ use App\Models\Organization;
 use App\Models\Ministry;
 use App\Models\Workplace;
 
+use Illuminate\Database\Eloquent\Builder;
+
 class MinistryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = Organization::query();
+
+        // Search
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $query->where(function (Builder $subQuery) use ($searchTerm) {
+                $subQuery->where('name', 'like', "%$searchTerm%")
+                    ->orWhere('phoneNo', 'like', "%$searchTerm%")
+                    ->orWhere('email', 'like', "%$searchTerm%")
+                    ->orWhere('website', 'like', "%$searchTerm%");
+                // Add other fields as needed
+            });
+        }
+
+        // Sort
+        $sortBy = $request->input('sort_by', 'id');
+        $sortOrder = $request->input('sort_order', 'asc');
+        $query->orderBy($sortBy, $sortOrder);
+
+        $ministries = $query->paginate(10); // Adjust the pagination as needed
+
+        return view('organizations.ministries.index', compact('ministries', 'sortBy', 'sortOrder', 'request'));
     }
 
     /**

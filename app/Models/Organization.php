@@ -19,7 +19,7 @@ class Organization extends Model
     }
     public function ministry(): HasMany
     {
-        return $this->hasMany(Ministry::class);
+        return $this->hasMany(Ministry::class, 'id');
     }
     public function company(): HasMany
     {
@@ -27,7 +27,7 @@ class Organization extends Model
     }
     public function personell(): HasMany
     {
-        return $this->hasMany(Personell::class);
+        return $this->hasMany(Personell::class,'organizationID');
     }
     public function workplace(): HasMany
     {

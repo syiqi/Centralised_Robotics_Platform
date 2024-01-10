@@ -12,6 +12,6 @@ class Ministry extends Model
     protected $guarded = [];
     public function organizations(): BelongsTo
     {
-        return $this->belongsTo(Organizations::class);
+        return $this->belongsTo(Organizations::class, 'id');
     }
 }

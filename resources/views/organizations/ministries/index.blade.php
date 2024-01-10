@@ -1,57 +1,45 @@
-@php
-use App\Models\Organization;
-@endphp
+
+
 <x-app-layout>
 
+    <div>
+        <form action="{{ route('ministries.index') }}" method="GET">
+            <input type="text" name="search" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
 
-<div class= 'text-gray-300' >
-            SEARCH, FILTER AND SORT FUNCTION UP HERE
 
-<table class= 'table-fixed bg-white dark:bg-gray-800'>
-  
-<tr>
-    <th>Name</th>															
-    <th>Phone Number</th>
-    <th>Email</th>
-    <th>Website</th>
-    <th>Category</th>
-    <th>Phone Number</th>
-    <th>Employed at</th>
-</tr>
-@if ($personells->count() == 0)
-        <tr>
-            <td colspan="5">No personells to display.</td>
-        </tr>
-@endif
-  @foreach ($personells as $personell)
-    <tr>
-            <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">{{$personell['personName']}}</a></td>
-            <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">{{$personell['personPosition']}}</a></td>   
-            <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">{{$personell['personJobTitle']}}</a></td>   
-            <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">{{$personell['personDeptDiv']}}</a></td>   
-            <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">{{$personell['personEmail']}}</a></td>   
-            <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">{{$personell['personNumber']}}</a></td>
-            <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">
-            @if($personell['organizationID']!=NULL)
-            @php
-            $organization = Organization::findorFail($personell['organizationID']);
-            @endphp
-            {{$organization['name']}}
-            @else
-            Unemployed
-            @endif
-  
 
-            </a></td>
+        <a href="{{route('ministries.index')}}"><button>Reset Filter</button></a>
 
-    </tr>
-    @endforeach
+        <table class="text-white">
+            <thead>
+                <tr>
+                    <th><a href="{{ route('ministries.index', ['search' => $request->input('search'), 'sort_by' => 'id', 'sort_order' => $sortBy == 'id' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc']) }}">ID</a></th>
+                    <th><a href="{{ route('ministries.index', ['search' => $request->input('search'), 'sort_by' => 'name', 'sort_order' => $sortBy == 'name' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc']) }}">Name</a></th>
+                    <th><a href="{{ route('ministries.index', ['search' => $request->input('search'), 'sort_by' => 'phoneNo', 'sort_order' => $sortBy == 'phoneNo' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc']) }}">Phone No</a></th>
+                    <th><a href="{{ route('ministries.index', ['search' => $request->input('search'), 'sort_by' => 'email', 'sort_order' => $sortBy == 'email' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc']) }}">Email</a></th>
+                    <th><a href="{{ route('ministries.index', ['search' => $request->input('search'), 'sort_by' => 'website', 'sort_order' => $sortBy == 'website' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc']) }}">Website</a></th>
+                    
+                    <!-- Add other columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($ministries as $ministry)
+                    <tr>
+                        <td>{{ $ministry->id }}</td> 
+                        <td>{{ $ministry->name }}</td>
+                        <td>{{ $ministry->phoneNo }}</td>
+                        <td>{{ $ministry->email }}</td>
+                        <td>{{ $ministry->website }}</td>
+                        <td><a href="{{ route('ministries.show', ['ministry' => $ministry['id']])}}">View Details</a></td>
+                        <!-- Add other columns as needed -->
+                    </tr>
+                @endforeach
+            </tbody>
         </table>
 
-        <div class="mx-auto pb-10 w-4/5">
-          {{ $personells->links()}}
-        </div>
-        </div>
-<!-- probably have to implement by pages or numbers to no display too much at a time nanti lag -->
+        {{ $ministries->links() }}
+    </div>
 
 </x-app-layout>

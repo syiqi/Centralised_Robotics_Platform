@@ -5,40 +5,49 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PersonellFormRequest;
 use App\Models\Personell;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 
 class PersonellController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    // public function index()
-    // {
-    //     //
-    //     return view('personells.index', [
-    //         'personells'=> Personell::orderby('updated_at','desc')->paginate(20)
-    //     ]);
-    // }
-
     public function index(Request $request)
     {
         $query = Personell::query();
 
+        // Include the organization relationship
+        $query->with('organization');
+
         // Search
         if ($request->has('search')) {
             $searchTerm = $request->input('search');
-            $query->where('personName', 'like', "%$searchTerm%")
-                  ->orWhere('personEmail', 'like', "%$searchTerm%");
-            // Add other fields as needed
+            $query->where(function (Builder $subQuery) use ($searchTerm) {
+                $subQuery->where('personName', 'like', "%$searchTerm%")
+                    ->orWhere('personJobTitle', 'like', "%$searchTerm%")
+                    ->orWhere('personDeptDiv', 'like', "%$searchTerm%")
+                    ->orWhere('personEmail', 'like', "%$searchTerm%")
+                    ->orWhere('personNumber', 'like', "%$searchTerm%")
+                    ->orWhereHas('organization', function (Builder $q) use ($searchTerm) {
+                        $q->where('name', 'like', "%$searchTerm%");
+                    });
+                // Add other fields as needed
+            });
+        }
+
+        // Filter by personPosition
+        $positions = $request->input('positions', []);
+        if (!empty($positions)) {
+            $query->whereIn('personPosition', $positions);
         }
 
         // Sort
         $sortBy = $request->input('sort_by', 'id');
         $sortOrder = $request->input('sort_order', 'asc');
-        $query->orderBy($sortBy, $sortOrder);
+        
+            $query->orderBy($sortBy, $sortOrder);
+        
 
-        $personell = $query->paginate(20); // Adjust the pagination as needed
+        $personell = $query->paginate(10); // Adjust the pagination as needed
 
-        return view('personells.index', compact('personell', 'sortBy', 'sortOrder'));
+        return view('personells.index', compact('personell', 'sortBy', 'sortOrder', 'request', 'positions'));
     }
     
     /**
@@ -61,6 +70,9 @@ class PersonellController extends Controller
         if($data['organizationID']==""){
             $data['organizationID']=NULL;
          }
+         if($data['personPosition']==""){
+            $data['personPosition']=NULL;
+         }
         Personell::create($data);
 
         return redirect()->route('personells.create');
@@ -70,25 +82,44 @@ class PersonellController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Personell $personell)
+    public function show($personell)
     {
         //
+
+            return view('personells.show',[
+                'personell' => Personell::findorFail($personell)
+            ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Personell $personell)
+    public function edit($personell)
     {
         //
+        return view('personells.show',[
+            'personell' => Personell::findorFail($personell)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Personell $personell)
+    public function update(PersonellFormRequest $request, Personell $personell)
     {
         //
+        $data = $request->validated();
+        if($data['organizationID']==""){
+            $data['organizationID']=NULL;
+         }
+         if($data['personPosition']==""){
+            $data['personPosition']=NULL;
+         }
+        $personell->update($data);
+
+        return back()->withInput();
+
+
     }
 
     /**
@@ -97,5 +128,8 @@ class PersonellController extends Controller
     public function destroy(Personell $personell)
     {
         //
+        $personell= Personell::where('id', $personell['id'])->firstOrFail()->delete();
+     
+        return redirect()->route('personells.index');
     }
 }
