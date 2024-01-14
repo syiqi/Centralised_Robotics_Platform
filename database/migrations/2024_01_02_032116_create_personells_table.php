@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('personEmail')->nullable();
             $table->string('personNumber')->nullable();
             $table->bigInteger('organizationID')->nullable()->unsigned();
-            $table->foreign('organizationID')->references('id')->on('organizations')->onDelete('cascade');
+            $table->foreign('organizationID')->references('id')->on('organizations')->nullOnDelete();
             $table->timestamps();
         });
     }

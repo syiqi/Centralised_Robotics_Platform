@@ -97,7 +97,7 @@ use App\Models\Organization;
         </div>
         
         <div>
-                <button class="text-white" type="submit" disabled>Submit</button>
+                <button class="text-white" type="submit" disabled>UPDATE</button>
             </div>
         </form>
 

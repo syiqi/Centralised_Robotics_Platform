@@ -10,8 +10,8 @@ class Ministry extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function organizations(): BelongsTo
+    public function organization(): BelongsTo
     {
-        return $this->belongsTo(Organizations::class, 'id');
+        return $this->belongsTo(Organization::class,'id');
     }
 }

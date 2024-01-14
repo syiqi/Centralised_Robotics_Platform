@@ -17,28 +17,8 @@ class MinistryController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Organization::query();
-
-        // Search
-        if ($request->has('search')) {
-            $searchTerm = $request->input('search');
-            $query->where(function (Builder $subQuery) use ($searchTerm) {
-                $subQuery->where('name', 'like', "%$searchTerm%")
-                    ->orWhere('phoneNo', 'like', "%$searchTerm%")
-                    ->orWhere('email', 'like', "%$searchTerm%")
-                    ->orWhere('website', 'like', "%$searchTerm%");
-                // Add other fields as needed
-            });
-        }
-
-        // Sort
-        $sortBy = $request->input('sort_by', 'id');
-        $sortOrder = $request->input('sort_order', 'asc');
-        $query->orderBy($sortBy, $sortOrder);
-
-        $ministries = $query->paginate(10); // Adjust the pagination as needed
-
-        return view('organizations.ministries.index', compact('ministries', 'sortBy', 'sortOrder', 'request'));
+        $ministries = Ministry::all();
+        return view('organizations.ministries.index', compact('ministries'));
     }
 
     /**
@@ -89,25 +69,41 @@ class MinistryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Ministry $ministry)
+    public function show($ministry)
     {
         //
+        return view('organizations.ministries.show',[
+            'ministry' => Ministry::findorFail($ministry)
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Ministry $ministry)
+    public function edit($ministry)
     {
-        //
+        //  
+        return view('organizations.ministries.show',[
+            'ministry' => Ministry::findorFail($ministry)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMinistryRequest $request, Ministry $ministry)
+    public function update(MinistryFormRequest $request, Organization $organization,Ministry $ministry)
     {
         //
+        $data = $request->validated();
+        $organization->update([
+            'name' => $data['name'],
+            'phoneNo' =>$data['phoneNo'],
+            'email' =>$data['email'],
+            'website' =>$data['website'],
+            'category' =>$data['category'],
+         ]);
+
+         return back()->withInput();
     }
 
     /**
@@ -116,5 +112,8 @@ class MinistryController extends Controller
     public function destroy(Ministry $ministry)
     {
         //
+        $ministry= Organization::where('id', $ministry['id'])->firstOrFail()->delete();
+     
+        return redirect()->route('ministries.index');
     }
 }

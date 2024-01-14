@@ -1,82 +1,57 @@
-@php
-use App\Models\Personell;
-@endphp
+<head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+</head>
+
 <x-app-layout>
-
-<div>
-        <form action="{{ route('personells.index') }}" method="GET">
-            <input type="text" name="search" placeholder="Search...">
-            <button type="submit">Search</button>
-        </form>
-
-        <form class="text-white" action="{{ route('personells.index') }}" method="GET" id="positionFilterForm">
-    <input type="hidden" name="search" value="{{ $request->input('search') }}">
-    <p>Filter by Position:</p>
-        <label>
-            <input type="checkbox" name="positions[]" value="Staff" {{ in_array('Staff', $positions) ? 'checked' : '' }} onclick="submitPositionFilter()"> Staff Level
-        </label>
-        <label>
-            <input type="checkbox" name="positions[]" value="E" {{ in_array('E', $positions) ? 'checked' : '' }} onclick="submitPositionFilter()"> Executive Level
-        </label>
-        <label>
-            <input type="checkbox" name="positions[]" value="M" {{ in_array('M', $positions) ? 'checked' : '' }} onclick="submitPositionFilter()"> Managerial Level
-        </label>
-        <label>
-            <input type="checkbox" name="positions[]" value="C" {{ in_array('C', $positions) ? 'checked' : '' }} onclick="submitPositionFilter()"> Chief Level
-        </label>
-    </form>
-
-    <a href="{{route('personells.index')}}"><button>Reset Filter</button></a>
-
-        <table class="text-white">
-            <thead>
-                <tr>
-                <th>Count</th>
-                <th><a href="{{ route('personells.index', ['search' => $request->input('search'), 'sort_by' => 'personName', 'sort_order' => $sortBy == 'personName' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc', 'positions' => $positions]) }}">Name</a></th>
-                <th><a href="{{ route('personells.index', ['search' => $request->input('search'), 'sort_by' => 'personPosition', 'sort_order' => $sortBy == 'personPosition' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc', 'positions' => $positions]) }}">Position</a></th>
-                <th><a href="{{ route('personells.index', ['search' => $request->input('search'), 'sort_by' => 'personJobTitle', 'sort_order' => $sortBy == 'personJobTitle' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc', 'positions' => $positions]) }}">Job Title</a></th>
-                <th><a href="{{ route('personells.index', ['search' => $request->input('search'), 'sort_by' => 'personDeptDiv', 'sort_order' => $sortBy == 'personDeptDiv' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc', 'positions' => $positions]) }}">Department / Division</a></th>
-                <th><a href="{{ route('personells.index', ['search' => $request->input('search'), 'sort_by' => 'personEmail', 'sort_order' => $sortBy == 'personEmail' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc', 'positions' => $positions]) }}">Email</a></th>
-                <th><a href="{{ route('personells.index', ['search' => $request->input('search'), 'sort_by' => 'personNumber', 'sort_order' => $sortBy == 'personNumber' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc', 'positions' => $positions]) }}">Number</a></th>    
-                <th><a href="{{ route('personells.index', ['search' => $request->input('search'), 'sort_by' => 'organizationID', 'sort_order' => $sortBy == 'organizationID' ? ($sortOrder == 'asc' ? 'desc' : 'asc') : 'asc', 'positions' => $positions]) }}">Employed at</a></th>                <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($personell as $index => $person)
-                    <tr>
-                        <td>{{ $index + 1}}</a></td>
-                        <td>{{ $person['personName'] }}</td>
-                        <td>{{ $person['personPosition'] ?? 'Unemployed' }}</td>
-                        <td>{{ $person['personJobTitle'] }}</td>
-                        <td>{{ $person['personDeptDiv'] }}</td>
-                        <td>{{ $person['personEmail'] }}</td>
-                        <td>{{ $person['personNumber'] }}</td>
-                        <td>{{ $person->organization->name ?? 'Unemployed' }}</td>
-                        <td><a href="{{ route('personells.show', ['personell' => $person['id']])}}">View Details</a></td>
-                        <td><form id="deleteForm" action="{{ route('personells.destroy',['personell'=> $person['id']]) }}" method="POST">
+<div class="container mt-5">
+<table id="personellTable" class="text-white">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Job Title</th>
+            <th>Department / Division</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Employed At</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody>
+            @foreach($personells as $personell)
+            <tr>
+                <td>{{$personell->personName ?? 'Unavailable' }}</td>
+                <td>{{$personell->personPosition ?? 'Unemployed' }}</td>
+                <td>{{$personell->personJobTitle ?? 'Unknown' }}</td>
+                <td>{{$personell->personDeptDiv ?? 'Unknown' }}</td>
+                <td>{{$personell->personEmail ?? 'Unknown' }}</td>
+                <td>{{$personell->personNumber ?? 'Unknown' }}</td>
+                <td>{{$personell->organization->name ?? 'Unemployed' }}</td>
+                <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">View Details</a></td>
+                <td><form id="deleteForm" action="{{ route('personells.destroy',['personell'=> $personell['id']]) }}" method="POST">
             @csrf
             @method('DELETE')
 
             <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-            <button class="text-white" type="button" onclick="confirmDelete()">DELETE</button></td>
+            <button type="button" onclick="confirmDelete()">X</button></td>
         </form>
-                        
-                        <!-- Add other columns as needed -->
-                @endforeach
-            </tbody>
-        </table>
+            </tr>
+            @endforeach
+        </tbody>
+    </thead>
 
-        {{ $personell->links() }}
-    </div>
+</table>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-
-    <script>
-    function submitPositionFilter() {
-        var positionForm = document.getElementById("positionFilterForm");
-        positionForm.submit();
-    }
-
-
+<script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#personellTable').DataTable();
+} );
+</script>
+<script>
     function confirmDelete() {
             var isConfirmed = confirm("Are you sure you want to delete?");
             if (isConfirmed) {
@@ -84,9 +59,6 @@ use App\Models\Personell;
                 document.getElementById('deleteForm').submit();
             }
         }
-    </script>
 </script>
 
 </x-app-layout>
-
-<!-- Why use GET - since this is for the superadmin side, i think it can help them to filter in out of the box way since they understand how the system works -->
