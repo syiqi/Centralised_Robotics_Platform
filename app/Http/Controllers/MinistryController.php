@@ -91,19 +91,17 @@ class MinistryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(MinistryFormRequest $request, Organization $organization,Ministry $ministry)
+    public function update(MinistryFormRequest $request, Ministry $ministry)
     {
-        //
         $data = $request->validated();
-        $organization->update([
+        $ministry->organization()->update([
             'name' => $data['name'],
-            'phoneNo' =>$data['phoneNo'],
-            'email' =>$data['email'],
-            'website' =>$data['website'],
-            'category' =>$data['category'],
-         ]);
-
-         return back()->withInput();
+            'phoneNo' => $data['phoneNo'],
+            'email' => $data['email'],
+            'website' => $data['website'],
+        ]);
+        
+        return back()->withInput();
     }
 
     /**

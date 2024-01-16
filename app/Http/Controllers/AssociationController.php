@@ -14,9 +14,11 @@ class AssociationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $associations = Association::all();
+        return view('organizations.associations.index', compact('associations'));
+    
     }
 
     /**
@@ -73,32 +75,56 @@ class AssociationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($association)
     {
         //
+        return view('organizations.associations.show',[
+            'association' => Association::findorFail($association)
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($association)
     {
         //
+        return view('organizations.associations.show',[
+            'association' => Association::findorFail($association)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(AssociationFormRequest $request, Association $association)
     {
         //
+        $data = $request->validated();
+        $association->organization()->update([
+            'name' => $data['name'],
+            'phoneNo' => $data['phoneNo'],
+            'email' => $data['email'],
+            'website' => $data['website'],
+        ]);
+        $association->update([
+            'registrationNo' => $data['registrationNo'],
+            'natureOfActivity' => $data['natureOfActivity'],
+            'mainCategory' => $data['mainCategory'],
+            'subCategory' => $data['subCategory'],
+        ]);
+        
+        return back()->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Association $association)
     {
         //
+        $association= Organization::where('id', $association['id'])->firstOrFail()->delete();
+     
+        return redirect()->route('associations.index');
     }
 }

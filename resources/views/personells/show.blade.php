@@ -15,20 +15,15 @@ use App\Models\Organization;
 <div>
     <form method="POST" action="{{ route('personells.update',['personell'=> $personell['id']]) }}">
 
-    <div>
-    <input type="checkbox" id="enableDisableInput">
-    <label class="text-white" for="enableDisableInput"> Enable/Disable Typing</label>
-</div>
-
         @csrf
         @method('PUT')
         <div>
             <label class="text-white" for="personName"> Name </label>
-            <input type="text" id="personName" name="personName" value="{{ $personell['personName']}}" required>
+            <input type="text" id="personName" name="personName" value="{{ $personell['personName']}}" required >
         </div>
         <div>
             <label class="text-white" for="organizationID"> Organization Name </label>
-            <select class="organization-select-input" id="organizationID" name="organizationID" disabled>
+            <select class="organization-select-input" id="organizationID" name="organizationID" >
                 <option value="">Unemployed</option>
             @foreach(Organization::all() as $organization)
             @if($personell['organizationID']==$organization['id'])
@@ -49,15 +44,15 @@ use App\Models\Organization;
         </div>
         <div>
             <label class="text-white" for="personJobTitle"> Job Title </label>
-            <input type="text" id="personJobTitle" name="personJobTitle" value="{{ $personell['personJobTitle']}}" disabled>
+            <input type="text" id="personJobTitle" name="personJobTitle" value="{{ $personell['personJobTitle']}}" >
         </div>
         <div>
             <label class="text-white" for="personDeptDiv"> Department/Division </label>
-            <input type="text" id="personDeptDiv" name="personDeptDiv" value="{{ $personell['personDeptDiv']}}" disabled>
+            <input type="text" id="personDeptDiv" name="personDeptDiv" value="{{ $personell['personDeptDiv']}}" >
         </div>
         <div>
             <label class="text-white" for="personPosition"> Position </label>
-            <select id="personPosition" name="personPosition" value="{{ $personell['personPosition']}}" disabled>
+            <select id="personPosition" name="personPosition" value="{{ $personell['personPosition']}}" >
             @if(empty($personell['personPosition']))
             <option value="" selected>Unemployed</option>
             @else
@@ -89,19 +84,19 @@ use App\Models\Organization;
 
         <div>
             <label class="text-white" for="personEmail"> Email </label>
-            <input type="email" id="personEmail" name="personEmail" value="{{ $personell['personEmail']}}" disabled>
+            <input type="email" id="personEmail" name="personEmail" value="{{ $personell['personEmail']}}" >
         </div>
         <div>
             <label class="text-white" for="personNumber"> Phone No </label>
-            <input type="tel" id="personNumber" name="personNumber" value="{{ $personell['personNumber']}}" disabled>
+            <input type="tel" id="personNumber" name="personNumber" value="{{ $personell['personNumber']}}" >
         </div>
         
         <div>
-                <button class="text-white" type="submit" disabled>UPDATE</button>
+                <button class="text-white" type="submit" >UPDATE</button>
             </div>
         </form>
 
-        <form id="deleteForm" action="{{ route('personells.destroy',['personell'=> $personell['id']]) }}" method="POST" disabled>
+        <form id="deleteForm" action="{{ route('personells.destroy',['personell'=> $personell['id']]) }}" method="POST" >
             @csrf
             @method('DELETE')
 
@@ -111,14 +106,7 @@ use App\Models\Organization;
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('.organization-select-input').select2();
 
-            $('#enableDisableInput').change(function() {
-                var isChecked = $(this).prop('checked');
-                $('input:not(#enableDisableInput), select, button').prop('disabled', !isChecked);
-            });
-        });
 
         // JavaScript function to show confirmation dialog
         function confirmDelete() {

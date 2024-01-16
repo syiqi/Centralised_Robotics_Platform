@@ -9,8 +9,8 @@ class Company extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function organizations(): BelongsTo
+    public function organization(): BelongsTo
     {
-        return $this->belongsTo(Organizations::class);
+        return $this->belongsTo(Organization::class);
     }
 }

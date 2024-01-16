@@ -8,34 +8,28 @@
 <table id="ministryTable" class="text-white">
     <thead>
         <tr>
+            <th>Entry</th>
             <th>Name</th>
             <th>Phone Number</th>
             <th>Email</th>
             <th>Website</th>
             <th></th>
-            <th></th>
         </tr>
         <tbody>
             @foreach($ministries as $ministry)
             <tr>
+            <td>{{$loop->iteration}}</td>
                 <td>{{$ministry->organization->name ?? '~' }}</td>
                 <td>{{$ministry->organization->phoneNo ?? '~' }}</td>
                 <td>{{$ministry->organization->email ?? '~' }}</td>
                 <td><a href="{{$ministry->organization->website ?? '' }}">
-                    @if($ministry->organization->website=='')
+                    @if(empty($ministry->organization->website))
                     Unknown/Unavailable
                     @else
                     <u>Visit Website</u>
                     @endif
                 </a></td>
                 <td><a href="{{ route('ministries.show', ['ministry' => $ministry['id']])}}">View Details</a></td> 
-                <td><form id="deleteForm" action="{{ route('ministries.destroy',['ministry'=> $ministry['id']]) }}" method="POST">
-            @csrf
-            @method('DELETE')
-
-            <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-            <button type="button" onclick="confirmDelete()">X</button></td>
-        </form>
             </tr>
             @endforeach
         </tbody>

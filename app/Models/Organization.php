@@ -15,7 +15,7 @@ class Organization extends Model
 
     public function association(): HasMany
     {
-        return $this->hasMany(Association::class);
+        return $this->hasMany(Association::class,'id');
     }
     public function ministry(): HasMany
     {
@@ -23,7 +23,7 @@ class Organization extends Model
     }
     public function company(): HasMany
     {
-        return $this->hasMany(Company::class);
+        return $this->hasMany(Company::class,'id');
     }
     public function personell(): HasMany
     {
@@ -31,7 +31,7 @@ class Organization extends Model
     }
     public function workplace(): HasMany
     {
-        return $this->hasMany(Workplace::class);
+        return $this->hasMany(Workplace::class,'organizationID');
     }
     
 }
