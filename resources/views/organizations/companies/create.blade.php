@@ -68,16 +68,30 @@
             <label> STA Ecosystem</label><br>
 
             <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation">Robotics & Automation 
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I./Developers/IT/Infrastructure">S.I. / Developers / IT / Infrastructure 
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="ERP/MOM/MES">ERP / MOM / MES
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="CRM/SRM/Sales">CRM / SRM / Sales
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AGV/AMR">AGV / AMR
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Social/Edutainment/Service Robot">Social / Edutainment / Service Robot
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I.">S.I.
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Developers">Developers
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="IT">IT
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Infrastructure">Infrastructure
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="ERP">ERP
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MOM">MOM
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MES">MES
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="CRM">CRM
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="SRM">SRM
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Sales">Sales
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AGV">AGV
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AMR">AMR            
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Social">Social
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Edutainment">Edutainment
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Service Robot">Service Robot
             <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="OEM-Arm,COBOT,Sensor,Actuator">OEM - Arm, COBOT, Sensor, Actuator 
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Talent/Skills Dev">Talent / Skills Dev
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Talent">Talent
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Skills Dev">Skills Dev
             <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AS/RS">AS/RS
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="3DP/AddMfg">3DP / AddMfg
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="UAV/Drone">UAV / Drone  
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="3DP">3DP
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AddMfg">AddMfg
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="UAV">UAV
+            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Drone">Drone  
+
         </div>
         <div>
             <label class="text-white" for="productAndService"> Product And Service</label>
@@ -144,11 +158,3 @@
 </div>
 
 </x-app-layout>
-
-<!-- Note:-
-1) Error Messages if want
-2) For Taashwin, can css now.
-3) Hello.
-4. LESGOOOOOOOOO 
-5) Lets do it one more time
--->
