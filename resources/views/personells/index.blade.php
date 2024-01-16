@@ -1,5 +1,17 @@
 <x-app-layout>
 <div class="container mt-5">
+<label>
+            <input type="checkbox" class="positionCheckbox" value="C"> C
+        </label>
+        <label>
+            <input type="checkbox" class="positionCheckbox" value="M"> M
+        </label>
+        <label>
+            <input type="checkbox" class="positionCheckbox" value="E"> E
+        </label>
+        <label>
+            <input type="checkbox" class="positionCheckbox" value="Staff"> Staff
+        </label>
 <table id="personellTable" class="text-white">
     <thead>
         <tr>
@@ -41,6 +53,20 @@ $(document).ready( function () {
     $('#personellTable').DataTable();
 } );
 </script>
+<script>
+        $(document).ready(function () {
+            var table = $('#personellTable').DataTable();
 
+            // Event handler for checkbox changes
+            $('.positionCheckbox').on('change', function () {
+                var checkedPositions = $('.positionCheckbox:checked').map(function () {
+                    return $(this).val();
+                }).get();
+
+                // Use DataTables API to filter based on selected positions
+                table.column(2).search(checkedPositions.join('|'), true, false).draw();
+            });
+        });
+    </script>
 
 </x-app-layout>
