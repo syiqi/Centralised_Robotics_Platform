@@ -8,7 +8,7 @@ use App\Models\Personell;
 </head>
 
 <div class="container mt-5">
-<table id="personellTable{{$level}}" class="text-white">
+<table id="personellTable{{$level}}" >
     <thead>
         <tr>
             <th>Name</th>

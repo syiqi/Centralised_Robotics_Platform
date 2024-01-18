@@ -144,7 +144,7 @@
             <input type="checkbox" class="subCategoryCheckbox" value="Educational"> Educational
         </label>
 -->
-<table id="associationTable" class="text-white">
+<table id="associationTable" >
     <thead>
         <tr>
             <th>Entry</th>

@@ -8,15 +8,15 @@ use App\Models\Workplace;
     @csrf
     @method('PUT')
             <div>
-                <label class="text-white" for="address"> Address </label>
+                <label  for="address"> Address </label>
                 <input type="text" id="address" name="address" value="{{$workplace['address']}}">
             </div>
             <div>
-                <label class="text-white" for="city"> City </label>
+                <label  for="city"> City </label>
                 <input type="text" id="city" name="city" value="{{$workplace['city']}}">
             </div>
             <div>
-                <label class="text-white" for="state"> State </label>
+                <label  for="state"> State </label>
                 <select id="state" name="state">
                     @if($workplace['state']=="Johor")
                 <option value="Johor" selected>Johor</option>
@@ -96,15 +96,15 @@ use App\Models\Workplace;
             </select>
             </div>
             <div>
-                <label class="text-white" for="postCode"> Post Code </label>
+                <label  for="postCode"> Post Code </label>
                 <input type="text" id="postCode" name="postCode" value="{{$workplace['postCode']}}">
             </div>
             <div>
-                <label class="text-white" for="country"> Country </label>
+                <label  for="country"> Country </label>
                 <input type="text" id="country" name="country" value="Malaysia" readonly>
             </div>
             <div>
-            <label class="text-white" for="workplaceCategory"> Workplace Category</label>
+            <label  for="workplaceCategory"> Workplace Category</label>
             <select id="workplaceCategory" name="workplaceCategory">
                 @if($workplace['workplaceCategory']=="M")
                 <option value="M" selected>Main</option>
@@ -124,7 +124,7 @@ use App\Models\Workplace;
             </select>
             </div>
             <div>
-            <button class="text-white" type="submit" >Update</button>    
+            <button  type="submit" >Update</button>    
             </div>
     
         </form>
@@ -133,9 +133,9 @@ use App\Models\Workplace;
             @method('DELETE')
 
             <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-            <button class="text-white" type="button" onclick="confirmWorkplaceDelete('{{ $workplace['id'] }}')">X</button>
+            <button  type="button" onclick="confirmWorkplaceDelete('{{ $workplace['id'] }}')">X</button>
         </form>
     @endif
 
     @endforeach
-        <u class="text-white"><a href="{{route('workplaces.create')}}">Create new address</a></u>
+        <u ><a href="{{route('workplaces.create')}}">Create new address</a></u>

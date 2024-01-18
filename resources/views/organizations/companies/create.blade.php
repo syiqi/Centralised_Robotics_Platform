@@ -5,30 +5,30 @@
     <form method="POST" action="{{ route('companies.store') }}">
     @csrf
         <div>
-            <label class="text-white" for="name"> Name </label>
+            <label  for="name"> Name </label>
             <input type="text" id="name" name="name" value="{{ old('name')}}" required>
         </div>
         <div>
-            <label class="text-white" for="phoneNo"> PhoneLinging </label>
+            <label  for="phoneNo"> PhoneLinging </label>
             <input type="tel" id="phoneNo" name="phoneNo" value="{{ old('phoneNo')}}">
             <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
         </div>
         <div>
-            <label class="text-white" for="email"> EMAIL </label>
+            <label  for="email"> EMAIL </label>
             <input type="email" id="email" name="email" value="{{ old('email')}}">
         </div>
         <div>
-            <label class="text-white" for="website"> Website </label>
+            <label  for="website"> Website </label>
             <input type="url" id="website" name="website" value="{{ old('website')}}">
         </div>
         <div>
             <input type="hidden" id="category" name="category" value='C'>
         </div>
         <div>
-            <label class="text-white" for="registrationNo"> Registration No </label>
+            <label  for="registrationNo"> Registration No </label>
             <input type="text" id="registrationNo" name="registrationNo" value="{{ old('registrationNo')}}">
         </div>
-        <div class="text-white">
+        <div >
         <label> Main Sector</label><br>
 
         <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Primary Agriculture">Primary Agriculture
@@ -37,34 +37,34 @@
         <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Services/Mining & Quarrying/Construction">Services / Mining & Quarrying / Construction
         </div>
         <div>
-            <label class="text-white" for="primaryMSIC2008"> MSIC2008 Code (Primary) *5-digits code of activity*</label>
+            <label  for="primaryMSIC2008"> MSIC2008 Code (Primary) *5-digits code of activity*</label>
             <input type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ old('primaryMSIC2008')}}">
         </div>
         <div>
-            <label class="text-white" for="secondaryMSIC2008"> MSIC2008 Code (Secondary) *5-digits code of activity*</label>
+            <label  for="secondaryMSIC2008"> MSIC2008 Code (Secondary) *5-digits code of activity*</label>
             <input type="number" id="secondaryMSIC2008" name="secondaryMSIC2008" value="{{ old('secondaryMSIC2008')}}">
         </div>
         <div>
-            <label class="text-white" for="tertiaryMSIC2008"> MSIC2008 Code (Tertiary) *5-digits code of activity*</label>
+            <label  for="tertiaryMSIC2008"> MSIC2008 Code (Tertiary) *5-digits code of activity*</label>
             <input type="number" id="tertiaryMSIC2008" name="tertiaryMSIC2008" value="{{ old('tertiaryMSIC2008')}}">
         </div>
         <div>
-            <label class="text-white" for="natureOfActivity"> Nature of Business</label>
+            <label  for="natureOfActivity"> Nature of Business</label>
             <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}">
         </div>
         <div>
-            <label class="text-white" for="financeYearCalendar"> Financial Year Calendar (Start Date) </label>
+            <label  for="financeYearCalendar"> Financial Year Calendar (Start Date) </label>
             <input type="date" id="financeYearCalendar" name="financeYearCalendar" value="{{ old('financeYearCalendar')}}">
         </div>
         <div>
-            <label class="text-white" for="latestRevenue"> Latest Revenue (RM) - (audited year)  </label>
+            <label  for="latestRevenue"> Latest Revenue (RM) - (audited year)  </label>
             <input type="number" step="any" id="latestRevenue" name="latestRevenue" value="{{ old('latestRevenue')}}">
         </div>
         <div>
-            <label class="text-white" for="latestNoEmployee"> Latest Number of Employee(s) </label>
+            <label  for="latestNoEmployee"> Latest Number of Employee(s) </label>
             <input type="number" id="latestNoEmployee" name="latestNoEmployee" value="{{ old('latestNoEmployee')}}">
         </div>
-        <div class="text-white">
+        <div >
             <label> STA Ecosystem</label><br>
 
             <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation">Robotics & Automation 
@@ -94,7 +94,7 @@
 
         </div>
         <div>
-            <label class="text-white" for="productAndService"> Product And Service</label>
+            <label  for="productAndService"> Product And Service</label>
             <input type="text" id="productAndService" name="productAndService" value="{{ old('productAndService')}}">
         </div>
 
@@ -103,15 +103,15 @@
             <!-- Address -->
 
             <div>
-                <label class="text-white" for="address"> Address </label>
+                <label  for="address"> Address </label>
                 <input type="text" id="address" name="address" value="{{ old('address')}}">
             </div>
             <div>
-                <label class="text-white" for="city"> City </label>
+                <label  for="city"> City </label>
                 <input type="text" id="city" name="city" value="{{ old('city')}}">
             </div>
             <div>
-                <label class="text-white" for="state"> State </label>
+                <label  for="state"> State </label>
                 <select id="state" name="state">
                 <option value="Johor">Johor</option>
                 <option value="Kedah">Kedah</option>
@@ -131,15 +131,15 @@
             </select>
             </div>
             <div>
-                <label class="text-white" for="postCode"> Post Code </label>
+                <label  for="postCode"> Post Code </label>
                 <input type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">
             </div>
             <div>
-                <label class="text-white" for="country"> Country </label>
+                <label  for="country"> Country </label>
                 <input type="text" id="country" name="country" value="Malaysia" readonly>
             </div>
             <div>
-            <label class="text-white" for="workplaceCategory"> Workplace Category</label>
+            <label  for="workplaceCategory"> Workplace Category</label>
             <select id="workplaceCategory" name="workplaceCategory">
                 <option value="M">Main</option>
                 <option value="B">Branch</option>
@@ -150,7 +150,7 @@
         </div>
 
         <div>
-            <button class="text-white" type="submit">Submit</button>    
+            <button  type="submit">Submit</button>    
         </div>
         
     </form>

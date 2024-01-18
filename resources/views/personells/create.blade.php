@@ -16,11 +16,11 @@ use App\Models\Organization;
     <form method="POST" action="{{ route('personells.store') }}">
         @csrf
         <div>
-            <label class="text-white" for="personName"> Name </label>
+            <label  for="personName"> Name </label>
             <input type="text" id="personName" name="personName" value="{{ old('personName')}}" required>
         </div>
         <div>
-            <label class="text-white" for="organizationID"> Organization Name </label>
+            <label  for="organizationID"> Organization Name </label>
             <select class="organization-select-input" id="organizationID" name="organizationID">
                 <option value="">Unemployed</option>
             @foreach(Organization::all() as $organization)
@@ -42,15 +42,15 @@ use App\Models\Organization;
         </x-nav-link>
         </div>
         <div>
-            <label class="text-white" for="personJobTitle"> Job Title </label>
+            <label  for="personJobTitle"> Job Title </label>
             <input type="text" id="personJobTitle" name="personJobTitle">
         </div>
         <div>
-            <label class="text-white" for="personDeptDiv"> Department/Division </label>
+            <label  for="personDeptDiv"> Department/Division </label>
             <input type="text" id="personDeptDiv" name="personDeptDiv">
         </div>
         <div>
-            <label class="text-white" for="personPosition"> Position</label>
+            <label  for="personPosition"> Position</label>
             <select id="personPosition" name="personPosition">
             <option value="">Unemployed</option>
             <option value="Staff">Staff Level</option>
@@ -60,16 +60,16 @@ use App\Models\Organization;
             </select>
         </div>
         <div>
-            <label class="text-white" for="personEmail"> Email </label>
+            <label  for="personEmail"> Email </label>
             <input type="email" id="personEmail" name="personEmail">
         </div>
         <div>
-            <label class="text-white" for="personNumber"> Phone No </label>
+            <label  for="personNumber"> Phone No </label>
             <input type="tel" id="personNumber" name="personNumber">
         </div>
         
         <div>
-            <button class="text-white" type="submit">Submit</button>    
+            <button  type="submit">Submit</button>    
         </div>
 
     </form>    

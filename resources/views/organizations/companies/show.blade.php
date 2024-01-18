@@ -7,30 +7,30 @@
     @csrf
     @method('PUT')
         <div>
-            <label class="text-white" for="name"> Name </label>
+            <label  for="name"> Name </label>
             <input type="text" id="name" name="name" value="{{$company->organization->name}}" required >
         </div>
         <div>
-            <label class="text-white" for="phoneNo"> PhoneLinging </label>
+            <label  for="phoneNo"> PhoneLinging </label>
             <input type="tel" id="phoneNo" name="phoneNo" value="{{ $company->organization->phoneNo}}" >
             <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
         </div>
         <div>
-            <label class="text-white" for="email"> EMAIL </label>
+            <label  for="email"> EMAIL </label>
             <input type="email" id="email" name="email" value="{{ $company->organization->email}}" >
         </div>
         <div>
-            <label class="text-white" for="website"> Website </label>
+            <label  for="website"> Website </label>
             <input type="url" id="website" name="website" value="{{ $company->organization->website}}" >
         </div>
         <div>
             <input type="hidden" id="category" name="category" value='M'>
         </div>
         <div>
-            <label class="text-white" for="registrationNo"> Registration No </label>
+            <label  for="registrationNo"> Registration No </label>
             <input type="text" id="registrationNo" name="registrationNo" value="{{$company->registrationNo}}">
         </div>
-        <div class="text-white">
+        <div >
         <label> Main Sector</label><br>
         @if(str_contains($company->companyMainSector,"Primary Agriculture"))
         <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Primary Agriculture" checked>Primary Agriculture
@@ -54,34 +54,34 @@
         @endif
         </div>
         <div>
-            <label class="text-white" for="primaryMSIC2008"> MSIC2008 Code (Primary) *5-digits code of activity*</label>
+            <label  for="primaryMSIC2008"> MSIC2008 Code (Primary) *5-digits code of activity*</label>
             <input type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ $company->primaryMSIC2008}}">
         </div>
         <div>
-            <label class="text-white" for="secondaryMSIC2008"> MSIC2008 Code (Secondary) *5-digits code of activity*</label>
+            <label  for="secondaryMSIC2008"> MSIC2008 Code (Secondary) *5-digits code of activity*</label>
             <input type="number" id="secondaryMSIC2008" name="secondaryMSIC2008" value="{{ $company->secondaryMSIC2008}}">
         </div>
         <div>
-            <label class="text-white" for="tertiaryMSIC2008"> MSIC2008 Code (Tertiary) *5-digits code of activity*</label>
+            <label  for="tertiaryMSIC2008"> MSIC2008 Code (Tertiary) *5-digits code of activity*</label>
             <input type="number" id="tertiaryMSIC2008" name="tertiaryMSIC2008" value="{{$company->tertiaryMSIC2008}}">
         </div>
         <div>
-            <label class="text-white" for="natureOfActivity"> Nature of Business</label>
+            <label  for="natureOfActivity"> Nature of Business</label>
             <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{ $company->natureOfActivity}}">
         </div>
         <div>
-            <label class="text-white" for="financeYearCalendar"> Financial Year Calendar (Start Date) </label>
+            <label  for="financeYearCalendar"> Financial Year Calendar (Start Date) </label>
             <input type="date" id="financeYearCalendar" name="financeYearCalendar" value="{{ $company->financeYearCalendar}}">
         </div>
         <div>
-            <label class="text-white" for="latestRevenue"> Latest Revenue (RM) - (audited year)  </label>
+            <label  for="latestRevenue"> Latest Revenue (RM) - (audited year)  </label>
             <input type="number" step="any" id="latestRevenue" name="latestRevenue" value="{{ $company->latestRevenue}}">
         </div>
         <div>
-            <label class="text-white" for="latestNoEmployee"> Latest Number of Employee(s) </label>
+            <label  for="latestNoEmployee"> Latest Number of Employee(s) </label>
             <input type="number" id="latestNoEmployee" name="latestNoEmployee" value="{{ $company->latestNoEmployee}}">
         </div>
-        <div class="text-white">
+        <div >
             <label> STA Ecosystem</label><br>
             @if(str_contains($company->staEcosystem,"Robotics&Automation"))
             <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation" checked>Robotics & Automation
@@ -207,34 +207,34 @@
 
         </div>
         <div>
-            <label class="text-white" for="productAndService"> Product And Service</label>
+            <label  for="productAndService"> Product And Service</label>
             <input type="text" id="productAndService" name="productAndService" value="{{ $company->productAndService}}">
         </div>
 
         <div>
-            <button class="text-white" type="submit" >Update</button>    
+            <button  type="submit" >Update</button>    
         </div>
 
     </form>
 
              
         ////////////////////////////////////////////////////////
-<h1 class="text-white">Address<h1>
+<h1 >Address<h1>
 <div class="tab-wrapper" x-data="{ activeTab:  0 }">
   <div class="flex">
     <label
       @click="activeTab = 0"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 0 }"
     >Main</label>
     <label
       @click="activeTab = 1"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 1 }"
     >Branch</label>
     <label
       @click="activeTab = 2"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 2 }"
     >Factory</label>
   </div>
@@ -262,27 +262,27 @@ $type="F";
 </div>
 
 //////////////////////////////////////////////
-<h1 class="text-white">Personnel<h1>
+<h1 >Personnel<h1>
 <div class="tab-wrapper" x-data="{ activeTab:  3 }">
   <div class="flex">
     <label
       @click="activeTab = 3"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 3 }"
     >C-Level</label>
     <label
       @click="activeTab = 4"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 4 }"
     >M-Level</label>
     <label
       @click="activeTab = 5"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 5 }"
     >E-Level</label>
     <label
       @click="activeTab = 6"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 6 }"
     >Staff Level</label>
   </div>
@@ -323,7 +323,7 @@ $type="F";
         @method('DELETE')
 
         <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-        <button class="text-white" type="button" onclick="confirmCompanyDelete()">DELETE</button>
+        <button  type="button" onclick="confirmCompanyDelete()">DELETE</button>
     </form>
 
 </div>

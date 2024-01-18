@@ -5,37 +5,37 @@
     <form method="POST" action="{{ route('associations.store') }}">
     @csrf
         <div>
-            <label class="text-white" for="name"> Name </label>
+            <label  for="name"> Name </label>
             <input type="text" id="name" name="name" value="{{ old('name')}}" required>
         </div>
         <div>
-            <label class="text-white" for="phoneNo"> PhoneLinging </label>
+            <label  for="phoneNo"> PhoneLinging </label>
             <input type="tel" id="phoneNo" name="phoneNo" value="{{ old('phoneNo')}}">
             <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
         </div>
         <div>
-            <label class="text-white" for="email"> EMAIL </label>
+            <label  for="email"> EMAIL </label>
             <input type="email" id="email" name="email" value="{{ old('email')}}">
         </div>
         <div>
-            <label class="text-white" for="website"> Website </label>
+            <label  for="website"> Website </label>
             <input type="url" id="website" name="website" value="{{ old('website')}}">
         </div>
         <div>
             <input type="hidden" id="category" name="category" value='A'>
         </div>
         <div>
-            <label class="text-white" for="registrationNo"> Registration No </label>
+            <label  for="registrationNo"> Registration No </label>
             <input type="text" id="registrationNo" name="registrationNo" value="{{ old('registrationNo')}}">
         </div>
         <div>
-            <label class="text-white" for="natureOfActivity"> Nature of Activity</label>
+            <label  for="natureOfActivity"> Nature of Activity</label>
             <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}">
         </div>
 <!-- 2 Selection where SubCategory Selection will output options based on the MainCategory Selection -->
         <!-- Your Main select -->
         <div>
-<label class="text-white" for="mainCategory"> Main Category</label>
+<label  for="mainCategory"> Main Category</label>
 <select id="mainCategory" name="mainCategory">
     <option value="">Unknown</option>
     <option value="Political">Political</option>
@@ -54,7 +54,7 @@
 </select>
 
 <!-- Your Sub select -->
-<label class="text-white" for="subCategory"> Sub Category</label>
+<label  for="subCategory"> Sub Category</label>
 <select id="subCategory" name="subCategory">
     <!-- This select will be populated dynamically based on the selected country -->
 </select>
@@ -107,15 +107,15 @@
             <!-- Address -->
 
             <div>
-                <label class="text-white" for="address"> Address </label>
+                <label  for="address"> Address </label>
                 <input type="text" id="address" name="address" value="{{ old('address')}}">
             </div>
             <div>
-                <label class="text-white" for="city"> City </label>
+                <label  for="city"> City </label>
                 <input type="text" id="city" name="city" value="{{ old('city')}}">
             </div>
             <div>
-                <label class="text-white" for="state"> State </label>
+                <label  for="state"> State </label>
                 <select id="state" name="state">
                 <option value="Johor">Johor</option>
                 <option value="Kedah">Kedah</option>
@@ -135,15 +135,15 @@
             </select>
             </div>
             <div>
-                <label class="text-white" for="postCode"> Post Code </label>
+                <label  for="postCode"> Post Code </label>
                 <input type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">
             </div>
             <div>
-                <label class="text-white" for="country"> Country </label>
+                <label  for="country"> Country </label>
                 <input type="text" id="country" name="country" value="Malaysia" readonly>
             </div>
             <div>
-            <label class="text-white" for="workplaceCategory"> Workplace Category</label>
+            <label  for="workplaceCategory"> Workplace Category</label>
             <select id="workplaceCategory" name="workplaceCategory">
                 <option value="M">Main</option>
                 <option value="B">Branch</option>
@@ -155,7 +155,7 @@
 
 
         <div>
-            <button class="text-white" type="submit">Submit</button>    
+            <button  type="submit">Submit</button>    
         </div>
 
     </form>

@@ -18,11 +18,11 @@ use App\Models\Organization;
         @csrf
         @method('PUT')
         <div>
-            <label class="text-white" for="personName"> Name </label>
+            <label  for="personName"> Name </label>
             <input type="text" id="personName" name="personName" value="{{ $personell['personName']}}" required >
         </div>
         <div>
-            <label class="text-white" for="organizationID"> Organization Name </label>
+            <label  for="organizationID"> Organization Name </label>
             <select class="organization-select-input" id="organizationID" name="organizationID" >
                 <option value="">Unemployed</option>
             @foreach(Organization::all() as $organization)
@@ -43,15 +43,15 @@ use App\Models\Organization;
         </script>
         </div>
         <div>
-            <label class="text-white" for="personJobTitle"> Job Title </label>
+            <label  for="personJobTitle"> Job Title </label>
             <input type="text" id="personJobTitle" name="personJobTitle" value="{{ $personell['personJobTitle']}}" >
         </div>
         <div>
-            <label class="text-white" for="personDeptDiv"> Department/Division </label>
+            <label  for="personDeptDiv"> Department/Division </label>
             <input type="text" id="personDeptDiv" name="personDeptDiv" value="{{ $personell['personDeptDiv']}}" >
         </div>
         <div>
-            <label class="text-white" for="personPosition"> Position </label>
+            <label  for="personPosition"> Position </label>
             <select id="personPosition" name="personPosition" value="{{ $personell['personPosition']}}" >
             @if(empty($personell['personPosition']))
             <option value="" selected>Unemployed</option>
@@ -83,16 +83,16 @@ use App\Models\Organization;
 
 
         <div>
-            <label class="text-white" for="personEmail"> Email </label>
+            <label  for="personEmail"> Email </label>
             <input type="email" id="personEmail" name="personEmail" value="{{ $personell['personEmail']}}" >
         </div>
         <div>
-            <label class="text-white" for="personNumber"> Phone No </label>
+            <label  for="personNumber"> Phone No </label>
             <input type="tel" id="personNumber" name="personNumber" value="{{ $personell['personNumber']}}" >
         </div>
         
         <div>
-                <button class="text-white" type="submit" >UPDATE</button>
+                <button  type="submit" >UPDATE</button>
             </div>
         </form>
 
@@ -101,7 +101,7 @@ use App\Models\Organization;
             @method('DELETE')
 
             <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-            <button class="text-white" type="button" onclick="confirmDelete()">DELETE</button>
+            <button  type="button" onclick="confirmDelete()">DELETE</button>
         </form>
     </div>
 

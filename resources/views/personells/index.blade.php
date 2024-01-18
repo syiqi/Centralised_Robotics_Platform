@@ -12,7 +12,7 @@
         <label>
             <input type="checkbox" class="positionCheckbox" value="Staff"> Staff
         </label>
-<table id="personellTable" class="text-white">
+<table id="personellTable" >
     <thead>
         <tr>
             <th>Entry</th>

@@ -2,7 +2,7 @@
 
 <x-app-layout>
 <div class="container mt-5">
-<table id="ministryTable" class="text-white">
+<table id="ministryTable" >
     <thead>
         <tr>
             <th>Entry</th>

@@ -107,7 +107,7 @@
 
         <!-- Add more checkboxes for other STA ecosystems as needed -->
 
-<table id="companyTable" class="text-white">
+<table id="companyTable" >
     <thead>
         <tr>
             <th>Entry</th>

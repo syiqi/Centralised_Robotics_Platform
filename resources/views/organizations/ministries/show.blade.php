@@ -7,20 +7,20 @@
     @csrf
     @method('PUT')
         <div>
-            <label class="text-white" for="name"> Name </label>
+            <label  for="name"> Name </label>
             <input type="text" id="name" name="name" value="{{$ministry->organization->name}}" required >
         </div>
         <div>
-            <label class="text-white" for="phoneNo"> PhoneLinging </label>
+            <label  for="phoneNo"> PhoneLinging </label>
             <input type="tel" id="phoneNo" name="phoneNo" value="{{ $ministry->organization->phoneNo}}" >
             <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
         </div>
         <div>
-            <label class="text-white" for="email"> EMAIL </label>
+            <label  for="email"> EMAIL </label>
             <input type="email" id="email" name="email" value="{{ $ministry->organization->email}}" >
         </div>
         <div>
-            <label class="text-white" for="website"> Website </label>
+            <label  for="website"> Website </label>
             <input type="url" id="website" name="website" value="{{ $ministry->organization->website}}" >
         </div>
         <div>
@@ -31,29 +31,29 @@
 
 
         <div>
-            <button class="text-white" type="submit" >Update</button>    
+            <button  type="submit" >Update</button>    
         </div>
 
     </form>
 
              
         ////////////////////////////////////////////////////////
-<h1 class="text-white">Address<h1>
+<h1 >Address<h1>
 <div class="tab-wrapper" x-data="{ activeTab:  0 }">
   <div class="flex">
     <label
       @click="activeTab = 0"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 0 }"
     >Main</label>
     <label
       @click="activeTab = 1"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 1 }"
     >Branch</label>
     <label
       @click="activeTab = 2"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 2 }"
     >Factory</label>
   </div>
@@ -81,27 +81,27 @@ $type="F";
 </div>
 
 //////////////////////////////////////////////
-<h1 class="text-white">Personnel<h1>
+<h1 >Personnel<h1>
 <div class="tab-wrapper" x-data="{ activeTab:  3 }">
   <div class="flex">
     <label
       @click="activeTab = 3"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 3 }"
     >C-Level</label>
     <label
       @click="activeTab = 4"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 4 }"
     >M-Level</label>
     <label
       @click="activeTab = 5"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 5 }"
     >E-Level</label>
     <label
       @click="activeTab = 6"
-      class="tab-control text-white"
+      class="tab-control "
       :class="{ 'active': activeTab === 6 }"
     >Staff Level</label>
   </div>
@@ -142,7 +142,7 @@ $type="F";
         @method('DELETE')
 
         <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-        <button class="text-white" type="button" onclick="confirmMinistryDelete()">DELETE</button>
+        <button  type="button" onclick="confirmMinistryDelete()">DELETE</button>
     </form>
 
 </div>

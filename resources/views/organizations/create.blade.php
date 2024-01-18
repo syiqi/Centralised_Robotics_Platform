@@ -3,7 +3,7 @@
 
 
 <h1> Create ORGANIZATION of </h1>
-<div class="text-white">
+<div >
 <x-nav-link :href="route('ministries.create')">
                         {{ __('Ministry') }}
         </x-nav-link>
