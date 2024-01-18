@@ -2,6 +2,111 @@
 
 <x-app-layout>
 <div class="container mt-5">
+    
+            <!-- Checkboxes for Main Sector -->
+        <label>
+            <input type="checkbox" class="mainSectorCheckbox" value="Primary Agriculture"> Primary Agriculture
+        </label>
+        <label>
+            <input type="checkbox" class="mainSectorCheckbox" value="agro"> Manufacturing (including agro-based)
+        </label>
+        <label>
+            <input type="checkbox" class="mainSectorCheckbox" value="(MRS)"> Manufacturing-Related-Services (MRS)
+        </label>
+        <label>
+            <input type="checkbox" class="mainSectorCheckbox" value="Services/Mining & Quarrying/Construction"> Services / Mining & Quarrying / Construction
+        </label>
+
+        <!-- Add more checkboxes for other main sectors as needed -->
+
+        <!-- Checkboxes for STA Ecosystem -->
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Robotics"> Robotics
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Automation">Automation 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="S.I."> S.I. 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Developers"> Developers
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="IT"> IT
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Infrastructure"> Infrastructure 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="ERP"> ERP
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="MOM"> MOM
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="MES"> MES 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="CRM"> CRM
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="SRM"> SRM
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Sales"> Sales 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="AGV"> AGV
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="AMR"> AMR 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Social"> Social
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Edutainment"> Edutainment
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Service Robot"> Service Robot 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="OEM - Arm"> OEM - Arm
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="COBOT"> COBOT
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Sensorr"> Sensor
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Actuator"> Actuator
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Talent"> Talent
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Skills Dev"> Skills Dev 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="AS/RS "> AS/RS 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="3DP"> 3DP 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="AddMfg "> AddMfg 
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="UAV"> UAV
+        </label>
+        <label>
+            <input type="checkbox" class="staEcosystemCheckbox" value="Drone"> Drone 
+        </label>
+
+        <!-- Add more checkboxes for other STA ecosystems as needed -->
+
 <table id="companyTable" class="text-white">
     <thead>
         <tr>
@@ -64,9 +169,29 @@
 
 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script>
-$(document).ready( function () {
-    $('#companyTable').DataTable();
-} );
-</script>
+        $(document).ready(function () {
+            var table = $('#companyTable').DataTable();
+
+            // Event handler for main sector checkbox changes
+            $('.mainSectorCheckbox').on('change', function () {
+                var checkedMainSectors = $('.mainSectorCheckbox:checked').map(function () {
+                    return $(this).val();
+                }).get();
+
+                // Use DataTables API to filter based on selected main sectors
+                table.column(6).search(checkedMainSectors.join('|'), true, false).draw(); // 6 is the index of the "Main Sector" column
+            });
+
+            // Event handler for STA ecosystem checkbox changes
+            $('.staEcosystemCheckbox').on('change', function () {
+                var checkedSTA = $('.staEcosystemCheckbox:checked').map(function () {
+                    return $(this).val();
+                }).get();
+
+                // Use DataTables API to filter based on selected STA ecosystems
+                table.column(14).search(checkedSTA.join('|'), true, false).draw(); // 14 is the index of the "STA Ecosystem" column
+            });
+        });
+    </script>
 
 </x-app-layout>

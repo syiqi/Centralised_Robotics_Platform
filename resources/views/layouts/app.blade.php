@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('Centralised Robotics Platform', 'Centralised Robotics Platform') }}</title>
 <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -21,7 +21,51 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+ <!-- <style>
+        body {
+            font-family: 'figtree', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(45deg, #ffffff, #3494e6);
+            color: #3494e6; /* Blue font color */
+            text-align: center;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #3494e6; /* Blue link color */
+            font-weight: bold;
+            margin-left: 20px;
+            font-size: 1.2rem;
+        }
+
+        header a:hover {
+            color: #26669e; /* Darker blue on hover */
+        }
+
+        .main-content {
+            margin-top: 50px;
+        }
+
+        .main-content p {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3494e6; /* Blue font color */
+        }
+
+        .logo {
+            max-width: 80%; /* Adjust the size as needed */
+            height: auto;
+            margin: 20px auto; /* Center the logo horizontally and add margin */
+        }
+    </style> -->
     
 </head>
     <body class="font-sans antialiased">

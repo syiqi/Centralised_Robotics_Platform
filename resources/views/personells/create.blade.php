@@ -6,9 +6,12 @@ use App\Models\Organization;
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-
 <x-app-layout>
-
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Register business card') }}
+        </h2>
+    </x-slot>
 <div>
     <form method="POST" action="{{ route('personells.store') }}">
         @csrf
