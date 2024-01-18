@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Workplace extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
+
     public function organization(): BelongsTo
     {
-        return $this->belongsTo(Organizations::class,'organizationID');
+        return $this->belongsTo(Organizations::class, 'organizationID');
     }
 }

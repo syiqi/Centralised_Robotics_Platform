@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\CompanyFormRequest;
 use App\Models\Company;
 use App\Models\Organization;
 use App\Models\Workplace;
+use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
@@ -17,8 +17,9 @@ class CompanyController extends Controller
     {
         //
         $companies = Company::all();
+
         return view('organizations.companies.index', compact('companies'));
-    
+
     }
 
     /**
@@ -39,56 +40,56 @@ class CompanyController extends Controller
         $data = $request->validated();
         $organization = Organization::create([
             'name' => $data['name'],
-            'phoneNo' =>$data['phoneNo'],
-            'email' =>$data['email'],
-            'website' =>$data['website'],
-            'category' =>$data['category'],
-    
-         ]);
-         // Change to an SQL Acceptable\Approriate\Standardized Value
-         if($data['companyMainSector']=="null"){
-            $data['companyMainSector']=NULL;
-         }
-         if($data['staEcosystem']=="null"){
-            $data['staEcosystem']=NULL;
-         }
-        if($data['financeYearCalendar']==""){
-         $data['financeYearCalendar']=NULL;
-         }
-         if($data['latestRevenue']==""){
-            $data['latestRevenue']=NULL;
-            }
-            if($data['latestNoEmployee']==""){
-                $data['latestNoEmployee']=NULL;
-                }
-         Company::create([
+            'phoneNo' => $data['phoneNo'],
+            'email' => $data['email'],
+            'website' => $data['website'],
+            'category' => $data['category'],
+
+        ]);
+        // Change to an SQL Acceptable\Approriate\Standardized Value
+        if ($data['companyMainSector'] == 'null') {
+            $data['companyMainSector'] = null;
+        }
+        if ($data['staEcosystem'] == 'null') {
+            $data['staEcosystem'] = null;
+        }
+        if ($data['financeYearCalendar'] == '') {
+            $data['financeYearCalendar'] = null;
+        }
+        if ($data['latestRevenue'] == '') {
+            $data['latestRevenue'] = null;
+        }
+        if ($data['latestNoEmployee'] == '') {
+            $data['latestNoEmployee'] = null;
+        }
+        Company::create([
             'id' => $organization['id'],
-            'registrationNo' =>$data['registrationNo'],
-            'companyMainSector' =>$data['companyMainSector'],
-            'primaryMSIC2008' =>$data['primaryMSIC2008'],
-            'secondaryMSIC2008' =>$data['secondaryMSIC2008'],
-            'tertiaryMSIC2008' =>$data['tertiaryMSIC2008'],
-            'natureOfActivity' =>$data['natureOfActivity'],
-            'financeYearCalendar' =>$data['financeYearCalendar'],
-            'latestRevenue' =>$data['latestRevenue'],
-            'latestNoEmployee' =>$data['latestNoEmployee'],
-            'staEcosystem' =>$data['staEcosystem'],
-            'productAndService' =>$data['productAndService'],
+            'registrationNo' => $data['registrationNo'],
+            'companyMainSector' => $data['companyMainSector'],
+            'primaryMSIC2008' => $data['primaryMSIC2008'],
+            'secondaryMSIC2008' => $data['secondaryMSIC2008'],
+            'tertiaryMSIC2008' => $data['tertiaryMSIC2008'],
+            'natureOfActivity' => $data['natureOfActivity'],
+            'financeYearCalendar' => $data['financeYearCalendar'],
+            'latestRevenue' => $data['latestRevenue'],
+            'latestNoEmployee' => $data['latestNoEmployee'],
+            'staEcosystem' => $data['staEcosystem'],
+            'productAndService' => $data['productAndService'],
         ]);
 
-        if($data['address']!=NULL | $data['address']!=""){
+        if ($data['address'] != null | $data['address'] != '') {
 
             Workplace::create([
                 'organizationID' => $organization['id'],
-                'address'=>$data['address'],
-                'city'=> $data['city'],
+                'address' => $data['address'],
+                'city' => $data['city'],
                 'state' => $data['state'],
-                'postCode'=>$data['postCode'],
-                'country'=> $data['country'],
-                'workplaceCategory'=> $data['workplaceCategory'],
+                'postCode' => $data['postCode'],
+                'country' => $data['country'],
+                'workplaceCategory' => $data['workplaceCategory'],
             ]);
-            }
-        
+        }
+
         return redirect()->route('companies.create');
     }
 
@@ -98,8 +99,8 @@ class CompanyController extends Controller
     public function show($company)
     {
         //
-        return view('organizations.companies.show',[
-            'company' => Company::findorFail($company)
+        return view('organizations.companies.show', [
+            'company' => Company::findorFail($company),
         ]);
     }
 
@@ -109,8 +110,8 @@ class CompanyController extends Controller
     public function edit($company)
     {
         //
-        return view('organizations.companies.show',[
-            'company' => Company::findorFail($company)
+        return view('organizations.companies.show', [
+            'company' => Company::findorFail($company),
         ]);
     }
 
@@ -128,19 +129,19 @@ class CompanyController extends Controller
             'website' => $data['website'],
         ]);
         $company->update([
-            'registrationNo' =>$data['registrationNo'],
-            'companyMainSector' =>$data['companyMainSector'],
-            'primaryMSIC2008' =>$data['primaryMSIC2008'],
-            'secondaryMSIC2008' =>$data['secondaryMSIC2008'],
-            'tertiaryMSIC2008' =>$data['tertiaryMSIC2008'],
-            'natureOfActivity' =>$data['natureOfActivity'],
-            'financeYearCalendar' =>$data['financeYearCalendar'],
-            'latestRevenue' =>$data['latestRevenue'],
-            'latestNoEmployee' =>$data['latestNoEmployee'],
-            'staEcosystem' =>$data['staEcosystem'],
-            'productAndService' =>$data['productAndService'],
+            'registrationNo' => $data['registrationNo'],
+            'companyMainSector' => $data['companyMainSector'],
+            'primaryMSIC2008' => $data['primaryMSIC2008'],
+            'secondaryMSIC2008' => $data['secondaryMSIC2008'],
+            'tertiaryMSIC2008' => $data['tertiaryMSIC2008'],
+            'natureOfActivity' => $data['natureOfActivity'],
+            'financeYearCalendar' => $data['financeYearCalendar'],
+            'latestRevenue' => $data['latestRevenue'],
+            'latestNoEmployee' => $data['latestNoEmployee'],
+            'staEcosystem' => $data['staEcosystem'],
+            'productAndService' => $data['productAndService'],
         ]);
-        
+
         return back()->withInput();
     }
 
@@ -150,8 +151,8 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         //
-        $company= Organization::where('id', $company['id'])->firstOrFail()->delete();
-     
+        $company = Organization::where('id', $company['id'])->firstOrFail()->delete();
+
         return redirect()->route('companies.index');
     }
 }

@@ -9,10 +9,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Association extends Model
 {
     use HasFactory;
+
     //belongs to method??
     protected $guarded = [];
+
     public function organization(): BelongsTo
     {
-        return $this->belongsTo(Organization::class,'id');
+        return $this->belongsTo(Organization::class, 'id');
     }
 }

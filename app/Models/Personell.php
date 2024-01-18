@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Personell extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
+
     public function organization(): BelongsTo
     {
-        return $this->belongsTo(Organization::class,'organizationID');
+        return $this->belongsTo(Organization::class, 'organizationID');
     }
 }

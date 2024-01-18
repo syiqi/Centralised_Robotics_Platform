@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\WorkplaceFormRequest;
 use App\Models\Workplace;
-use Illuminate\Http\Request;
-
 
 class WorkplaceController extends Controller
 {
@@ -58,17 +57,18 @@ class WorkplaceController extends Controller
      */
     public function update(WorkplaceFormRequest $request, Workplace $workplace)
     {
-            //
-            $data = $request->validated();
-            $workplace->update([
-                'address' => $data['address'],
-                'city' => $data['city'],
-                'state' => $data['state'],
-                'postCode' => $data['postCode'],
-                'country'=> $data['country'],
-                'workplaceCategory'=> $data['workplaceCategory'],
-            ]);
-            return back()->withInput();
+        //
+        $data = $request->validated();
+        $workplace->update([
+            'address' => $data['address'],
+            'city' => $data['city'],
+            'state' => $data['state'],
+            'postCode' => $data['postCode'],
+            'country' => $data['country'],
+            'workplaceCategory' => $data['workplaceCategory'],
+        ]);
+
+        return back()->withInput();
     }
 
     /**
@@ -77,8 +77,8 @@ class WorkplaceController extends Controller
     public function destroy(Workplace $workplace)
     {
         //
-        $workplace= Workplace::where('id', $workplace['id'])->firstOrFail()->delete();
-     
+        $workplace = Workplace::where('id', $workplace['id'])->firstOrFail()->delete();
+
         return back();
     }
 }

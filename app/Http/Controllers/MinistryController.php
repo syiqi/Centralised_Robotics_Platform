@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\MinistryFormRequest;
-use App\Models\Organization;
 use App\Models\Ministry;
+use App\Models\Organization;
 use App\Models\Workplace;
-
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
 
 class MinistryController extends Controller
 {
@@ -18,6 +16,7 @@ class MinistryController extends Controller
     public function index(Request $request)
     {
         $ministries = Ministry::all();
+
         return view('organizations.ministries.index', compact('ministries'));
     }
 
@@ -35,34 +34,34 @@ class MinistryController extends Controller
      */
     public function store(MinistryFormRequest $request)
     {
-        //          
+        //
         $data = $request->validated();
         $organization = Organization::create([
             'name' => $data['name'],
-            'phoneNo' =>$data['phoneNo'],
-            'email' =>$data['email'],
-            'website' =>$data['website'],
-            'category' =>$data['category'],
-    
-         ]);
+            'phoneNo' => $data['phoneNo'],
+            'email' => $data['email'],
+            'website' => $data['website'],
+            'category' => $data['category'],
+
+        ]);
 
         Ministry::create([
             'id' => $organization['id'],
         ]);
 
-        if($data['address']!=NULL | $data['address']!=""){
+        if ($data['address'] != null | $data['address'] != '') {
 
             Workplace::create([
                 'organizationID' => $organization['id'],
-                'address'=>$data['address'],
-                'city'=> $data['city'],
+                'address' => $data['address'],
+                'city' => $data['city'],
                 'state' => $data['state'],
-                'postCode'=>$data['postCode'],
-                'country'=> $data['country'],
-                'workplaceCategory'=> $data['workplaceCategory'],
+                'postCode' => $data['postCode'],
+                'country' => $data['country'],
+                'workplaceCategory' => $data['workplaceCategory'],
             ]);
-            }
-        
+        }
+
         return redirect()->route('ministries.create');
     }
 
@@ -72,8 +71,8 @@ class MinistryController extends Controller
     public function show($ministry)
     {
         //
-        return view('organizations.ministries.show',[
-            'ministry' => Ministry::findorFail($ministry)
+        return view('organizations.ministries.show', [
+            'ministry' => Ministry::findorFail($ministry),
         ]);
     }
 
@@ -82,9 +81,9 @@ class MinistryController extends Controller
      */
     public function edit($ministry)
     {
-        //  
-        return view('organizations.ministries.show',[
-            'ministry' => Ministry::findorFail($ministry)
+        //
+        return view('organizations.ministries.show', [
+            'ministry' => Ministry::findorFail($ministry),
         ]);
     }
 
@@ -100,7 +99,7 @@ class MinistryController extends Controller
             'email' => $data['email'],
             'website' => $data['website'],
         ]);
-        
+
         return back()->withInput();
     }
 
@@ -110,8 +109,8 @@ class MinistryController extends Controller
     public function destroy(Ministry $ministry)
     {
         //
-        $ministry= Organization::where('id', $ministry['id'])->firstOrFail()->delete();
-     
+        $ministry = Organization::where('id', $ministry['id'])->firstOrFail()->delete();
+
         return redirect()->route('ministries.index');
     }
 }

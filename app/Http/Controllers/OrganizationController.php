@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Organization;
 use App\Http\Requests\OrganizationFormRequest;
+use App\Models\Organization;
 
 class OrganizationController extends Controller
 {
@@ -14,7 +13,7 @@ class OrganizationController extends Controller
     public function index()
     {
         return view('organizations.index', [
-            'organizations'=> organization::all()
+            'organizations' => organization::all(),
         ]);
     }
 
@@ -24,30 +23,30 @@ class OrganizationController extends Controller
     public function create()
     {
         //
-        
+
     }
- 
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(OrganizationFormRequest $request)
-    {        
-         $data = $request->validated();
-         
+    {
+        $data = $request->validated();
+
         Organization::create($data);
 
-       // return redirect()->route('organizations.index');
+        // return redirect()->route('organizations.index');
 
     }
- 
+
     /**
      * Display the specified resource.
      */
     public function show($organization)
     {
         //
-        return view('organizations.show',[
-            'organization' => Organization::findOrFail($organization)
+        return view('organizations.show', [
+            'organization' => Organization::findOrFail($organization),
         ]);
 
     }
@@ -58,8 +57,8 @@ class OrganizationController extends Controller
     public function edit($organization)
     {
         //
-        return view('organizations.show',[
-            'organization' => Organization::findOrFail($organization )
+        return view('organizations.show', [
+            'organization' => Organization::findOrFail($organization),
         ]);
     }
 
@@ -72,7 +71,7 @@ class OrganizationController extends Controller
         $data = $request->validated();
         $organization->update($data);
 
-        return redirect()->route('organizations.show',$organization['id']);
+        return redirect()->route('organizations.show', $organization['id']);
     }
 
     /**
@@ -80,9 +79,9 @@ class OrganizationController extends Controller
      */
     public function destroy(Organization $organization)
     {
-        //     
-        $organization= Organization::where('id', $organization['id'])->firstOrFail()->delete();
-     
-          return redirect()->route('organizations.index');
+        //
+        $organization = Organization::where('id', $organization['id'])->firstOrFail()->delete();
+
+        return redirect()->route('organizations.index');
     }
 }

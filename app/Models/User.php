@@ -43,5 +43,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected $dateformat ='U';
+    protected $dateformat = 'U';
 }

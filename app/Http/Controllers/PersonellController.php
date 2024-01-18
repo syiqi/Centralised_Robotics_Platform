@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PersonellFormRequest;
 use App\Models\Personell;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Builder;
 
 class PersonellController extends Controller
 {
     public function index(Request $request)
     {
         $personells = Personell::all();
+
         return view('personells.index', compact('personells'));
-   
+
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -33,12 +33,12 @@ class PersonellController extends Controller
     {
         //
         $data = $request->validated();
-        if($data['organizationID']==""){
-            $data['organizationID']=NULL;
-         }
-         if($data['personPosition']==""){
-            $data['personPosition']=NULL;
-         }
+        if ($data['organizationID'] == '') {
+            $data['organizationID'] = null;
+        }
+        if ($data['personPosition'] == '') {
+            $data['personPosition'] = null;
+        }
         Personell::create($data);
 
         return redirect()->route('personells.create');
@@ -52,9 +52,9 @@ class PersonellController extends Controller
     {
         //
 
-            return view('personells.show',[
-                'personell' => Personell::findorFail($personell)
-            ]);
+        return view('personells.show', [
+            'personell' => Personell::findorFail($personell),
+        ]);
     }
 
     /**
@@ -63,8 +63,8 @@ class PersonellController extends Controller
     public function edit($personell)
     {
         //
-        return view('personells.show',[
-            'personell' => Personell::findorFail($personell)
+        return view('personells.show', [
+            'personell' => Personell::findorFail($personell),
         ]);
     }
 
@@ -75,16 +75,15 @@ class PersonellController extends Controller
     {
         //
         $data = $request->validated();
-        if($data['organizationID']==""){
-            $data['organizationID']=NULL;
-         }
-         if($data['personPosition']==""){
-            $data['personPosition']=NULL;
-         }
+        if ($data['organizationID'] == '') {
+            $data['organizationID'] = null;
+        }
+        if ($data['personPosition'] == '') {
+            $data['personPosition'] = null;
+        }
         $personell->update($data);
 
         return back()->withInput();
-
 
     }
 
@@ -94,8 +93,8 @@ class PersonellController extends Controller
     public function destroy(Personell $personell)
     {
         //
-        $personell= Personell::where('id', $personell['id'])->firstOrFail()->delete();
-     
+        $personell = Personell::where('id', $personell['id'])->firstOrFail()->delete();
+
         return redirect()->route('personells.index');
     }
 }

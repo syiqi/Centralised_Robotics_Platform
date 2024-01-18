@@ -24,23 +24,25 @@ class PersonellFormRequest extends FormRequest
         return [
             //
             'personName' => 'required',
-            'personPosition'=>'nullable',
-            'personJobTitle'=>'nullable',
-            'personDeptDiv'=>'nullable',
-            'personEmail'=>'nullable',
-            'personNumber'=>'nullable',
-            'organizationID'=>'nullable',
+            'personPosition' => 'nullable',
+            'personJobTitle' => 'nullable',
+            'personDeptDiv' => 'nullable',
+            'personEmail' => 'nullable',
+            'personNumber' => 'nullable',
+            'organizationID' => 'nullable',
         ];
     }
-    protected function prepareforValidation(){
+
+    protected function prepareforValidation()
+    {
         $this->merge([
-            'personName'=> strip_tags($this['personName']),
-            'personPosition'=> strip_tags($this['personPosition']),
-            'personJobTitle'=> strip_tags($this['personJobTitle']),
-            'personDeptDiv'=> strip_tags($this['personDeptDiv']),
-            'personEmail'=> strip_tags($this['personEmail']),
-            'personNumber'=> strip_tags($this['personNumber']),
-            'organizationID'=> strip_tags($this['organizationID']),
+            'personName' => strip_tags($this['personName']),
+            'personPosition' => strip_tags($this['personPosition']),
+            'personJobTitle' => strip_tags($this['personJobTitle']),
+            'personDeptDiv' => strip_tags($this['personDeptDiv']),
+            'personEmail' => strip_tags($this['personEmail']),
+            'personNumber' => strip_tags($this['personNumber']),
+            'organizationID' => strip_tags($this['organizationID']),
         ]);
     }
 }

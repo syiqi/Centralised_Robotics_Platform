@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Ministry extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
+
     public function organization(): BelongsTo
     {
-        return $this->belongsTo(Organization::class,'id');
+        return $this->belongsTo(Organization::class, 'id');
     }
 }

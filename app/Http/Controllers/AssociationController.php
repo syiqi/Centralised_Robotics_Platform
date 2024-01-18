@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\AssociationFormRequest;
-use App\Models\Organization;
 use App\Models\Association;
+use App\Models\Organization;
 use App\Models\Workplace;
-
+use Illuminate\Http\Request;
 
 class AssociationController extends Controller
 {
@@ -17,8 +16,9 @@ class AssociationController extends Controller
     public function index(Request $request)
     {
         $associations = Association::all();
+
         return view('organizations.associations.index', compact('associations'));
-    
+
     }
 
     /**
@@ -36,41 +36,40 @@ class AssociationController extends Controller
     public function store(AssociationFormRequest $request)
     {
         //
-         
+
         $data = $request->validated();
         $organization = Organization::create([
             'name' => $data['name'],
-            'phoneNo' =>$data['phoneNo'],
-            'email' =>$data['email'],
-            'website' =>$data['website'],
-            'category' =>$data['category'],
-    
-         ]);
+            'phoneNo' => $data['phoneNo'],
+            'email' => $data['email'],
+            'website' => $data['website'],
+            'category' => $data['category'],
+
+        ]);
 
         Association::create([
             'id' => $organization['id'],
-            'registrationNo' =>$data['registrationNo'],
-            'natureOfActivity' =>$data['natureOfActivity'],
-            'mainCategory' =>$data['mainCategory'],
-            'subCategory' =>$data['subCategory'],
+            'registrationNo' => $data['registrationNo'],
+            'natureOfActivity' => $data['natureOfActivity'],
+            'mainCategory' => $data['mainCategory'],
+            'subCategory' => $data['subCategory'],
         ]);
 
-        if($data['address']!=NULL | $data['address']!=""){
+        if ($data['address'] != null | $data['address'] != '') {
 
-        Workplace::create([
-            'organizationID' => $organization['id'],
-            'address'=>$data['address'],
-            'city'=> $data['city'],
-            'state' => $data['state'],
-            'postCode'=>$data['postCode'],
-            'country'=> $data['country'],
-            'workplaceCategory'=> $data['workplaceCategory'],
-        ]);
+            Workplace::create([
+                'organizationID' => $organization['id'],
+                'address' => $data['address'],
+                'city' => $data['city'],
+                'state' => $data['state'],
+                'postCode' => $data['postCode'],
+                'country' => $data['country'],
+                'workplaceCategory' => $data['workplaceCategory'],
+            ]);
         }
-        
+
         return redirect()->route('associations.create');
     }
-
 
     /**
      * Display the specified resource.
@@ -78,8 +77,8 @@ class AssociationController extends Controller
     public function show($association)
     {
         //
-        return view('organizations.associations.show',[
-            'association' => Association::findorFail($association)
+        return view('organizations.associations.show', [
+            'association' => Association::findorFail($association),
         ]);
     }
 
@@ -89,8 +88,8 @@ class AssociationController extends Controller
     public function edit($association)
     {
         //
-        return view('organizations.associations.show',[
-            'association' => Association::findorFail($association)
+        return view('organizations.associations.show', [
+            'association' => Association::findorFail($association),
         ]);
     }
 
@@ -113,7 +112,7 @@ class AssociationController extends Controller
             'mainCategory' => $data['mainCategory'],
             'subCategory' => $data['subCategory'],
         ]);
-        
+
         return back()->withInput();
     }
 
@@ -123,8 +122,8 @@ class AssociationController extends Controller
     public function destroy(Association $association)
     {
         //
-        $association= Organization::where('id', $association['id'])->firstOrFail()->delete();
-     
+        $association = Organization::where('id', $association['id'])->firstOrFail()->delete();
+
         return redirect()->route('associations.index');
     }
 }
