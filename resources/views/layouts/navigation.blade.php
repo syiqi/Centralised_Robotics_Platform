@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center text-gray-300">
+                <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                     {{ __('Centralised Robotics Platform') }}
                     </a>
