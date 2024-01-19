@@ -9,24 +9,27 @@ use App\Models\Organization;
 <x-app-layout>
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
-            {{ __('Register business card') }}
+            {{ __('REGISTER BUSSINES CARD') }}
         </h2>
     </x-slot>
-<div>
+<div class="max-w-2xl mx-auto mt-4 p-4">
     <form method="POST" action="{{ route('personells.store') }}">
         @csrf
-        <div>
+        <div class="flex flex-nowrap">
+        <div class="w-full mr-2 mb-4">
             <label  for="personName"> Name </label>
-            <input type="text" id="personName" name="personName" value="{{ old('personName')}}" required>
+            <input class="mt-1 p-2 block w-full  border rounded-md"type="text" id="personName" name="personName" value="{{ old('personName')}}" required>
         </div>
-        <div>
+        <div class="w-full mb-4">
             <label  for="organizationID"> Organization Name </label>
-            <select class="organization-select-input" id="organizationID" name="organizationID">
+            <div class="select2-container w-full">
+            <select class="organization-select-input w-full" id="organizationID" name="organizationID">
                 <option value="">Unemployed</option>
-            @foreach(Organization::all() as $organization)
+            @foreach(Organization::all() as $organization) 
                 <option value="{{$organization['id']}}">{{$organization['name']}}</option>
             @endforeach
             </select>
+            </div>
             <script type="text/javascript">
 
             $(document).ready(function() {
@@ -35,23 +38,23 @@ use App\Models\Organization;
             });
 
         </script>
-        </div>
-        <div>
         <x-nav-link :href="route('organizations.create')">
                         {{ __('...Create a new one') }}
         </x-nav-link>
         </div>
-        <div>
+    </div>
+    <div class="flex flex-nowrap">
+        <div class="w-full mb-4">
             <label  for="personJobTitle"> Job Title </label>
-            <input type="text" id="personJobTitle" name="personJobTitle">
+            <input class="mt-1 p-2 block w-full border rounded-md" type="text" id="personJobTitle" name="personJobTitle">
         </div>
-        <div>
+        <div class="w-full mx-4  mb-4">
             <label  for="personDeptDiv"> Department/Division </label>
-            <input type="text" id="personDeptDiv" name="personDeptDiv">
+            <input class="mt-1 p-2 block w-full border rounded-md" type="text" id="personDeptDiv" name="personDeptDiv">
         </div>
-        <div>
+        <div class="w-full mb-4">
             <label  for="personPosition"> Position</label>
-            <select id="personPosition" name="personPosition">
+            <select class="mt-1 p-2 block w-full border rounded-md" id="personPosition" name="personPosition">
             <option value="">Unemployed</option>
             <option value="Staff">Staff Level</option>
             <option value="E">Executive Level(E-Level)</option>
@@ -59,17 +62,24 @@ use App\Models\Organization;
             <option value="C">Chief Level(C-Level)</option>
             </select>
         </div>
-        <div>
-            <label  for="personEmail"> Email </label>
-            <input type="email" id="personEmail" name="personEmail">
         </div>
-        <div>
-            <label  for="personNumber"> Phone No </label>
-            <input type="tel" id="personNumber" name="personNumber">
+        <div class="flex flex-nowrap">
+        <div class="mb-4">
+            EMAILICON
+       <!-- <img src="{{url('/images/emailicon.png')}}" alt="Image"/> -->
+            <input class="mt-1 p-2 w-1/2 border rounded-md" type="email" id="personEmail" name="personEmail">
+        </div>
+    </div>
+        <div class="mb-4">
+            PHONEICON
+       <!-- <img src="{{url('/images/phoneicon.png')}}" alt="Image"/> -->
+            <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber">
         </div>
         
+        
         <div>
-            <button  type="submit">Submit</button>    
+            <!-- there's probably a css file conflicting, cuz can't use tailwind class to style -syamir to taash -->
+            <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>    
         </div>
 
     </form>    

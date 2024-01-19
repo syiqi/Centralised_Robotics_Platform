@@ -20,15 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/settings', function () {
-    return view('settings');
-})->name('settings');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('users', ProfileController::class);
 
 Route::resource('ministries', MinistryController::class);
 

@@ -26,7 +26,7 @@
                         {{ __('Ministry') }}
                     </x-nav-link>
                     <x-nav-link :href="route('personells.index')" :active="request()->routeIs('personells.index')">
-                        {{ __('Personell') }}
+                        {{ __('Personnel') }}
                     </x-nav-link>
                     <x-nav-link :href="route('personells.create')" :active="request()->routeIs('personells.create')">
                         {{ __('Register Business Card') }}
