@@ -8,7 +8,7 @@ use App\Models\Organization;
 
 <x-app-layout>
 <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
             {{ __('Register business card') }}
         </h2>
     </x-slot>

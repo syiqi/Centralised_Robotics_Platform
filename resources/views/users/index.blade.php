@@ -1,7 +1,7 @@
 <x-app-layout>
 
         <div class= 'text-gray-300' >
-        <table class= 'table-fixed bg-white dark:bg-gray-800'>
+        <table class= 'table-fixed bg-white light:bg-gray-800'>
   <tr>
     <th>Name</th>
     <th>Email</th>
