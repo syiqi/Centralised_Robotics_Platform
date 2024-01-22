@@ -34,8 +34,10 @@
 
 <div class = h-36 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl>
     
-    <label for="name"> Ministry Name </label>
-    <input type="text" id="name" name="name" value="{{ old('name')}}" required>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">    
+            <label for="name"> Ministry Name</label>
+            <input type="text" id="name" name="name" value="{{ old('name')}}" class="w-full">
+    </div>
     
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 ">
         <label  for="phoneNo"> Phone No </label>
@@ -64,9 +66,10 @@
             <!-- Address -->
 
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-                <label  for="address"> Address </label>
-                <input type="text" id="address" name="address" value="{{ old('address')}}">
+                <label for="address"> Address</label>
+                <input type="text" id="address" name="address" value="{{ old('address')}}" class="w-full">
             </div>
+
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
                 <label  for="postCode"> Post Code </label>
                 <input type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">

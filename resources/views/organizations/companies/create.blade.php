@@ -38,9 +38,9 @@
             </p>
         </div>   
 
-        <div>
-        <label for="name"> Company Name </label>
-        <input type="text" id="name" name="name" value="{{ old('name')}}" required>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label for="name"> Company Name</label>
+            <input type="text" id="name" name="name" value="{{ old('name')}}" class="w-full">
         </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
@@ -72,14 +72,39 @@
             <label  for="registrationNo"> Registration No </label>
             <input type="text" id="registrationNo" name="registrationNo" value="{{ old('registrationNo')}}">
         </div>
-        
+
         <div >
         <label> Main Sector</label><br>
 
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Primary Agriculture">Primary Agriculture
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing(including agro-based)">Manufacturing(including agro-based)
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing-Related-Services(MRS)">Manufacturing-Related-Services (MRS)
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Services/Mining & Quarrying/Construction">Services / Mining & Quarrying / Construction
+
+  <div class="ml-8 mt-8">
+            <div x-data="{show: true}">
+                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
+                    <span class="inline-block">Select Sector</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
+                        x-bind:class="{ 'rotate-180': show }">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <div x-show.transition="show"
+                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
+
+            <!-- Row 1 -->
+            <div class="flex mb-2">
+                <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Primary Agriculture" 
+                    class="inline-block mr-2">Primary Agriculture
+                <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing(including agro-based)" 
+                    class="inline-block mr-2">Manufacturing(including agro-based)
+                <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing-Related-Services(MRS)" 
+                    class="inline-block mr-2">Manufacturing-Related-Services (MRS)
+                <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Services/Mining & Quarrying/Construction" 
+                    class="inline-block mr-2">Services / Mining & Quarrying / Construction
+
+            </div>
+    </div>
+</div>
+
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
             <label  for="primaryMSIC2008"> MSIC2008 Code [5-digits code of activity]</label>
@@ -89,9 +114,10 @@
         </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  for="natureOfActivity"> Nature of Business</label>
-            <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}">
+            <label for="natureOfActivity"> Nature of Business</label>
+            <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}" class="w-full">
         </div>
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
             <label  for="financeYearCalendar"> Financial Year Calendar</label>
             <input type="date" id="financeYearCalendar" name="financeYearCalendar" value="{{ old('financeYearCalendar')}}">
@@ -112,17 +138,17 @@
 
 
         <div class="ml-8 mt-8">
-    <div x-data="{show: true}">
-        <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
-            <span class="inline-block">Select STA Ecosystem</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                 class="stroke-current inline-block w-4 h-4 transform transition duration-150"
-                 x-bind:class="{ 'rotate-180': show }">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-        </a>
-        <div x-show.transition="show"
-             class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
+            <div x-data="{show: true}">
+                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
+                    <span class="inline-block">Select STA Ecosystem</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
+                        x-bind:class="{ 'rotate-180': show }">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <div x-show.transition="show"
+                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
 
             <!-- Row 1 -->
             <div class="flex mb-2">
@@ -204,11 +230,11 @@
         <div>
             <!-- Address -->
 
-            
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-                <label  for="address"> Address </label>
-                <input type="text" id="address" name="address" value="{{ old('address')}}">
+                <label for="address"> Address</label>
+                <input type="text" id="address" name="address" value="{{ old('address')}}" class="w-full">
             </div>
+
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
                 <label  for="postCode"> Post Code </label>
                 <input type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">

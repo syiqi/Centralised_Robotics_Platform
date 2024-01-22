@@ -32,9 +32,9 @@
             </p>
         </div>    
 
-        <div>
-        <label for="name"> Association Name </label>
-        <input type="text" id="name" name="name" value="{{ old('name')}}" required>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label for="name"> Association Name</label>
+            <input type="text" id="name" name="name" value="{{ old('name')}}" class="w-full">
         </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
@@ -136,9 +136,9 @@
             
 
         </div>
-        <div class="w-screen max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  for="natureOfActivity"> Nature of Activity</label>
-            <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label for="natureOfActivity"> Nature of Activity</label>
+            <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}" class="w-full">
         </div>
 
 
@@ -154,9 +154,10 @@
             <!-- Address -->
 
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-                <label  for="address"> Address </label>
-                <input type="text" id="address" name="address" value="{{ old('address')}}">
+                <label for="address"> Address</label>
+                <input type="text" id="address" name="address" value="{{ old('address')}}" class="w-full">
             </div>
+            
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
                 <label  for="postCode"> Post Code </label>
                 <input type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">
