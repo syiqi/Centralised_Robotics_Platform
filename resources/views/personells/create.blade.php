@@ -65,14 +65,13 @@ use App\Models\Organization;
         </div>
         <div class="flex flex-nowrap">
         <div class="mb-4">
-            EMAILICON
-       <!-- <img src="{{url('/images/emailicon.png')}}" alt="Image"/> -->
+            <img src="{{url('/images/emailicon.png')}}" width="50" height ="50" alt="Email"  style="float: left; margin-right: 10px;"/>
             <input class="mt-1 p-2 w-1/2 border rounded-md" type="email" id="personEmail" name="personEmail">
         </div>
     </div>
         <div class="mb-4">
-            PHONEICON
-       <!-- <img src="{{url('/images/phoneicon.png')}}" alt="Image"/> -->
+
+            <img src="{{url('/images/phoneicon.png')}}" width="50" height ="50" alt="Phone Number" style="float: left; margin-right: 10px;" />
             <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber">
         </div>
         

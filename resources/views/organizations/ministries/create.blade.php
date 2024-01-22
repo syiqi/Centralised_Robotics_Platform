@@ -26,11 +26,11 @@
     }
 </style>
 
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl">  
-    <p class="text-2xl font-bold text-center text-white">
-    <span class="inline-block align-middle">General Information</span>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl text-white">
+    <p class="text-2xl font-bold text-center">
+        <span class="inline-block align-middle">General Information</span>
     </p>
-</div>    
+</div>
 
 <div>
 <label for="name"> Ministry Name </label>
