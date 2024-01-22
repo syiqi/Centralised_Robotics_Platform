@@ -26,33 +26,34 @@
     }
 </style>
 
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl text-white">
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl text-white">
     <p class="text-2xl font-bold text-center">
         <span class="inline-block align-middle">General Information</span>
     </p>
 </div>
 
-<div>
-<label for="name"> Ministry Name </label>
-<input type="text" id="name" name="name" value="{{ old('name')}}" required>
-</div>
+<div class = h-36 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl>
+    
+    <label for="name"> Ministry Name </label>
+    <input type="text" id="name" name="name" value="{{ old('name')}}" required>
+    
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 ">
+        <label  for="phoneNo"> Phone No </label>
+        <input type="tel" id="phoneNo" name="phoneNo" value="{{ old('phoneNo')}}">
+        <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
 
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-    <label  for="phoneNo"> Phone No </label>
-    <input type="tel" id="phoneNo" name="phoneNo" value="{{ old('phoneNo')}}">
-    <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
+        <label  for="email"> Email </label>
+        <input type="email" id="email" name="email" value="{{ old('email')}}">
 
-    <label  for="email"> Email </label>
-    <input type="email" id="email" name="email" value="{{ old('email')}}">
+        <label  for="website"> Website </label>
+        <input type="url" id="website" name="website" value="{{ old('website')}}">
 
-    <label  for="website"> Website </label>
-    <input type="url" id="website" name="website" value="{{ old('website')}}">
-
+    </div>
 </div>
             <input type="hidden" id="category" name="category" value='M'>
         </div>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl">  
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">Address Information</span>
             </p>
