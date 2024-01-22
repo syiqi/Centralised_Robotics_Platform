@@ -1,9 +1,23 @@
 
 
 <x-app-layout>
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
+            {{ __('Companies') }}
+        </h2>
+    </x-slot>
+
 <div class="container mt-5">
+
+       <!-- <select id="pricingType" name="pricingType"
+            class="w-full h-10 border-2 border-sky-500 focus:outline-none focus:border-sky-500 text-sky-500 rounded px-2 md:px-3 py-0 md:py-1 tracking-wider">
+            <option value="All" selected="">All</option>
+            <option value="Freemium">Freemium</option>
+            <option value="Free">Free</option>
+            <option value="Paid">Paid</option>
+        </select>-->
     
-            <!-- Checkboxes for Main Sector -->
+             Checkboxes for Main Sector 
         <label>
             <input type="checkbox" class="mainSectorCheckbox" value="Primary Agriculture"> Primary Agriculture
         </label>
