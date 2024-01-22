@@ -12,7 +12,7 @@ use App\Models\Organization;
             {{ __('Register Business Card') }}
         </h2>
     </x-slot>
-<div class="max-w-2xl mx-auto mt-4 p-4">
+<div class="max-w-7xl mx-auto mt-4 p-4">
     <form method="POST" action="{{ route('personells.store') }}">
         @csrf
         <div class="flex flex-nowrap">
@@ -63,12 +63,12 @@ use App\Models\Organization;
             </select>
         </div>
         </div>
-        <div class="flex flex-nowrap">
+  
         <div class="mb-4">
             <img src="{{url('/images/emailicon.png')}}" width="50" height ="50" alt="Email"  style="float: left; margin-right: 10px;"/>
             <input class="mt-1 p-2 w-1/2 border rounded-md" type="email" id="personEmail" name="personEmail">
         </div>
-    </div>
+
         <div class="mb-4">
 
             <img src="{{url('/images/phoneicon.png')}}" width="50" height ="50" alt="Phone Number" style="float: left; margin-right: 10px;" />
