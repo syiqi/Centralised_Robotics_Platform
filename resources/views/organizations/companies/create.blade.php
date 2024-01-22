@@ -32,7 +32,7 @@
             }
         </style>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl">  
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">General Information</span>
             </p>
@@ -62,7 +62,7 @@
         </div>
     
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl">  
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">Detailed Overview</span>
             </p>
@@ -96,54 +96,106 @@
             <label  for="financeYearCalendar"> Financial Year Calendar</label>
             <input type="date" id="financeYearCalendar" name="financeYearCalendar" value="{{ old('financeYearCalendar')}}">
 
-            <label  for="latestRevenue"> Latest Revenue (RM)</label>
+            <label  for="latestRevenue"> Revenue (RM)</label>
             <input type="number" step="any" id="latestRevenue" name="latestRevenue" value="{{ old('latestRevenue')}}">
 
-            <label  for="latestNoEmployee"> Latest Number of Employee(s) </label>
+            <label  for="latestNoEmployee"> Number of Employee(s) </label>
             <input type="number" id="latestNoEmployee" name="latestNoEmployee" value="{{ old('latestNoEmployee')}}">
 
         </div>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl">  
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">STA Ecosystem</span>
             </p>
         </div>  
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
 
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation">Robotics & Automation 
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I.">S.I.
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Developers">Developers
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="IT">IT
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Infrastructure">Infrastructure
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="ERP">ERP
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MOM">MOM
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MES">MES
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="CRM">CRM
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="SRM">SRM
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Sales">Sales
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AGV">AGV
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AMR">AMR            
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Social">Social
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Edutainment">Edutainment
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Service Robot">Service Robot
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="OEM-Arm,COBOT,Sensor,Actuator">OEM - Arm, COBOT, Sensor, Actuator 
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Talent">Talent
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Skills Dev">Skills Dev
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AS/RS">AS/RS
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="3DP">3DP
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AddMfg">AddMfg
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="UAV">UAV
-            <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Drone">Drone  
+        <div class="ml-8 mt-8">
+    <div x-data="{show: true}">
+        <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
+            <span class="inline-block">Select STA Ecosystem</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                 class="stroke-current inline-block w-4 h-4 transform transition duration-150"
+                 x-bind:class="{ 'rotate-180': show }">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </a>
+        <div x-show.transition="show"
+             class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
+
+            <!-- Row 1 -->
+            <div class="flex mb-2">
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation"
+                       class="inline-block mr-2">Robotics & Automation
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I."
+                       class="inline-block mr-2">S.I.
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Developers"
+                       class="inline-block mr-2">Developers
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="IT" class="inline-block mr-2">IT
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Infrastructure"
+                       class="inline-block mr-2">Infrastructure
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="ERP"
+                       class="inline-block mr-2">ERP
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MOM" 
+                       class="inline-block mr-2">MOM
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MES" 
+                       class="inline-block mr-2">MES
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="CRM" 
+                       class="inline-block mr-2">CRM
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="SRM" 
+                       class="inline-block mr-2">SRM
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Sales" 
+                       class="inline-block mr-2">Sales
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AGV" 
+                       class="inline-block mr-2">AGV
+            </div>
+
+            <!-- Row 2 -->
+            <div class="flex mb-2">
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AMR" 
+                    class="inline-block mr-2">AMR            
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Social" 
+                    class="inline-block mr-2">Social
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Edutainment" 
+                    class="inline-block mr-2">Edutainment
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Service Robot" 
+                    class="inline-block mr-2">Service Robot
+
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="OEM-Arm,COBOT,Sensor,Actuator" 
+                    class="inline-block mr-2">OEM - Arm, COBOT, Sensor, Actuator 
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Talent" 
+                    class="inline-block mr-2">Talent
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Skills Dev" 
+                    class="inline-block mr-2">Skills Dev
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AS/RS" 
+                    class="inline-block mr-2">AS/RS
+            </div>
+
+            <!-- Row 3 -->
+            <div class="flex mb-2">
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="3DP" 
+                    class="inline-block mr-2">3DP
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AddMfg" 
+                    class="inline-block mr-2">AddMfg
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="UAV" 
+                    class="inline-block mr-2">UAV
+                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Drone" 
+                    class="inline-block mr-2">Drone  
+            </div>
+
 
         </div>
-        <div>
-            <label  for="productAndService"> Product And Service</label>
-            <input type="text" id="productAndService" name="productAndService" value="{{ old('productAndService')}}">
-        </div>
+    </div>
+</div>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl">  
+
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+    <label for="productAndService"> Product And Service</label>
+    <input type="text" id="productAndService" name="productAndService" value="{{ old('productAndService')}}" class="w-full">
+</div>
+
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">Address Information</span>
             </p>
