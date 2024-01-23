@@ -1,4 +1,4 @@
-<aside x-data="{ open: false }"class="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+<aside x-data="{ open: false }"class="flex flex-col w-60 min-w-60 max-w-60 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
     <!-- Logo -->
     <div class="shrink-0 flex items-center p-4">
         <a href="{{ route('dashboard') }}" class="text-lg font-bold text-blue-900 light:text-blue-900">
@@ -11,7 +11,7 @@
         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="p-2">
             {{ __('Dashboard') }}
         </x-nav-link><br><br>
-        <label class="text-xs text-gray-500 uppercase dark:text-gray-400">REPORTING & MANAGING</label>
+        <label class="text-xs text-gray-500 uppercase dark:text-gray-400">REPORTING&MANAGING</label>
         <br>
         <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.index')" class="p-2">
             {{ __('Manage Companies') }}
