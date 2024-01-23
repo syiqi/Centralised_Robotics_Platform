@@ -59,7 +59,7 @@ class CompanyFormRequest extends FormRequest
             'category' => strip_tags($this['category']),
 
             'registrationNo' => strip_tags($this['registrationNo']),
-            'companyMainSector' => json_encode($this['companyMainSector']),
+            'companyMainSector' => strip_tags($this['companyMainSector']),
             'primaryMSIC2008' => strip_tags($this['primaryMSIC2008']),
             'secondaryMSIC2008' => strip_tags($this['secondaryMSIC2008']),
             'tertiaryMSIC2008' => strip_tags($this['tertiaryMSIC2008']),

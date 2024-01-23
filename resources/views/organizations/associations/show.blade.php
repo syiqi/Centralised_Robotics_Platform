@@ -26,7 +26,7 @@
             <input type="hidden" id="category" name="category" value='A'>
         </div>
         <div>
-            <label  for="registrationNo"> Registration No </label>
+            <label  for="registrationNo"> Registration No (ROS) </label>
             <input type="text" id="registrationNo" name="registrationNo" value="{{$association->registrationNo}}">
         </div>
         <div>
@@ -105,6 +105,7 @@
 <select id="subCategory" name="subCategory">
     <!-- This select will be populated dynamically based on the selected country -->
 </select>
+Current: {{$association['subCategory']}}
 
         <div>
             <button  type="submit" >Update</button>    
@@ -137,8 +138,6 @@
         // Clear existing options
         $('#subCategory').empty();
 
-        // Add a default option
-        $('#subCategory').append('<option value="{{$association['subCategory']}}">{{$association['subCategory']}}</option>');
 
         // Add new options based on the selected main
         $.each(subCategories, function(index, subCategory) {
@@ -162,16 +161,6 @@
       class="tab-control "
       :class="{ 'active': activeTab === 0 }"
     >Main</label>
-    <label
-      @click="activeTab = 1"
-      class="tab-control "
-      :class="{ 'active': activeTab === 1 }"
-    >Branch</label>
-    <label
-      @click="activeTab = 2"
-      class="tab-control "
-      :class="{ 'active': activeTab === 2 }"
-    >Factory</label>
   </div>
 @php
 $organization=$association;
@@ -179,18 +168,6 @@ $organization=$association;
   <div class="tab-panel" :class="{ 'active': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0">
   @php
 $type="M";
-@endphp
-    @include('layouts.workplace')
-  </div>
-  <div class="tab-panel" :class="{ 'active': activeTab === 1 }" x-show.transition.in.opacity.duration.600="activeTab === 1">
-  @php
-$type="B";
-@endphp
-    @include('layouts.workplace')
-  </div>
-  <div class="tab-panel" :class="{ 'active': activeTab === 2 }" x-show.transition.in.opacity.duration.600="activeTab === 2">
-  @php
-$type="F";
 @endphp
     @include('layouts.workplace')
   </div>

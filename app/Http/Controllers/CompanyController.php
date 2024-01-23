@@ -128,6 +128,21 @@ class CompanyController extends Controller
             'email' => $data['email'],
             'website' => $data['website'],
         ]);
+        if ($data['companyMainSector'] == 'null') {
+            $data['companyMainSector'] = null;
+        }
+        if ($data['staEcosystem'] == 'null') {
+            $data['staEcosystem'] = null;
+        }
+        if ($data['financeYearCalendar'] == '') {
+            $data['financeYearCalendar'] = null;
+        }
+        if ($data['latestRevenue'] == '') {
+            $data['latestRevenue'] = null;
+        }
+        if ($data['latestNoEmployee'] == '') {
+            $data['latestNoEmployee'] = null;
+        }
         $company->update([
             'registrationNo' => $data['registrationNo'],
             'companyMainSector' => $data['companyMainSector'],

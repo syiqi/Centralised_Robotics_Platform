@@ -146,7 +146,6 @@
             @foreach($companies as $company)
             <tr>
             @php
-                $mainSector=json_decode($company->companyMainSector);
                 $STA = json_decode($company->staEcosystem);
             @endphp
             <td>{{$loop->iteration}}</td>
@@ -161,7 +160,7 @@
                     @endif
                 </a></td>
                 <td>{{$company->registrationNo ?? '~' }}</td>
-                <td>{{ is_array($mainSector) ? implode(', ', $mainSector) : ($mainSector ?? '~') }}</td>
+                <td>{{$company->companyMainSector ?? '~' }}</td>
                 <td>{{$company->primaryMSIC2008 ?? '~' }}</td>
                 <td>{{$company->secondaryMSIC2008 ?? '~' }}</td>
                 <td>{{$company->tertiaryMSIC2008 ?? '~' }}</td>

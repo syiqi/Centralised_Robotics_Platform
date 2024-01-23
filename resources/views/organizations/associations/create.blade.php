@@ -60,7 +60,7 @@
             <input type="hidden" id="category" name="category" value='A'>
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  for="registrationNo"> Registration No </label>
+            <label  for="registrationNo"> Registration No (ROS)</label>
             <input type="text" id="registrationNo" name="registrationNo" value="{{ old('registrationNo')}}">
 
         
@@ -117,8 +117,6 @@
                 // Clear existing options
                 $('#subCategory').empty();
 
-                // Add a default option
-                $('#subCategory').append('<option value="">Select a Sub Category</option>');
 
                 // Add new options based on the selected main
                 $.each(subCategories, function(index, subCategory) {
@@ -192,8 +190,6 @@
             <label  for="workplaceCategory"> Workplace Category</label>
             <select id="workplaceCategory" name="workplaceCategory">
                 <option value="M">Main</option>
-                <option value="B">Branch</option>
-                <option value="F">Factory</option>
             </select>
             </div>
     

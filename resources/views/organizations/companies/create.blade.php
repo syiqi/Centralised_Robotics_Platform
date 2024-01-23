@@ -69,7 +69,7 @@
         </div>     
 
         <div>
-            <label  for="registrationNo"> Registration No </label>
+            <label  for="registrationNo"> Registration No (SSM ID) </label>
             <input type="text" id="registrationNo" name="registrationNo" value="{{ old('registrationNo')}}">
         </div>
 
@@ -77,35 +77,15 @@
         <label> Main Sector</label><br>
 
 
-  <div class="ml-8 mt-8">
-            <div x-data="{show: true}">
-                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
-                    <span class="inline-block">Select Sector</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
-                        x-bind:class="{ 'rotate-180': show }">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </a>
-                <div x-show.transition="show"
-                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
-
             <!-- Row 1 -->
             <div class="flex mb-2">
-                <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Primary Agriculture" 
-                    class="inline-block mr-2">Primary Agriculture
-                <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing(including agro-based)" 
-                    class="inline-block mr-2">Manufacturing(including agro-based)
-                <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing-Related-Services(MRS)" 
-                    class="inline-block mr-2">Manufacturing-Related-Services (MRS)
-                <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Services/Mining & Quarrying/Construction" 
-                    class="inline-block mr-2">Services / Mining & Quarrying / Construction
+            <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" >Primary Agriculture</label>
+                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing(including agro-based)" >Manufacturing(including agro-based)</label>
+                <label>  <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)" >Manufacturing-Related-Services (MRS)</label>
+            <label>    <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction" >Services / Mining & Quarrying / Construction</label>
 
             </div>
-    </div>
-</div>
 
-        </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
             <label  for="primaryMSIC2008"> MSIC2008 Code [5-digits code of activity]</label>
             <input class="placeholder-gray-500 border" placeholder="primary" type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ old('primaryMSIC2008')}}">

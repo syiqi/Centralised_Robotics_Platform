@@ -111,6 +111,7 @@ use App\Models\Workplace;
                 @else
                 <option value="M" >Main</option>
                 @endif
+                @if($workplace->organization->category!='A')
                 @if($workplace['workplaceCategory']=="B")
                 <option value="B" selected>Branch</option>
                 @else
@@ -120,6 +121,7 @@ use App\Models\Workplace;
                 <option value="F" selected>Factory</option>
                 @else
                 <option value="F" >Factory</option>
+                @endif
                 @endif
             </select>
             </div>

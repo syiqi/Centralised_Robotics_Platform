@@ -11,7 +11,7 @@
             <input type="text" id="name" name="name" value="{{$company->organization->name}}" required >
         </div>
         <div>
-            <label  for="phoneNo"> PhoneLinging </label>
+            <label  for="phoneNo"> Phone Number </label>
             <input type="tel" id="phoneNo" name="phoneNo" value="{{ $company->organization->phoneNo}}" >
             <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
         </div>
@@ -27,30 +27,30 @@
             <input type="hidden" id="category" name="category" value='M'>
         </div>
         <div>
-            <label  for="registrationNo"> Registration No </label>
+            <label  for="registrationNo"> Registration No (SSM ID) </label>
             <input type="text" id="registrationNo" name="registrationNo" value="{{$company->registrationNo}}">
         </div>
         <div >
         <label> Main Sector</label><br>
         @if(str_contains($company->companyMainSector,"Primary Agriculture"))
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Primary Agriculture" checked>Primary Agriculture
+        <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" checked>Primary Agriculture
         @else
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Primary Agriculture" >Primary Agriculture
+        <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" >Primary Agriculture
         @endif
         @if(str_contains($company->companyMainSector,"Manufacturing(including agro-based)"))
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing(including agro-based)" checked>Manufacturing(including agro-based)
+        <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing(including agro-based)" checked>Manufacturing(including agro-based)
         @else
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing(including agro-based)" >Manufacturing(including agro-based)
+        <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing(including agro-based)" >Manufacturing(including agro-based)
         @endif
         @if(str_contains($company->companyMainSector,"Manufacturing-Related-Services(MRS)"))
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing-Related-Services(MRS)" checked>Manufacturing-Related-Services (MRS)
+        <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)" checked>Manufacturing-Related-Services (MRS)
         @else
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Manufacturing-Related-Services(MRS)" >Manufacturing-Related-Services(MRS)
+        <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)" >Manufacturing-Related-Services(MRS)
         @endif
         @if(str_contains($company->companyMainSector,"Services\/Mining & Quarrying\/Construction"))
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Services/Mining & Quarrying/Construction" checked>Services / Mining & Quarrying / Construction
+        <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction" checked>Services / Mining & Quarrying / Construction
         @else
-        <input type="checkbox" id="companyMainSector" name="companyMainSector[]" value="Services/Mining & Quarrying/Construction" >Services/Mining & Quarrying/Construction
+        <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction" >Services/Mining & Quarrying/Construction
         @endif
         </div>
         <div>

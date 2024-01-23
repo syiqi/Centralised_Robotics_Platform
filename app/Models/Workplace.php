@@ -14,6 +14,6 @@ class Workplace extends Model
 
     public function organization(): BelongsTo
     {
-        return $this->belongsTo(Organizations::class, 'organizationID');
+        return $this->belongsTo(Organization::class, 'organizationID');
     }
 }
