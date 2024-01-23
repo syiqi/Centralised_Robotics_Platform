@@ -1,152 +1,88 @@
-<nav x-data="{ open: false }" class="border-red-700">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                    {{ __('Centralised Robotics Platform') }}
-                    </a>
-                </div>
-                
+<aside x-data="{ open: false }"class="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+    <!-- Logo -->
+    <div class="shrink-0 flex items-center p-4">
+        <a href="{{ route('dashboard') }}" class="text-lg font-bold text-blue-900 light:text-blue-900">
+            {{ __('Centralised Robotics Platform') }}
+        </a>
+    </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" >
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.index')">
-                        {{ __('Company') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('associations.index')" :active="request()->routeIs('associations.index')">
-                        {{ __('Association') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('ministries.index')" :active="request()->routeIs('ministries.index')">
-                        {{ __('Ministry') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('personells.index')" :active="request()->routeIs('personells.index')">
-                        {{ __('Personnel') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('personells.create')" :active="request()->routeIs('personells.create')">
-                        {{ __('Register Business Card') }}
-                    </x-nav-link>
-                    <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 text-sm leading-4 font-medium rounded-md text-blue-900 light:text-blue-900 bg-transparent light:bg-blue-800 hover:text-red-700 light:hover:text-red-1000 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ __('Register Organization ') }}</div>
-
-                            <div class="ml-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('companies.create')">
-                            {{ __('Company') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('associations.create')">
-                            {{ __('Association') }}
-                        </x-dropdown-link>
-                        <x-dropdown-link :href="route('ministries.create')">
-                            {{ __('Ministry') }}
-                        </x-dropdown-link>
+    <!-- Navigation Links -->
+    <div class="text-sm font-medium">
+        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="p-4">
+            {{ __('Dashboard') }}
+        </x-nav-link><br>
+        <label class="text-xs text-gray-500 uppercase dark:text-gray-400">REPORTING & MANAGING</label>
+        <br>
+        <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.index')" class="p-4">
+            {{ __('Manage Companies') }}
+        </x-nav-link><br>
+        <x-nav-link :href="route('associations.index')" :active="request()->routeIs('associations.index')" class="p-4">
+            {{ __('Manage Associations') }}
+        </x-nav-link><br>
+        <x-nav-link :href="route('ministries.index')" :active="request()->routeIs('ministries.index')" class="p-4">
+            {{ __('Manage Ministries') }}
+        </x-nav-link><br>
+        <x-nav-link :href="route('personells.index')" :active="request()->routeIs('personells.index')" class="p-4">
+            {{ __('Manage Personnel') }}
+        </x-nav-link><br>
         
-                    </x-slot>
-                </x-dropdown>
+    <br>
+    <label class="text-xs font-medium text-gray-500 uppercase dark:text-gray-400">DATA REGISTRATION</label>
+
+        <x-nav-link :href="route('personells.create')" :active="request()->routeIs('personells.create')" class="p-4">
+            {{ __('Register Business Card') }}
+        </x-nav-link><br>
+    </div>
+    <!-- Register Organization Dropdown -->
+    <div class="p-4">
+        <button @click="open = ! open" class="inline-flex items-center px-3 py-2 text-sm leading-4 font-medium rounded-md text-blue-900 light:text-blue-900 bg-transparent light:bg-blue-800 hover:text-red-700 light:hover:text-red-1000 focus:outline-none transition ease-in-out duration-150">
+            <div>{{ __('Register Organization ') }}</div>
+
+            <div class="ml-1">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
             </div>
+        </button>
 
-                </div>
-                
-                
-            </div>
-
-            
-
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-blue-900 light:text-blue-900 bg-transparent light:bg-blue-800 hover:text-red-700 light:hover:text-red-1000 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
-
-                            <div class="ml-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 light:text-gray-500 hover:text-gray-500 light:hover:text-gray-400 hover:bg-gray-100 light:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 light:focus:bg-gray-900 focus:text-gray-500 light:focus:text-gray-400 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
+        <div x-show="open" class="mt-2 space-y-2">
+            <x-dropdown-link :href="route('companies.create')" class="block p-2">
+                {{ __('Company') }}
+            </x-dropdown-link>
+            <x-dropdown-link :href="route('associations.create')" class="block p-2">
+                {{ __('Association') }}
+            </x-dropdown-link>
+            <x-dropdown-link :href="route('ministries.create')" class="block p-2">
+                {{ __('Ministry') }}
+            </x-dropdown-link>
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
+    <!-- User Settings Dropdown -->
+    <div class="p-4">
+        <button @click="open = ! open" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-blue-900 light:text-blue-900 bg-transparent light:bg-blue-800 hover:text-red-700 light:hover:text-red-1000 focus:outline-none transition ease-in-out duration-150">
+            <div>{{ Auth::user()->name }}</div>
 
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200 light:border-gray-600">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800 light:text-gray-200">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+            <div class="ml-1">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
             </div>
+        </button>
 
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
+        <div x-show="open" class="mt-2 space-y-2">
+            <x-dropdown-link :href="route('profile.edit')" class="block p-2">
+                {{ __('Profile') }}
+            </x-dropdown-link>
 
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
+            <!-- Authentication -->
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
+                <x-dropdown-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="block p-2">
+                    {{ __('Log Out') }}
+                </x-dropdown-link>
+            </form>
         </div>
     </div>
-</nav>
-
-
+</aside>
