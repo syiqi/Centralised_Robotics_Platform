@@ -1,5 +1,11 @@
+<style>
+div.dataTables_wrapper {
+        width: 1000px;
+        margin: 10;
+        
+    }
 
-
+</style>
 <x-app-layout>
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
@@ -7,7 +13,7 @@
         </h2>
     </x-slot>
 
-<div class="container mt-5">
+<div class="container mt-5 ">
 
        <!-- <select id="pricingType" name="pricingType"
             class="w-full h-10 border-2 border-sky-500 focus:outline-none focus:border-sky-500 text-sky-500 rounded px-2 md:px-3 py-0 md:py-1 tracking-wider">
@@ -121,7 +127,7 @@
 
         <!-- Add more checkboxes for other STA ecosystems as needed -->
 
-<table id="companyTable" >
+<table id="companyTable" class="display nowrap" style="width:100%">
     <thead>
         <tr>
             <th>Entry</th>
@@ -184,7 +190,6 @@
 <script>
         $(document).ready(function () {
             var table = $('#companyTable').DataTable();
-
             // Event handler for main sector checkbox changes
             $('.mainSectorCheckbox').on('change', function () {
                 var checkedMainSectors = $('.mainSectorCheckbox:checked').map(function () {
@@ -205,6 +210,10 @@
                 table.column(14).search(checkedSTA.join('|'), true, false).draw(); // 14 is the index of the "STA Ecosystem" column
             });
         });
+        
+new DataTable('#companyTable', {
+    scrollX: true
+});
     </script>
 
 </x-app-layout>
