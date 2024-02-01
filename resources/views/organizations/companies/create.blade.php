@@ -10,7 +10,7 @@
     @csrf
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8"> 
 
-        <style>
+         <!--<style>
             input[type="text"] {
                 border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
             }
@@ -29,7 +29,7 @@
             input[type="date"] {
                 border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
             }
-        </style>
+        </style>-->
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
@@ -37,23 +37,27 @@
             </p>
         </div>   
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">    
             <label for="name"> Company Name</label>
-            <input type="text" id="name" name="name" value="{{ old('name')}}" class="w-full">
-        </div>
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="name" name="name" value="{{ old('name')}}" class="w-full">
+    </div>
+    
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
+    <div class="flex-1 mr-4">
+        <label  for="phoneNo"> Phone No </label>
+        <input class="mt-1 p-2 block w-full  border rounded-md" type="tel" id="phoneNo" name="phoneNo" value="{{ old('phoneNo')}}">
+    </div>
+    <div class="flex-1 mr-4">
+        <label  for="email"> Email </label>
+        <input class="mt-1 p-2 block w-full  border rounded-md" type="email" id="email" name="email" value="{{ old('email')}}">
+    </div>
+    <div class="flex-1">
+        <label  for="website"> Website </label>
+        <input class="mt-1 p-2 block w-full  border rounded-md" type="url" id="website" name="website" value="{{ old('website')}}">
+    </div>
+</div>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  for="phoneNo"> Phone No </label>
-            <input type="tel" id="phoneNo" name="phoneNo" value="{{ old('phoneNo')}}">
-            <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
-
-            <label  for="email"> Email </label>
-            <input type="email" id="email" name="email" value="{{ old('email')}}">
-
-            <label  for="website"> Website </label>
-            <input type="url" id="website" name="website" value="{{ old('website')}}">
-
-        </div>
+    </div>
 
 
         <div>
@@ -67,47 +71,50 @@
             </p>
         </div>     
 
-        <div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 ">
             <label  for="registrationNo"> Registration No (SSM ID) </label>
-            <input type="text" id="registrationNo" name="registrationNo" value="{{ old('registrationNo')}}">
+            <input class = "mt-1 p-2 block w-full  border rounded-md"  type="text" id="registrationNo" name="registrationNo" value="{{ old('registrationNo')}}">
         </div>
 
-        <div >
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
         <label> Main Sector</label><br>
 
 
             <!-- Row 1 -->
-            <div class="flex mb-2">
-            <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" >Primary Agriculture</label>
-                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing(including agro-based)" >Manufacturing(including agro-based)</label>
-                <label>  <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)" >Manufacturing-Related-Services (MRS)</label>
-            <label>    <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction" >Services / Mining & Quarrying / Construction</label>
+            <div class="flex mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" > Primary Agriculture</label>
+                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing(including agro-based)" > Manufacturing(including agro-based)</label>
+                <label>  <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)" > Manufacturing-Related-Services (MRS)</label>
+            <label>    <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction" > Services / Mining & Quarrying / Construction</label>
 
-            </div>
+            </div> 
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  for="primaryMSIC2008"> MSIC2008 Code [5-digits code of activity]</label>
-            <input class="placeholder-gray-500 border" placeholder="primary" type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ old('primaryMSIC2008')}}">
-            <input class="placeholder-gray-500 border" placeholder="secondary" type="number" id="secondaryMSIC2008" name="secondaryMSIC2008" value="{{ old('secondaryMSIC2008')}}">
-            <input class="placeholder-gray-500 border" placeholder="tertiary" type="number" id="tertiaryMSIC2008" name="tertiaryMSIC2008" value="{{ old('tertiaryMSIC2008')}}">
+            <label  for="primaryMSIC2008"> MSIC2008 [5-digits Activity Code]</label>
+            <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="primary" type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ old('primaryMSIC2008')}}">
+            <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="secondary" type="number" id="secondaryMSIC2008" name="secondaryMSIC2008" value="{{ old('secondaryMSIC2008')}}">
+            <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="tertiary" type="number" id="tertiaryMSIC2008" name="tertiaryMSIC2008" value="{{ old('tertiaryMSIC2008')}}">
         </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
             <label for="natureOfActivity"> Nature of Business</label>
-            <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}" class="w-full">
+            <input class = "mt-1 p-2 block w-full border rounded-md" type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}" class="w-full">
         </div>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
+        <div class="flex-1 mr-4">
             <label  for="financeYearCalendar"> Financial Year Calendar</label>
-            <input type="date" id="financeYearCalendar" name="financeYearCalendar" value="{{ old('financeYearCalendar')}}">
-
-            <label  for="latestRevenue"> Revenue (RM)</label>
-            <input type="number" step="any" id="latestRevenue" name="latestRevenue" value="{{ old('latestRevenue')}}">
-
-            <label  for="latestNoEmployee"> Number of Employee(s) </label>
-            <input type="number" id="latestNoEmployee" name="latestNoEmployee" value="{{ old('latestNoEmployee')}}">
-
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="date" id="financeYearCalendar" name="financeYearCalendar" value="{{ old('financeYearCalendar')}}">
         </div>
+        <div class="flex-1 mr-4">
+            <label  for="latestRevenue"> Revenue (RM)</label>
+            <input class="mt-1 p-2 block w-full  border rounded-md"  type="number" step="any" id="latestRevenue" name="latestRevenue" value="{{ old('latestRevenue')}}">
+        </div>
+        <div class="flex-1">
+            <label  for="latestNoEmployee"> Number of Employee(s) </label>
+            <input class="mt-1 p-2 block w-full  border rounded-md"  type="number" id="latestNoEmployee" name="latestNoEmployee" value="{{ old('latestNoEmployee')}}">
+        </div>
+    </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
@@ -274,7 +281,7 @@
 
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
     <label for="productAndService"> Product And Service</label>
-    <input type="text" id="productAndService" name="productAndService" value="{{ old('productAndService')}}" class="w-full">
+    <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="productAndService" name="productAndService" value="{{ old('productAndService')}}" class="w-full">
 </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
@@ -288,47 +295,43 @@
 
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
                 <label for="address"> Address</label>
-                <input type="text" id="address" name="address" value="{{ old('address')}}" class="w-full">
+                <input class = "mt-1 p-2 block w-full  border rounded-md"  type="text" id="address" name="address" value="{{ old('address')}}" class="w-full">
             </div>
 
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-                <label  for="postCode"> Post Code </label>
-                <input type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">
-                
-                <label  for="city"> City </label>
-                <input type="text" id="city" name="city" value="{{ old('city')}}">
-
-                <label  for="state"> State </label>
-                <select id="state" name="state">
-                <option value="Johor">Johor</option>
-                <option value="Kedah">Kedah</option>
-                <option value="Kelantan">Kelantan</option>
-                <option value="Malacca">Malacca</option>
-                <option value="Negeri Sembilan">Negeri Sembilan</option>
-                <option value="Pahang">Pahang</option>
-                <option value="Penang">Penang</option>
-                <option value="Perak">Perak</option>
-                <option value="Perlis">Perlis</option>
-                <option value="Sabah">Sabah</option>
-                <option value="Sarawak">Sarawak</option>
-                <option value="Selangor">Selangor</option>
-                <option value="Kuala Lumpur">Kuala Lumpur</option>
-                <option value="Labuan">Labuan</option>
-                <option value="Putrajaya">Putrajaya</option>
-            </select>
-            </div>
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-                <label  for="country"> Country </label>
-                <input type="text" id="country" name="country" value="Malaysia" readonly>
-            </div>
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  for="workplaceCategory"> Workplace Category</label>
-            <select id="workplaceCategory" name="workplaceCategory">
-                <option value="M">Main</option>
-                <option value="B">Branch</option>
-                <option value="F">Factory</option>
-            </select>
-            </div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
+    <div class="flex-1 mr-4">
+        <label  for="postCode"> Post Code </label>
+        <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">
+    </div>
+    <div class="flex-1 mr-4">
+        <label  for="city"> City </label>
+        <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="city" name="city" value="{{ old('city')}}">
+    </div>
+    <div class="flex-1 mr-4">
+        <label  for="state"> State </label>
+        <select class="mt-1 p-2 block w-full  border rounded-md" id="state" name="state">
+            <option value="Johor">Johor</option>
+            <option value="Kedah">Kedah</option>
+            <option value="Kelantan">Kelantan</option>
+            <option value="Malacca">Malacca</option>
+            <option value="Negeri Sembilan">Negeri Sembilan</option>
+            <option value="Pahang">Pahang</option>
+            <option value="Penang">Penang</option>
+            <option value="Perak">Perak</option>
+            <option value="Perlis">Perlis</option>
+            <option value="Sabah">Sabah</option>
+            <option value="Sarawak">Sarawak</option>
+            <option value="Selangor">Selangor</option>
+            <option value="Kuala Lumpur">Kuala Lumpur</option>
+            <option value="Labuan">Labuan</option>
+            <option value="Putrajaya">Putrajaya</option>
+        </select>
+    </div>
+    <div class="flex-1">
+        <label  for="country"> Country </label>
+        <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="country" name="country" value="Malaysia" readonly>
+    </div>
+</div>
     
         </div>
 
