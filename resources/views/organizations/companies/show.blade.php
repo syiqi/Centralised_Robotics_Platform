@@ -1,8 +1,10 @@
 
 <x-app-layout>
-
-
-
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
+            {{$company->organization->name}} Details
+        </h2>
+    </x-slot>
     <form method="POST" action="{{ route('companies.update',['company'=> $company['id']]) }}">
     @csrf
     @method('PUT')

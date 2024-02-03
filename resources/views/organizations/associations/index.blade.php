@@ -1,3 +1,16 @@
+<style>
+div.dataTables_wrapper {
+        width: 1050px;
+        margin: 10;
+        
+    }
+
+    .checkbox-container {
+        display: block;
+        margin-bottom: 10px; /* Adjust the margin-bottom value as needed */
+    }
+
+</style>
 
 <x-app-layout>
 <x-slot name="header">
@@ -5,151 +18,163 @@
             {{ __('Associations') }}
         </h2>
     </x-slot>
-<div class="container mt-5">
-        <label>
+<div class="flex flex-row">
+<div class="bg-gradient-to-b from-gray-100 to-white-gray-500">
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Political"> Political
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Shared Benefits"> Shared Benefits
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Human Rights"> Human Rights
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Religious"> Religious
         </label>
-        <label>
+        <div x-data="{ showCheckboxes: false }">
+    <button @click="showCheckboxes = !showCheckboxes">More±</button>
+        <div x-show="showCheckboxes">
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Professionalism"> Professionalism
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Welfare"> Welfare
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Art & Cultural"> Art & Cultural
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Security"> Security
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Trade"> Trade
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Recreation"> Recreation
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Social"> Social
         </label>
-<br><!--
-        <label>
+        </div> 
+</div>
+
+        Sub Category
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Death Benefits"> Death Benefits
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="General"> General
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Nature"> Nature
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Humanity"> Humanity
         </label>
-        <label>
+        <div x-data="{ showCheckboxes: false }">
+    <button @click="showCheckboxes = !showCheckboxes">More±</button>
+        <div x-show="showCheckboxes">
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Consumer"> Consumer
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Devotees Society"> Devotees Society
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="General"> General
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="OKU"> OKU
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Seniors"> Seniors
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Children"> Children
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Nursing Home"> Nursing Home
         </label>
         <label>
             <input type="checkbox" class="subCategoryCheckbox" value="Single Mother"> Single Mother
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Member's Welfare"> Member's Welfare
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Societal's Welfare"> Societal's Welfare
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Dancing\/Singing\/Music"> Dancing/Singing/Music
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Drama\/Theather"> Drama/Theather
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Tradtional Games"> Tradtional Games
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Martial Arts"> Martial Arts
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Paintings"> Paintings
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Handcrafts"> Handcrafts
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Literature"> Literature
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Volunteer Firefighters"> Volunteer Firefighters
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Crime Preventation"> Crime Preventation
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Trade Chambers"> Trade Chambers
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Manufacturing Industry"> Manufacturing Industry
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Small Medium Enterprise"> Small Medium Enterprise
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Small Retailers & Hawkers"> Small Retailers & Hawkers
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Services"> Services
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="General Recreation"> General Recreation
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Exercise"> Exercise
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Hobby"> Hobby
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Neighbourhood"> Neighbourhood
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Alumni"> Alumni
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Heritage"> Heritage
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Occupational"> Occupational
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Educational"> Educational
         </label>
--->
-<table id="associationTable" >
+        </div> 
+</div>
+</div>
+<table id="associationTable" class="display nowrap" style="width:100%">
     <thead>
         <tr>
             <th>Entry</th>
@@ -216,6 +241,9 @@
                 table.column(8).search(checkedSubCategories.join('|'), true, false).draw(); // 8 is the index of the "Sub Category" column
             });
         });
+        new DataTable('#associationTable', {
+    scrollX: true
+});
     </script>
 
 

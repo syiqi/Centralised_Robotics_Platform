@@ -8,7 +8,7 @@
     </x-slot>
 
 <div class="container mt-5">
-<table id="ministryTable" >
+<table id="ministryTable" class="display nowrap" style="width:100%" >
     <thead>
         <tr>
             <th>Entry</th>
@@ -47,6 +47,10 @@
 $(document).ready( function () {
     $('#ministryTable').DataTable();
 } );
+
+new DataTable('#ministryTable', {
+    scrollX: true
+});
 </script>
 
 

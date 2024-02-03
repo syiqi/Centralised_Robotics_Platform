@@ -1,23 +1,39 @@
+<style>
+div.dataTables_wrapper {
+        width: 1200px;
+        margin: 10;
+        
+    }
+
+    .checkbox-container {
+        display: block;
+        margin-bottom: 10px; /* Adjust the margin-bottom value as needed */
+    }
+
+</style>
+
 <x-app-layout>
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
             {{ __('Personnels') }}
         </h2>
     </x-slot>
-<div class="container mt-5">
-<label>
+<div class="flex flex-row">
+    <div class="bg-gradient-to-b from-gray-100 to-white-gray-500">
+        <label class="checkbox-container">
             <input type="checkbox" class="positionCheckbox" value="C"> C
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="positionCheckbox" value="M"> M
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="positionCheckbox" value="E"> E
         </label>
-        <label>
+        <label class="checkbox-container">
             <input type="checkbox" class="positionCheckbox" value="Staff"> Staff
         </label>
-<table id="personellTable" >
+</div>
+<table id="personellTable" class="display nowrap" style="width:100%">
     <thead>
         <tr>
             <th>Entry</th>
@@ -72,6 +88,10 @@ $(document).ready( function () {
                 table.column(2).search(checkedPositions.join('|'), true, false).draw();
             });
         });
+
+        new DataTable('#personellTable', {
+    scrollX: true
+});
     </script>
 
 </x-app-layout>
