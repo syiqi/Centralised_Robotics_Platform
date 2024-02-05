@@ -5,39 +5,51 @@
     <form method="POST" action="{{ route('associations.update',['association'=> $association['id']]) }}">
     @csrf
     @method('PUT')
-        <div>
-            <label  for="name"> Name </label>
-            <input type="text" id="name" name="name" value="{{$association->organization->name}}" required>
-        </div>
-        <div>
-            <label  for="phoneNo"> PhoneLinging </label>
-            <input type="tel" id="phoneNo" name="phoneNo" value="{{$association->organization->phoneNo}}">
+
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
+    <p class="text-2xl font-bold text-center text-white">
+    <span class="inline-block align-middle">General Information</span>
+    </p>
+</div>    
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label  for="name"> Association Name </label>
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="name" name="name" value="{{$association->organization->name}}" required>
+        </div> 
+       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
+
+        <div class="flex-1 mr-4">
+            <label  for="phoneNo"> Phone Number </label>
+            <input  class="mt-1 p-2 block w-full  border rounded-md"type="tel" id="phoneNo" name="phoneNo" value="{{$association->organization->phoneNo}}">
             <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
         </div>
-        <div>
-            <label  for="email"> EMAIL </label>
-            <input type="email" id="email" name="email" value="{{$association->organization->email}}">
+        <div class="flex-1 mr-4">
+            <label  for="email"> Email </label>
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="email" id="email" name="email" value="{{$association->organization->email}}">
         </div>
-        <div>
+        <div class="flex-1">
             <label  for="website"> Website </label>
-            <input type="url" id="website" name="website" value="{{$association->organization->website}}">
+            <input  class="mt-1 p-2 block w-full  border rounded-md"type="url" id="website" name="website" value="{{$association->organization->website}}">
         </div>
+</div>
+
         <div>
             <input type="hidden" id="category" name="category" value='A'>
         </div>
-        <div>
-            <label  for="registrationNo"> Registration No (ROS) </label>
-            <input type="text" id="registrationNo" name="registrationNo" value="{{$association->registrationNo}}">
-        </div>
-        <div>
-            <label  for="natureOfActivity"> Nature of Activity</label>
-            <input type="text" id="natureOfActivity" name="natureOfActivity" value="{{$association->natureOfActivity}}">
-        </div>
-<!-- 2 Selection where SubCategory Selection will output options based on the MainCategory Selection -->
-        <!-- Your Main select -->
-        <div>
-<label  for="mainCategory"> Main Category</label>
-<select id="mainCategory" name="mainCategory">
+
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
+            <p class="text-2xl font-bold text-center text-white">
+            <span class="inline-block align-middle">Detailed Overview</span>
+            </p>
+        </div>  
+        
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 my-8">
+        <div class="flex flex-row">
+            <label class = "mx-4" for="registrationNo"> Registration No (ROS) </label>
+            <input class="mt-1 p-2 block w-1/6 border rounded-md" type="text" id="registrationNo" name="registrationNo" value="{{$association->registrationNo}}">
+
+       
+<label class = "mx-4" for="mainCategory"> Main Category</label>
+<select class="mt-1 p-2 block w-1/6 border rounded-md" id="mainCategory" name="mainCategory">
 @if(empty($association['mainCategory']))
     <option value="" selected>Unknown</option>
 @else
@@ -102,13 +114,17 @@
 
 <!-- Your Sub select -->
 <br><label  for="subCategory"> Sub Category</label>
-<select id="subCategory" name="subCategory">
+<select class="mt-1 p-2 block w-1/6 border rounded-md" id="subCategory" name="subCategory">
     <!-- This select will be populated dynamically based on the selected country -->
 </select>
 Current: {{$association['subCategory']}}
-
-        <div>
-            <button  type="submit" >Update</button>    
+</div></div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label  for="natureOfActivity"> Nature of Activity</label>
+            <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="natureOfActivity" name="natureOfActivity" value="{{$association->natureOfActivity}}">
+        </div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Update</button>    
         </div>
 </form>
 
@@ -152,15 +168,21 @@ Current: {{$association['subCategory']}}
     // Bind the updateSub function to the change event of the Main select
     $('#mainCategory').on('change', updateSub);
 </script>
-////////////////////////////////////////////////////////
-<h1 >Address<h1>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
+            <p class="text-2xl font-bold text-center text-white">
+            <span class="inline-block align-middle">Address Information</span>
+            </p>
+        </div>  
 <div class="tab-wrapper" x-data="{ activeTab:  0 }">
-  <div class="flex">
+<div class="flex font-bold text-center text-white">
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+
     <label
       @click="activeTab = 0"
       class="tab-control "
       :class="{ 'active': activeTab === 0 }"
     >Main</label>
+</div>
   </div>
 @php
 $organization=$association;
@@ -172,32 +194,45 @@ $type="M";
     @include('layouts.workplace')
   </div>
 </div>
-
-//////////////////////////////////////////////
-<h1 >Personnel<h1>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
+            <p class="text-2xl font-bold text-center text-white">
+            <span class="inline-block align-middle">List of Personnel</span>
+            </p>
+        </div> 
 <div class="tab-wrapper" x-data="{ activeTab:  3 }">
-  <div class="flex">
+<div class="flex font-bold text-center text-white">
+  <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+
     <label
       @click="activeTab = 3"
       class="tab-control "
       :class="{ 'active': activeTab === 3 }"
     >C-Level</label>
+</div>
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+
     <label
       @click="activeTab = 4"
       class="tab-control "
       :class="{ 'active': activeTab === 4 }"
     >M-Level</label>
+</div>
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+
     <label
       @click="activeTab = 5"
       class="tab-control "
       :class="{ 'active': activeTab === 5 }"
-    >E-Level</label>
+    >E-Level</label></div>
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+
     <label
       @click="activeTab = 6"
       class="tab-control "
       :class="{ 'active': activeTab === 6 }"
     >Staff Level</label>
   </div>
+</div>
 
   <div class="tab-panel" :class="{ 'active': activeTab === 3 }" x-show.transition.in.opacity.duration.600="activeTab === 3">
     @php
@@ -230,7 +265,7 @@ $type="M";
         @method('DELETE')
 
         <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-        <button  type="button" onclick="confirmAssociationDelete()">DELETE</button>
+        <button  type="button" onclick="confirmAssociationDelete()" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">DELETE ASSOCITAION RECORDS</button>
     </form>
 
 </div>

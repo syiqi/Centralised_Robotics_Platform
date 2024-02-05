@@ -206,7 +206,7 @@ div.dataTables_wrapper {
                 <td>{{$association->natureOfActivity ?? '~' }}</td>
                 <td>{{$association->mainCategory ?? '~' }}</td>
                 <td>{{$association->subCategory ?? '~' }}</td>
-            <td><a href="{{ route('associations.show', ['association' => $association['id']])}}">View Details</a></td>
+            <td><a href="{{ route('associations.show', ['association' => $association['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">View Details</a></td>
             </tr>
             @endforeach
         </tbody>

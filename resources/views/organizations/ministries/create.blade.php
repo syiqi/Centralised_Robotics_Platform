@@ -9,7 +9,6 @@
 
     <form method="POST" action="{{ route('ministries.store') }}">
     @csrf
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8"> 
 
 <style>
     input[type="text"] {
@@ -32,7 +31,7 @@
     </p>
 </div>
 
-<div class = h-36 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl>
+<div>
     
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">    
             <label for="name"> Ministry Name</label>
