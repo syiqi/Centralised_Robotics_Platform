@@ -8,7 +8,6 @@
 
     <form method="POST" action="{{ route('companies.store') }}">
     @csrf
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8"> 
 
          <!--<style>
             input[type="text"] {
@@ -57,7 +56,6 @@
     </div>
 </div>
 
-    </div>
 
 
         <div>

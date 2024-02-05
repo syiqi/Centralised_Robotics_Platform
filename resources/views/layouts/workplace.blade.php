@@ -140,4 +140,4 @@ use App\Models\Workplace;
     @endif
 
     @endforeach
-        <u ><a href="{{route('workplaces.create')}}">Create new address</a></u>
+        <p class="text-blue-500 underline underline-offset-1"><a href="{{route('workplaces.create')}}">Create new address</a></u>
