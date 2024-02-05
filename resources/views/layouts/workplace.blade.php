@@ -7,17 +7,22 @@ use App\Models\Workplace;
   <form method="POST" action="{{ route('workplaces.update',['workplace'=> $workplace['id']]) }}">
     @csrf
     @method('PUT')
-            <div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
                 <label  for="address"> Address </label>
-                <input type="text" id="address" name="address" value="{{$workplace['address']}}">
+                <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="address" name="address" value="{{$workplace['address']}}">
             </div>
-            <div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
+            <div class="flex-1 mr-4">
+                <label  for="postCode"> Post Code </label>
+                <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="postCode" name="postCode" value="{{$workplace['postCode']}}">
+            </div>
+            <div class="flex-1 mr-4">
                 <label  for="city"> City </label>
-                <input type="text" id="city" name="city" value="{{$workplace['city']}}">
+                <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="city" name="city" value="{{$workplace['city']}}">
             </div>
-            <div>
+            <div class="flex-1 mr-4">
                 <label  for="state"> State </label>
-                <select id="state" name="state">
+                <select class="mt-1 p-2 block w-full  border rounded-md" id="state" name="state">
                     @if($workplace['state']=="Johor")
                 <option value="Johor" selected>Johor</option>
                 @else
@@ -95,17 +100,14 @@ use App\Models\Workplace;
                 @endif
             </select>
             </div>
-            <div>
-                <label  for="postCode"> Post Code </label>
-                <input type="text" id="postCode" name="postCode" value="{{$workplace['postCode']}}">
-            </div>
-            <div>
+            <div class="flex-1">
                 <label  for="country"> Country </label>
-                <input type="text" id="country" name="country" value="Malaysia" readonly>
+                <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="country" name="country" value="Malaysia" readonly>
             </div>
+        </div>
             <div>
             <label  for="workplaceCategory"> Workplace Category</label>
-            <select id="workplaceCategory" name="workplaceCategory">
+            <select class="mt-1 p-2 block w-full  border rounded-md" id="workplaceCategory" name="workplaceCategory">
                 @if($workplace['workplaceCategory']=="M")
                 <option value="M" selected>Main</option>
                 @else
@@ -125,8 +127,8 @@ use App\Models\Workplace;
                 @endif
             </select>
             </div>
-            <div>
-            <button  type="submit" >Update</button>    
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8" >
+            <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;" >Update</button>    
             </div>
     
         </form>
