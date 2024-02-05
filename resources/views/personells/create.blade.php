@@ -18,7 +18,7 @@ use App\Models\Organization;
         <div class="flex flex-nowrap">
         <div class="w-full mr-2 mb-4">
             <label  for="personName"> Name </label>
-            <input class="mt-1 p-2 block w-full  border rounded-md"type="text" id="personName" name="personName" value="{{ old('personName')}}" required>
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="personName" name="personName" value="{{ old('personName')}}" required>
         </div>
         <div class="w-full mb-4">
             <label  for="organizationID"> Organization Name </label>
