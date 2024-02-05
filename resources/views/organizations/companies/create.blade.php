@@ -330,6 +330,14 @@
         <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="country" name="country" value="Malaysia" readonly>
     </div>
 </div>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label  for="workplaceCategory"> Workplace Category</label>
+            <select class="mt-1 p-2 block w-full  border rounded-md" id="workplaceCategory" name="workplaceCategory">
+                <option value="M">Main</option>
+                <option value="B">Branch</option>
+                <option value="F">Factory</option>
+            </select>
+            </div>
     
         </div>
 
