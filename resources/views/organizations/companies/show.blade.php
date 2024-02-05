@@ -115,7 +115,6 @@
 
 
         <div class="flex mb-2">
-            <label> STA Ecosystem</label><br>
             @if(str_contains($company->staEcosystem,"Robotics&Automation"))
             <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation" checked>Robotics & Automation
             @else
@@ -312,31 +311,41 @@ $type="F";
     @include('layouts.workplace')
   </div>
 </div>
-
-//////////////////////////////////////////////
-<h1 >Personnel<h1>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
+            <p class="text-2xl font-bold text-center text-white">
+            <span class="inline-block align-middle">List of Personnel</span>
+            </p>
+        </div> 
 <div class="tab-wrapper" x-data="{ activeTab:  3 }">
-  <div class="flex">
+  <div class="flex font-bold text-center text-white">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 3"
       class="tab-control "
       :class="{ 'active': activeTab === 3 }"
-    >C-Level</label>
+    >C-Level</label> 
+</div>
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 4"
       class="tab-control "
       :class="{ 'active': activeTab === 4 }"
     >M-Level</label>
+</div>
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 5"
       class="tab-control "
       :class="{ 'active': activeTab === 5 }"
     >E-Level</label>
+</div>
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 6"
       class="tab-control "
       :class="{ 'active': activeTab === 6 }"
     >Staff Level</label>
+</div>
   </div>
 
   <div class="tab-panel" :class="{ 'active': activeTab === 3 }" x-show.transition.in.opacity.duration.600="activeTab === 3">
@@ -375,8 +384,9 @@ $type="F";
         @method('DELETE')
 
         <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-        <button  type="button" onclick="confirmCompanyDelete()">DELETE</button>
+        <button  type="button" onclick="confirmCompanyDelete()" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">!DELETE COMPANY RECORDS!</button>
     </form>
+
 
 </div>
 <script type="text/javascript">

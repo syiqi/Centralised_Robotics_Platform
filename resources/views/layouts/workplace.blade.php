@@ -3,6 +3,7 @@ use App\Models\Workplace;
 @endphp
 
 @foreach(Workplace::all() as $workplace)
+<div class="shadow">
     @if($workplace['organizationID']==$organization['id'] && $workplace['workplaceCategory']==$type)
   <form method="POST" action="{{ route('workplaces.update',['workplace'=> $workplace['id']]) }}">
     @csrf
@@ -105,7 +106,7 @@ use App\Models\Workplace;
                 <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="country" name="country" value="Malaysia" readonly>
             </div>
         </div>
-            <div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
             <label  for="workplaceCategory"> Workplace Category</label>
             <select class="mt-1 p-2 block w-full  border rounded-md" id="workplaceCategory" name="workplaceCategory">
                 @if($workplace['workplaceCategory']=="M")
@@ -127,19 +128,21 @@ use App\Models\Workplace;
                 @endif
             </select>
             </div>
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8" >
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-8" >
             <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;" >Update</button>    
             </div>
     
         </form>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-1">
         <form id="deleteForm_{{ $workplace['id'] }}" action="{{ route('workplaces.destroy',['workplace'=> $workplace['id']]) }}" method="POST">
             @csrf
             @method('DELETE')
 
             <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-            <button  type="button" onclick="confirmWorkplaceDelete('{{ $workplace['id'] }}')">X</button>
+            <button class="text-3xl" type="button" onclick="confirmWorkplaceDelete('{{ $workplace['id'] }}')" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">ⓧ</button>
         </form>
+</div>
     @endif
-
+</div>
     @endforeach
-        <p class="text-blue-500 underline underline-offset-1"><a href="{{route('workplaces.create')}}">Create new address</a></u>
+        <p class="text-blue-500 underline underline-offset-1"><a href="{{route('workplaces.create')}}">...Create a new address</a></u>

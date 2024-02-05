@@ -6,9 +6,8 @@ use App\Models\Personell;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
 </head>
-
 <div class="container mt-5">
-<table id="personellTable{{$level}}" >
+<table id="personellTable{{$level}}" class="display nowrap" style="width:100%">
     <thead>
         <tr>
             <th>Name</th>
@@ -47,5 +46,9 @@ use App\Models\Personell;
 $(document).ready( function () {
     $('#personellTable{{$level}}').DataTable();
 } );
+
+new DataTable('#personellTable', {
+    scrollX: true
+});
 </script>
 
