@@ -29,7 +29,7 @@ use App\Models\Personell;
                 <td>{{$personell->personDeptDiv ?? 'Unknown' }}</td>
                 <td>{{$personell->personEmail ?? 'Unknown' }}</td>
                 <td>{{$personell->personNumber ?? 'Unknown' }}</td>
-                <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">View Details</a></td>
+                <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">View Details</a></td>
             </tr>
             @endif
             @endif
