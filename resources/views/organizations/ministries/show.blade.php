@@ -33,11 +33,11 @@
             <input class="w-full" type="text" id="name" name="name" value="{{$ministry->organization->name}}" required >
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 ">
-            <label  for="phoneNo"> PhoneLinging </label>
+            <label  for="phoneNo"> Phone Number </label>
             <input type="tel" id="phoneNo" name="phoneNo" value="{{ $ministry->organization->phoneNo}}" >
             <!-- can set pattern using = pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
 
-            <label  for="email"> EMAIL </label>
+            <label  for="email"> Email </label>
             <input type="email" id="email" name="email" value="{{ $ministry->organization->email}}" >
 
             <label  for="website"> Website </label>
