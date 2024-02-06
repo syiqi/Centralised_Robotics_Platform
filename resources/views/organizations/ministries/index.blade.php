@@ -32,7 +32,7 @@
                     <u>Visit Website</u>
                     @endif
                 </a></td>
-                <td><a href="{{ route('ministries.show', ['ministry' => $ministry['id']])}}">View Details</a></td> 
+                <td><a href="{{ route('ministries.show', ['ministry' => $ministry['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">View Details</a></td> 
             </tr>
             @endforeach
         </tbody>

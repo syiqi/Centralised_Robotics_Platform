@@ -9,22 +9,6 @@
 
     <form method="POST" action="{{ route('associations.store') }}">
     @csrf
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8"> 
-
-        <!--<style>
-            input[type="text"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-            input[type="email"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-            input[type="tel"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-            input[type="url"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-        </style>-->
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">

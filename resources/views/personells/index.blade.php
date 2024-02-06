@@ -58,7 +58,7 @@ div.dataTables_wrapper {
                 <td>{{$personell->personEmail ?? 'Unknown' }}</td>
                 <td>{{$personell->personNumber ?? 'Unknown' }}</td>
                 <td>{{$personell->organization->name ?? 'Unemployed' }}</td>
-                <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}">View Details</a></td>
+                <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">View Details</a></td>
             </tr>
             @endforeach
         </tbody>
