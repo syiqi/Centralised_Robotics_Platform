@@ -3,6 +3,9 @@ use App\Models\Company;
 use App\Models\Ministry;
 use App\Models\Association;
 use App\Models\Personell;
+use App\Models\Organization;
+$latestOrg = Organization::orderBy('id', 'DESC')->first();
+$latestPersonnel = Personell::orderBy('id', 'DESC')->first();
 @endphp
 
 <body class="min-h-screen bg-gradient-to-b from-blue-900 to-red-700">
@@ -65,4 +68,55 @@ use App\Models\Personell;
     </div>
     </a>
 
+</div>
+<div class="m-8">
+@if($latestOrg->category=='C')
+<a href="{{ route('companies.show', ['company' => $latestOrg['id']]) }}" :active="request()->routeIs('companies.show', ['company' => $latestOrg['id']])" class="p-2">
+    <div class="group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105">
+        <div class="flex items-center justify-between" @click="window.location.href='{{ route('companies.show', ['company' => $latestOrg['id']]) }}'">
+            <div>
+                <h3 class="text-2xl font-semibold">{{ __("Latest Organization Created: Company") }}</h3>
+                <span class="text-4xl font-bold">{{$latestOrg->name }}</span>
+            </div>
+            <img src="/images/companies.png" alt="Icon" class="ml-4" width="40" height="40">
+        </div>
+    </div>
+    </a>
+@elseif($latestOrg->category=='A')
+<a href="{{ route('associations.show', ['association' => $latestOrg['id']]) }}" :active="request()->routeIs('associations.show', ['association' => $latestOrg['id']])" class="p-2">
+    <div class="group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105">
+        <div class="flex items-center justify-between" @click="window.location.href='{{ route('associations.show', ['association' => $latestOrg['id']]) }}'">
+            <div>
+                <h3 class="text-2xl font-semibold">{{ __("Latest Organization Created: Association") }}</h3>
+                <span class="text-4xl font-bold">{{$latestOrg->name }}</span>
+            </div>
+            <img src="/images/associations.png" alt="Icon" class="ml-4" width="40" height="40">
+        </div>
+    </div>
+    </a>
+@elseif($latestOrg->category=='M')
+<a href="{{ route('ministries.show', ['ministry' => $latestOrg['id']]) }}" :active="request()->routeIs('ministries.show', ['ministry' => $latestOrg['id']])" class="p-2">
+    <div class="group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105">
+        <div class="flex items-center justify-between" @click="window.location.href='{{ route('ministries.show', ['ministry' => $latestOrg['id']]) }}'">
+            <div>
+                <h3 class="text-2xl font-semibold">{{ __("Latest Organization Created: Ministry") }}</h3>
+                <span class="text-4xl font-bold">{{$latestOrg->name }}</span>
+            </div>
+            <img src="/images/ministries.png" alt="Icon" class="ml-4" width="40" height="40">
+        </div>
+    </div>
+    </a>
+@endif
+    <a href="{{ route('personells.show', ['personell' => $latestPersonnel['id']]) }}" :active="request()->routeIs('personells.show', ['personell' => $latestPersonnel['id']])" class="p-2">
+    <div class="group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105">
+        <div class="flex items-center justify-between" @click="window.location.href='{{ route('personells.show', ['personell' => $latestPersonnel['id']]) }}'">
+            <div>
+                <h3 class="text-2xl font-semibold">{{ __("Latest Personnel Created: ") }}{{$latestPersonnel->organization->name ?? 'Unemployed'}}</h3>
+                <span class="text-4xl font-bold">{{ $latestPersonnel->personName }}</span>
+            </div>
+            <img src="/images/personnels.png" alt="Icon" class="ml-4" width="40" height="40">
+        </div>
+    </div>
+    </a>
+</div>
 </x-app-layout>

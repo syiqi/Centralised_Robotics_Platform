@@ -1,4 +1,4 @@
-<aside x-data="{ open: false }"class="flex flex-col w-60 min-w-60 max-w-60 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+<aside x-data="{ open: false }"class="flex flex-col w-60 min-w-60 max-w-60 min-h-full px-5 py-8 overflow-y-auto bg-white border-r-2 rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
     <!-- Logo -->
     <div class="shrink-0 flex items-center p-4">
         <a href="{{ route('dashboard') }}" class="text-lg font-bold text-blue-900 light:text-blue-900">
@@ -55,7 +55,7 @@
                 @csrf
 
                 <x-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="size-auto">
-                <img src="{{url('/images/logouticon.png')}}" width="25" height ="25" alt="LogOut" />
+                <img src="{{url('/images/logouticon.png')}}" width="20" height ="20" alt="LogOut" />
                 </x-nav-link>
             </form>
     </div>

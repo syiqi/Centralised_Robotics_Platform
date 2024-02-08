@@ -15,7 +15,7 @@ div.dataTables_wrapper {
 <x-app-layout>
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
-            {{ __('Associations') }}
+            {{ __('Manage Associations') }}
         </h2>
     </x-slot>
 <div class="flex flex-row">
@@ -206,7 +206,7 @@ div.dataTables_wrapper {
                 <td>{{$association->natureOfActivity ?? '~' }}</td>
                 <td>{{$association->mainCategory ?? '~' }}</td>
                 <td>{{$association->subCategory ?? '~' }}</td>
-            <td><a href="{{ route('associations.show', ['association' => $association['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">View Details</a></td>
+            <td><a href="{{ route('associations.show', ['association' => $association['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">UPDATE/DELETE</a></td>
             </tr>
             @endforeach
         </tbody>
