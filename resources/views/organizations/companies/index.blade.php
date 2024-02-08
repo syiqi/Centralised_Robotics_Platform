@@ -19,8 +19,9 @@ div.dataTables_wrapper {
     </x-slot>
 
 <div class="flex flex-row">
-<div class="bg-gradient-to-b from-gray-100 to-white-gray-500">
-            Main Sector 
+<div class="mx-1">
+<p class="font-bold"> SEARCH FILTER</p>
+           <p class="font-semibold"> Main Sector </p>
         <label class="checkbox-container">
             <input type="checkbox" class="mainSectorCheckbox" value="Primary Agriculture"> Primary Agriculture
         </label>
@@ -39,12 +40,13 @@ div.dataTables_wrapper {
         <!-- Add more checkboxes for other main sectors as needed -->
 
         <!-- Checkboxes for STA Ecosystem -->
-        STA Ecosystem
+        <div class="border-y-2">
+        <p class="font-semibold"> STA Ecosystem </p>
         <label class="checkbox-container">
             <input type="checkbox" class="staEcosystemCheckbox" value="Robotics"> Robotics
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" class="staEcosystemCheckbox" value="Automation">Automation 
+            <input type="checkbox" class="staEcosystemCheckbox" value="Automation"> Automation 
         </label>
         <label class="checkbox-container">
             <input type="checkbox" class="staEcosystemCheckbox" value="S.I."> S.I. 
@@ -53,7 +55,6 @@ div.dataTables_wrapper {
             <input type="checkbox" class="staEcosystemCheckbox" value="Developers"> Developers
         </label>
                 <div x-data="{ showCheckboxes: false }">
-    <button @click="showCheckboxes = !showCheckboxes">More±</button>
         <div x-show="showCheckboxes">
         <label class="checkbox-container">
             <input type="checkbox" class="staEcosystemCheckbox" value="IT"> IT
@@ -127,7 +128,10 @@ div.dataTables_wrapper {
         <label class="checkbox-container">
             <input type="checkbox" class="staEcosystemCheckbox" value="Drone"> Drone 
         </label>
+        
 </div> 
+<button class="mb-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #808080; color: #00000; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">More/Less±</button>
+</div>
 </div>
 </div>
         <!-- Add more checkboxes for other STA ecosystems as needed -->

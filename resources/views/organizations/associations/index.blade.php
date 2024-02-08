@@ -1,6 +1,6 @@
 <style>
 div.dataTables_wrapper {
-        width: 1050px;
+        width: 1120px;
         margin: 10;
         
     }
@@ -19,7 +19,9 @@ div.dataTables_wrapper {
         </h2>
     </x-slot>
 <div class="flex flex-row">
-<div class="bg-gradient-to-b from-gray-100 to-white-gray-500">
+<div class="mx-1">
+<p class="font-bold"> SEARCH FILTER</p>
+<p class="font-semibold"> Main Category </p>
         <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Political"> Political
         </label>
@@ -33,7 +35,6 @@ div.dataTables_wrapper {
             <input type="checkbox" class="mainCategoryCheckbox" value="Religious"> Religious
         </label>
         <div x-data="{ showCheckboxes: false }">
-    <button @click="showCheckboxes = !showCheckboxes">More±</button>
         <div x-show="showCheckboxes">
         <label class="checkbox-container">
             <input type="checkbox" class="mainCategoryCheckbox" value="Professionalism"> Professionalism
@@ -57,9 +58,11 @@ div.dataTables_wrapper {
             <input type="checkbox" class="mainCategoryCheckbox" value="Social"> Social
         </label>
         </div> 
-</div>
+        <button class="mb-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #808080; color: #00000; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">More/Less±</button>
 
-        Sub Category
+</div>
+<div class="border-y-2">
+<p class="font-semibold"> Sub Category </p>
         <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Death Benefits"> Death Benefits
         </label>
@@ -73,7 +76,6 @@ div.dataTables_wrapper {
             <input type="checkbox" class="subCategoryCheckbox" value="Humanity"> Humanity
         </label>
         <div x-data="{ showCheckboxes: false }">
-    <button @click="showCheckboxes = !showCheckboxes">More±</button>
         <div x-show="showCheckboxes">
         <label class="checkbox-container">
             <input type="checkbox" class="subCategoryCheckbox" value="Consumer"> Consumer
@@ -172,6 +174,8 @@ div.dataTables_wrapper {
             <input type="checkbox" class="subCategoryCheckbox" value="Educational"> Educational
         </label>
         </div> 
+        <button class="mb-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #808080; color: #00000; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">More/Less±</button>
+</div>
 </div>
 </div>
 <table id="associationTable" class="display nowrap" style="width:100%">

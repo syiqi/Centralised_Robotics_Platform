@@ -1,6 +1,6 @@
 <style>
 div.dataTables_wrapper {
-        width: 1200px;
+        width: 1130px;
         margin: 10;
         
     }
@@ -19,19 +19,23 @@ div.dataTables_wrapper {
         </h2>
     </x-slot>
 <div class="flex flex-row">
-    <div class="bg-gradient-to-b from-gray-100 to-white-gray-500">
+<div class="mx-1">
+<p class="font-bold"> SEARCH FILTER</p>
+<p class="font-semibold"> Position Level </p>
+<div class="border-b-2">
         <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="C"> C
+            <input type="checkbox" class="positionCheckbox" value="C"> Chief
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="M"> M
+            <input type="checkbox" class="positionCheckbox" value="M"> Managerial
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="E"> E
+            <input type="checkbox" class="positionCheckbox" value="E"> Executive
         </label>
         <label class="checkbox-container">
             <input type="checkbox" class="positionCheckbox" value="Staff"> Staff
         </label>
+</div>
 </div>
 <table id="personellTable" class="display nowrap" style="width:100%">
     <thead>
