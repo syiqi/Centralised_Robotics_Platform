@@ -86,6 +86,7 @@ $putrajayaA = 0; $putrajayaC = 0; $putrajayaM = 0;
 
 </div>
 <div class="m-8">
+@if (!$latestOrg==NULL)
 @if($latestOrg->category=='C')
 <a href="{{ route('companies.show', ['company' => $latestOrg['id']]) }}" :active="request()->routeIs('companies.show', ['company' => $latestOrg['id']])" class="p-2">
     <div class="group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105">
@@ -122,7 +123,23 @@ $putrajayaA = 0; $putrajayaC = 0; $putrajayaM = 0;
         </div>
     </div>
     </a>
+
 @endif
+@else
+<a href="#" :active="#" class="p-2">
+    <div class="group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105">
+        <div class="flex items-center justify-between" @click="window.location.href='#'">
+            <div>
+                <h3 class="text-2xl font-semibold">{{ __("Latest Organization Created:None") }}</h3>
+                <span class="text-4xl font-bold">None</span>
+            </div>
+            <img src="/images/ministries.png" alt="Icon" class="ml-4" width="40" height="40">
+        </div>
+    </div>
+    </a>
+@endif
+
+@if(!$latestPersonnel==NULL)
     <a href="{{ route('personells.show', ['personell' => $latestPersonnel['id']]) }}" :active="request()->routeIs('personells.show', ['personell' => $latestPersonnel['id']])" class="p-2">
     <div class="group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105">
         <div class="flex items-center justify-between" @click="window.location.href='{{ route('personells.show', ['personell' => $latestPersonnel['id']]) }}'">
@@ -136,6 +153,21 @@ $putrajayaA = 0; $putrajayaC = 0; $putrajayaM = 0;
     </a>
 </div>
 
+@else
+
+<a href="#" :active="#" class="p-2">
+    <div class="group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105">
+        <div class="flex items-center justify-between" @click="window.location.href='#'">
+            <div>
+                <h3 class="text-2xl font-semibold">{{ __("Latest Personnel Created: ") }}None</h3>
+                <span class="text-4xl font-bold">None</span>
+            </div>
+            <img src="/images/personnels.png" alt="Icon" class="ml-4" width="40" height="40">
+        </div>
+    </div>
+    </a>
+</div>
+@endif
 <div class="m-8 group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105 ">
 @php
 foreach(Workplace::all() as $workplace){

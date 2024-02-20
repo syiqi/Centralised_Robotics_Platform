@@ -53,6 +53,12 @@ class CompanyController extends Controller
         if ($data['staEcosystem'] == 'null') {
             $data['staEcosystem'] = null;
         }
+        if ($data['vcdEcosystem'] == 'null') {
+            $data['vcdEcosystem'] = null;
+        }
+        if ($data['spdEcosystem'] == 'null') {
+            $data['spdEcosystem'] = null;
+        }
         if ($data['financeYearCalendar'] == '') {
             $data['financeYearCalendar'] = null;
         }
@@ -74,6 +80,8 @@ class CompanyController extends Controller
             'latestRevenue' => $data['latestRevenue'],
             'latestNoEmployee' => $data['latestNoEmployee'],
             'staEcosystem' => $data['staEcosystem'],
+            'vcdEcosystem' => $data['vcdEcosystem'],
+            'spdEcosystem' => $data['spdEcosystem'],
             'productAndService' => $data['productAndService'],
         ]);
 
@@ -134,6 +142,12 @@ class CompanyController extends Controller
         if ($data['staEcosystem'] == 'null') {
             $data['staEcosystem'] = null;
         }
+        if ($data['vcdEcosystem'] == 'null') {
+            $data['vcdEcosystem'] = null;
+        }
+        if ($data['spdEcosystem'] == 'null') {
+            $data['spdEcosystem'] = null;
+        }
         if ($data['financeYearCalendar'] == '') {
             $data['financeYearCalendar'] = null;
         }
@@ -154,6 +168,8 @@ class CompanyController extends Controller
             'latestRevenue' => $data['latestRevenue'],
             'latestNoEmployee' => $data['latestNoEmployee'],
             'staEcosystem' => $data['staEcosystem'],
+            'vcdEcosystem' => $data['vcdEcosystem'],
+            'spdEcosystem' => $data['spdEcosystem'],
             'productAndService' => $data['productAndService'],
         ]);
 

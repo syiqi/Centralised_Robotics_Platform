@@ -196,62 +196,9 @@
 
 
         </div>
+        </div>        
     </div>
-</div>
-
-
-
-<div class="ml-8 mt-8 inline-block">
-            <div x-data="{show: true}">
-                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
-                    <span class="inline-block">Select SCD Ecosystem</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
-                        x-bind:class="{ 'rotate-180': show }">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </a>
-                <div x-show.transition="show"
-                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
-
-            <!-- Row 1 -->
-            <div class="flex mb-2">
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation"
-                       class="inline-block mr-2">Robotics & Automation
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I."
-                       class="inline-block mr-2">S.I.
-            </div>
-
-            </div>
-                </div>
-</div>
-
-<div class="ml-8 mt-8 inline-block">
-            <div x-data="{show: true}">
-                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
-                    <span class="inline-block">Select CSD Ecosystem</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
-                        x-bind:class="{ 'rotate-180': show }">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </a>
-                <div x-show.transition="show"
-                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
-
-            <!-- Row 1 -->
-            <div class="flex mb-2">
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation"
-                       class="inline-block mr-2">Robotics & Automation
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I."
-                       class="inline-block mr-2">S.I.
-            </div>
-
-            </div>
-                </div>
-</div>
-
-<div class="ml-8 mt-8 inline-block">
+        <div class="ml-8 mt-8">
             <div x-data="{show: true}">
                 <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
                     <span class="inline-block">Select VCD Ecosystem</span>
@@ -266,15 +213,46 @@
 
             <!-- Row 1 -->
             <div class="flex mb-2">
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation"
-                       class="inline-block mr-2">Robotics & Automation
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I."
-                       class="inline-block mr-2">S.I.
-            </div>
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1"
+                       class="inline-block mr-2">VCD1
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2"
+                       class="inline-block mr-2">VCD2
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3"
+                       class="inline-block mr-2">VCD3
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4" class="inline-block mr-2">VCD4
+        </div>
+        </div>
+        </div>       
+     </div>
 
-            </div>
-                </div>
+        <div class="ml-8 mt-8">
+            <div x-data="{show: true}">
+                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
+                    <span class="inline-block">Select SPD Ecosystem</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
+                        x-bind:class="{ 'rotate-180': show }">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <div x-show.transition="show"
+                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
+
+            <!-- Row 1 -->
+            <div class="flex mb-2">
+                <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1"
+                       class="inline-block mr-2">SPD1
+                <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2"
+                       class="inline-block mr-2">SPD2
+                <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3"
+                       class="inline-block mr-2">SPD3
+                <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4" class="inline-block mr-2">SPD4
+
+        </div>
+        </div>
+    </div>
 </div>
+</div>        </div>
 
 
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">

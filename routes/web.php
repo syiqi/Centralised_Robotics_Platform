@@ -1,7 +1,9 @@
 <?php
-
+use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AssociationController;
 use App\Http\Controllers\MinistryController;
+use App\Http\Controllers\WorkplaceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::resource('organizations', OrganizationController::class);
 
 Route::resource('ministries', MinistryController::class);
 

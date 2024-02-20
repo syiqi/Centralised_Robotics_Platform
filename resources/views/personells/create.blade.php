@@ -12,6 +12,48 @@ use App\Models\Organization;
             {{ __('Register Business Card') }}
         </h2>
     </x-slot>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New organization</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{{ route('organizations.store') }}">
+        @csrf
+          <div class="mb-3">
+            <label for="name" class="col-form-label">Organization Name:</label>
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="name" name="name" value="{{ old('name')}}" class="w-full">
+          </div>
+          <div class="mb-3">
+            <label for="category" class="col-form-label">Category:</label>
+            <select class="mt-1 p-2 block w-full border rounded-md" id="category" name="category">
+            <option value="C">Company</option>
+            <option value="A">Association</option>
+            <option value="M">Ministry</option>
+            </select>
+          </div>
+
+                <div class="modal-footer">
+        <button type="button" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;" data-bs-dismiss="modal">Close</button>
+        <button type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>
+        </div>
+        </form>
+
+
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    
 <div class="max-w-7xl mx-auto mt-4 p-4">
     <form method="POST" action="{{ route('personells.store') }}">
         @csrf
@@ -38,9 +80,7 @@ use App\Models\Organization;
             });
 
         </script>
-        <x-nav-link :href="route('organizations.create')">
-                        {{ __('...Create a new one') }}
-        </x-nav-link>
+    <button type="button" class=" text-blue-500 underline underline-offset-2" data-bs-toggle="modal" data-bs-target="#exampleModal">...Create a new organization</button>
         </div>
     </div>
     <div class="flex flex-nowrap">
@@ -84,5 +124,6 @@ use App\Models\Organization;
     </form>    
 
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </x-app-layout>

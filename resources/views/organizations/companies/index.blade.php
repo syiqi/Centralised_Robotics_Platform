@@ -154,6 +154,8 @@ div.dataTables_wrapper {
             <th>Latest Revenue</th>
             <th>Latest No. Employee</th>
             <th>STA Ecosystem</th>
+            <th>VCD Ecosystem</th>
+            <th>SPD Ecosystem</th>
             <th>Product and Service</th>
             <th></th>
         </tr>
@@ -162,6 +164,8 @@ div.dataTables_wrapper {
             <tr>
             @php
                 $STA = json_decode($company->staEcosystem);
+                $VCD = json_decode($company->vcdEcosystem);
+                $SPD = json_decode($company->spdEcosystem);
             @endphp
             <td>{{$loop->iteration}}</td>
                 <td>{{$company->organization->name ?? '~' }}</td>
@@ -184,6 +188,8 @@ div.dataTables_wrapper {
                 <td>{{$company->latestRevenue ?? '~' }}</td>
                 <td>{{$company->latestNoEmployee ?? '~' }}</td>
                 <td>{{ is_array($STA) ? implode(', ', $STA) : ($STA ?? '~') }}</td>
+                <td>{{ is_array($VCD) ? implode(', ', $VCD) : ($VCD ?? '~') }}</td>
+                <td>{{ is_array($SPD) ? implode(', ', $SPD) : ($SPD ?? '~') }}</td>
                 <td>{{$company->productAndService ?? '~' }}</td>
                 <td><a href="{{ route('companies.show', ['company' => $company['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">UPDATE/DELETE</a></td> 
             </tr>

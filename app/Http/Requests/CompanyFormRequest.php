@@ -38,6 +38,8 @@ class CompanyFormRequest extends FormRequest
             'latestRevenue' => 'nullable',
             'latestNoEmployee' => 'nullable',
             'staEcosystem' => 'nullable',
+            'vcdEcosystem' => 'nullable',
+            'spdEcosystem' => 'nullable',
             'productAndService' => 'nullable',
 
             'address' => 'nullable',
@@ -68,6 +70,8 @@ class CompanyFormRequest extends FormRequest
             'latestRevenue' => strip_tags($this['latestRevenue']),
             'latestNoEmployee' => strip_tags($this['latestNoEmployee']),
             'staEcosystem' => json_encode($this['staEcosystem']),
+            'vcdEcosystem' => json_encode($this['vcdEcosystem']),
+            'spdEcosystem' => json_encode($this['spdEcosystem']),
             'productAndService' => strip_tags($this['productAndService']),
 
             'address' => strip_tags($this['address']),

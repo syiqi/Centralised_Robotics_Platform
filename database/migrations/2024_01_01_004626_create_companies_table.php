@@ -24,6 +24,8 @@ return new class extends Migration
             $table->double('latestRevenue')->nullable();
             $table->integer('latestNoEmployee')->nullable();
             $table->string('staEcosystem')->nullable();
+            $table->string('vcdEcosystem')->nullable();
+            $table->string('spdEcosystem')->nullable();
             $table->string('productAndService')->nullable();
             $table->timestamps();
         });

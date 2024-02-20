@@ -244,6 +244,85 @@
         </div>
         </div>
     </div>
+    <div class="ml-8 mt-8">
+            <div x-data="{show: true}">
+                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
+                    <span class="inline-block">Select VCD Ecosystem</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
+                        x-bind:class="{ 'rotate-180': show }">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <div x-show.transition="show"
+                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
+
+            <!-- Row 1 -->
+            <div class="flex mb-2">
+            @if(str_contains($company->vcdEcosystem,"VCD1"))
+            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1" checked>VCD1  
+            @else
+            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1">VCD1
+            @endif
+            @if(str_contains($company->vcdEcosystem,"VCD2"))
+            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2" checked>VCD2  
+            @else
+            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2">VCD2
+            @endif
+            @if(str_contains($company->vcdEcosystem,"VCD3"))
+            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3" checked>VCD3  
+            @else
+            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3">VCD3
+            @endif
+            @if(str_contains($company->vcdEcosystem,"VCD4"))
+            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4" checked>VCD4  
+            @else
+            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4">VCD4
+            @endif
+        </div>
+        </div>
+        </div></div>
+
+        <div class="ml-8 mt-8">
+            <div x-data="{show: true}">
+                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
+                    <span class="inline-block">Select SPD Ecosystem</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
+                        x-bind:class="{ 'rotate-180': show }">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <div x-show.transition="show"
+                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
+
+            <!-- Row 1 -->
+            <div class="flex mb-2">
+            @if(str_contains($company->spdEcosystem,"SPD1"))
+            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1" checked>SPD1  
+            @else
+            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1">SPD1
+            @endif
+            @if(str_contains($company->spdEcosystem,"SPD2"))
+            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2" checked>SPD2  
+            @else
+            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2">SPD2
+            @endif
+            @if(str_contains($company->spdEcosystem,"SPD3"))
+            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3" checked>SPD3  
+            @else
+            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3">SPD3
+            @endif
+            @if(str_contains($company->spdEcosystem,"SPD4"))
+            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4" checked>SPD4  
+            @else
+            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4">SPD4
+            @endif
+
+        </div>
+        </div>
+        </div>
+        </div>
 </div>
 
 

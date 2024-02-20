@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OrganizationFormRequest;
 use App\Models\Organization;
+use App\Models\Company;
+use App\Models\Association;
+use App\Models\Ministry;
 
 class OrganizationController extends Controller
 {
@@ -32,10 +35,34 @@ class OrganizationController extends Controller
     public function store(OrganizationFormRequest $request)
     {
         $data = $request->validated();
-
-        Organization::create($data);
-
-        // return redirect()->route('organizations.index');
+        $organization = Organization::create([
+            'name' => $data['name'],
+            'category' => $data['category'],
+            'phoneNo' => "",
+            'email' => "",
+            'website' => "",
+        ]);
+         
+        if($data['category']=="M") {
+        Ministry::create([
+            'id' => $organization['id']
+        ]);
+    }
+        elseif($data['category']=="C") {
+        Company::create([
+            'id' => $organization['id']
+        ]);
+    }
+        elseif($data['category']=="A") {
+        Association::create([
+            'id' => $organization['id'],
+            'registrationNo'=>"",
+            'natureOfActivity'=>"",
+            'mainCategory'=>"",
+            'subCategory'=>""
+        ]);
+    }
+        return back()->withInput();
 
     }
 
