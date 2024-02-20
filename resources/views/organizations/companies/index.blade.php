@@ -39,10 +39,14 @@ div.dataTables_wrapper {
 
         <!-- Add more checkboxes for other main sectors as needed -->
 
-        <!-- Checkboxes for STA Ecosystem -->
-        <div class="border-y-2">
-        <p class="font-semibold"> STA Ecosystem </p>
-        <label class="checkbox-container">
+                   <!-- Checkboxes for STA Ecosystem -->
+        <div class="border-y-2"> 
+
+                        <div x-data="{ showCheckboxes: false }">
+
+        <button class="my-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #D3D3D3; color: #00000; font-weight: 550; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">STA Ecosystem</button>
+               <div x-show="showCheckboxes"> 
+                <label class="checkbox-container">
             <input type="checkbox" class="staEcosystemCheckbox" value="Robotics"> Robotics
         </label>
         <label class="checkbox-container">
@@ -54,8 +58,7 @@ div.dataTables_wrapper {
         <label class="checkbox-container">
             <input type="checkbox" class="staEcosystemCheckbox" value="Developers"> Developers
         </label>
-                <div x-data="{ showCheckboxes: false }">
-        <div x-show="showCheckboxes">
+
         <label class="checkbox-container">
             <input type="checkbox" class="staEcosystemCheckbox" value="IT"> IT
         </label>
@@ -130,7 +133,48 @@ div.dataTables_wrapper {
         </label>
         
 </div> 
-<button class="mb-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #808080; color: #00000; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">More/Less±</button>
+<div class="border-y-2"> 
+<div x-data="{ showCheckboxes: false }">
+
+        <button class="my-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #D3D3D3; color: #00000; font-weight: 550; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">VCD Ecosystem</button>
+               <div x-show="showCheckboxes"> 
+                <label class="checkbox-container">
+            <input type="checkbox" class="vcdEcosystemCheckbox" value="VCD1"> VCD1
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" class="vcdEcosystemCheckbox" value="VCD2"> VCD2 
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" class="vcdEcosystemCheckbox" value="VCD3"> VCD3
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" class="vcdEcosystemCheckbox" value="VCD4"> VCD4
+        </label>
+</div>
+</div>
+</div>
+
+<div class="border-y-2"> 
+<div x-data="{ showCheckboxes: false }">
+
+        <button class="my-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #D3D3D3; color: #00000; font-weight: 550; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">SPD Ecosystem</button>
+               <div x-show="showCheckboxes"> 
+                <label class="checkbox-container">
+            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD1"> SPD1
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD2"> SPD2 
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD3"> SPD3
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD4"> SPD4
+        </label>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </div>
@@ -224,6 +268,26 @@ div.dataTables_wrapper {
 
                 // Use DataTables API to filter based on selected STA ecosystems
                 table.column(14).search(checkedSTA.join('|'), true, false).draw(); // 14 is the index of the "STA Ecosystem" column
+            });
+            
+            // Event handler for VCD ecosystem checkbox changes
+                        $('.vcdEcosystemCheckbox').on('change', function () {
+                var checkedVCD = $('.vcdEcosystemCheckbox:checked').map(function () {
+                    return $(this).val();
+                }).get();
+
+                // Use DataTables API to filter based on selected STA ecosystems
+                table.column(15).search(checkedVCD.join('|'), true, false).draw(); // 15 is the index of the "VCD Ecosystem" column
+            });
+
+            // Event handler for SPD ecosystem checkbox changes
+                        $('.spdEcosystemCheckbox').on('change', function () {
+                var checkedSPD = $('.spdEcosystemCheckbox:checked').map(function () {
+                    return $(this).val();
+                }).get();
+
+                // Use DataTables API to filter based on selected STA ecosystems
+                table.column(16).search(checkedSPD.join('|'), true, false).draw(); // 16 is the index of the "SPD Ecosystem" column
             });
         });
         
