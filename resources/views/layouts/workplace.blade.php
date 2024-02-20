@@ -145,4 +145,78 @@ use App\Models\Workplace;
     @endif
 </div>
     @endforeach
-        <p class="text-blue-500 underline underline-offset-1"><a href="{{route('workplaces.create')}}">...Create a new address</a></u>
+    <button type="button" class=" text-blue-500 underline underline-offset-2" data-bs-toggle="modal" data-bs-target="#exampleModal">...Add new address</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New organization</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form method="POST" action="{{ route('workplaces.store') }}">
+            @csrf
+
+                <input type="hidden" id="organizationID" name="organizationID" value="{{ $organization['id']}}">
+
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-4">
+                <label  for="address"> Address </label>
+                <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="address" name="address" value="{{ old('address')}}">
+            </div>
+         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-4 flex justify-between">
+            <div class="flex-1 mr-4">
+                <label  for="postCode"> Post Code </label>
+                <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">
+            </div>
+            <div class="flex-1 mr-4">
+                <label  for="city"> City </label>
+                <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="city" name="city" value="{{ old('city')}}">
+            </div>
+            <div class="flex-1 mr-4">
+                <label  for="state"> State </label>
+                <select class = "mt-1 p-2 block w-full  border rounded-md" id="state" name="state">
+                <option value="Johor">Johor</option>
+                <option value="Kedah">Kedah</option>
+                <option value="Kelantan">Kelantan</option>
+                <option value="Malacca">Malacca</option>
+                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                <option value="Pahang">Pahang</option>
+                <option value="Penang">Penang</option>
+                <option value="Perak">Perak</option>
+                <option value="Perlis">Perlis</option>
+                <option value="Sabah">Sabah</option>
+                <option value="Sarawak">Sarawak</option>
+                <option value="Selangor">Selangor</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="Labuan">Labuan</option>
+                <option value="Putrajaya">Putrajaya</option>
+            </select>
+            </div>
+            <div class="flex-1">
+                <label  for="country"> Country </label>
+                <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="country" name="country" value="Malaysia" readonly>
+            </div>
+        </div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+                <label for="workplaceCategory"> Workplace Category</label>
+                <select class = "mt-1 p-2 block w-full  border rounded-md" id="workplaceCategory" name="workplaceCategory">
+                    <option value="M">Main</option>
+                    <option value="B" class="category-B">Branch</option>
+                    <option value="F" class="category-B">Factory</option>
+                </select>
+            </div>
+
+
+            <div class="modal-footer">
+        <button type="button" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;" data-bs-dismiss="modal">Close</button>
+        <button type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>
+        </div>
+         
+        </form>
+
+
+    </div>
+    </div>
+  </div>
+</div>
