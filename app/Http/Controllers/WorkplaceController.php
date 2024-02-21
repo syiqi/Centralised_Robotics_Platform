@@ -33,7 +33,7 @@ class WorkplaceController extends Controller
         $data = $request->validated();
         Workplace::create($data);
 
-        return back();
+        return back()->withInput();
     }
 
     /**

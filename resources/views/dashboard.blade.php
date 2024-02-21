@@ -22,6 +22,7 @@ $selangorA = 0; $selangorC = 0; $selangorM = 0;
 $klA = 0; $klC = 0; $klM = 0;
 $labuanA = 0; $labuanC = 0; $labuanM = 0;
 $putrajayaA = 0; $putrajayaC = 0; $putrajayaM = 0;
+$staCount = 0; $spdCount = 0; $vcdCount = 0;
 @endphp
 
 <body class="min-h-screen bg-gradient-to-b from-blue-900 to-red-700">
@@ -168,7 +169,6 @@ $putrajayaA = 0; $putrajayaC = 0; $putrajayaM = 0;
     </a>
 </div>
 @endif
-<div class="m-8 group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105 ">
 @php
 foreach(Workplace::all() as $workplace){
 if($workplace->state=="Johor"){
@@ -293,25 +293,48 @@ $putrajayaM++;
 }
 }
 
+foreach(Company::all() as $company){
+ if($company->staEcosystem==!NULL){
+    $staCount++;
+ }
+ if($company->vcdEcosystem==!NULL){
+    $vcdCount++;
+ }
+ if($company->spdEcosystem==!NULL){
+    $spdCount++;
+ }
+}
+
+
 @endphp
+<div class="m-8 group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105 ">
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+</div>
+<div class="m-8 group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105 ">
+<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+</div>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
 <script>
 window.onload = function () {
 
-//Better to construct options first and then pass it as a parameter
-var options = {
+var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	title:{
-		text: "Organization by State"   
-	},
-	axisY:{
-		title:"Number of Organization"
+		text: "Organization by States"
 	},
 	toolTip: {
 		shared: true,
-		reversed: true
+	},
+    axisX:{
+   interval: 1
+    },
+	legend:{
+		cursor: "pointer",
+		itemclick: toggleDataSeries
 	},
 	data: [{
-		type: "stackedColumn",
+		type: "stackedBar",
 		name: "Companies",
 		showInLegend: "true",
 		yValueFormatString: "#,##0",
@@ -331,12 +354,11 @@ var options = {
             { y: {{$klC}}, label: "Kuala Lumpur" },
             { y: {{$labuanC}}, label: "Labuan" },
             { y: {{$putrajayaC}}, label: "Putrajaya" }
-            
 		]
 	},
 	{
-		type: "stackedColumn",
-		name: "Associations",
+		type: "stackedBar",
+		name: "Association",
 		showInLegend: "true",
 		yValueFormatString: "#,##0",
 		dataPoints: [
@@ -357,9 +379,9 @@ var options = {
             { y: {{$putrajayaA}}, label: "Putrajaya" }
 		]
 	},
-    {
-		type: "stackedColumn",
-		name: "Ministries",
+	{
+		type: "stackedBar",
+		name: "Ministry",
 		showInLegend: "true",
 		yValueFormatString: "#,##0",
 		dataPoints: [
@@ -380,16 +402,54 @@ var options = {
             { y: {{$putrajayaM}}, label: "Putrajaya" }
 		]
 	}]
-};
+});
 
-$("#chartContainer").CanvasJSChart(options);
+var chart1 = new CanvasJS.Chart("chartContainer1", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Company's Ecosystem"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{name}: <strong>{y}</strong>",
+		indexLabel: "{name} - {y}",
+		dataPoints: [
+			{ y: {{$staCount}}, name: "STA", exploded: true },
+			{ y: {{$vcdCount}}, name: "VCD" },
+			{ y: {{$spdCount}}, name: "SPD" }
+    		]
+	}]
+});
+
+chart.render();
+chart1.render();
+
+function toggleDataSeries(e) {
+	if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else {
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+
+}
 }
 </script>
-
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
-</div>
-
 
 </x-app-layout>
