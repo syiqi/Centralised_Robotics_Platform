@@ -110,20 +110,20 @@ use App\Models\Workplace;
             <label  for="workplaceCategory"> Workplace Category</label>
             <select class="mt-1 p-2 block w-full  border rounded-md" id="workplaceCategory" name="workplaceCategory">
                 @if($workplace['workplaceCategory']=="M")
-                <option value="M" selected>Main</option>
+                <option value="M" selected>Main (incl. Manufacturing & Services Activity)</option>
                 @else
-                <option value="M" >Main</option>
+                <option value="M" >: Main (incl. Manufacturing & Services Activity)</option>
                 @endif
                 @if($workplace->organization->category!='A')
                 @if($workplace['workplaceCategory']=="B")
-                <option value="B" selected>Branch</option>
+                <option value="B" selected>Branch (Manufacturing Activity)</option>
                 @else
-                <option value="B" >Branch</option>
+                <option value="B" >Branch (Manufacturing Activity)</option>
                 @endif
                 @if($workplace['workplaceCategory']=="F")
-                <option value="F" selected>Factory</option>
+                <option value="F" selected>Branch (Services Activity)</option>
                 @else
-                <option value="F" >Factory</option>
+                <option value="F" >Branch (Services Activity)</option>
                 @endif
                 @endif
             </select>
@@ -201,9 +201,9 @@ use App\Models\Workplace;
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
                 <label for="workplaceCategory"> Workplace Category</label>
                 <select class = "mt-1 p-2 block w-full  border rounded-md" id="workplaceCategory" name="workplaceCategory">
-                    <option value="M">Main</option>
-                    <option value="B" class="category-B">Branch</option>
-                    <option value="F" class="category-B">Factory</option>
+                    <option value="M">Main (incl. Manufacturing & Services Activity)</option>
+                    <option value="B" class="category-B">Branch (Manufacturing Activity)</option>
+                    <option value="F" class="category-B">Branch (Services Activity)</option>
                 </select>
             </div>
 

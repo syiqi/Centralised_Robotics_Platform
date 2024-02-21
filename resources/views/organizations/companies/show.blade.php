@@ -351,21 +351,21 @@
       @click="activeTab = 0"
       class="tab-control "
       :class="{ 'active': activeTab === 0 }"
-    >Main</label>
+    >Main (incl. Manufacturing & Services Activity)</label>
 </div>
 <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 1"
       class="tab-control "
       :class="{ 'active': activeTab === 1 }"
-    >Branch</label>
+    >Branch (Manufacturing Activity)</label>
 </div>
     <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 2"
       class="tab-control "
       :class="{ 'active': activeTab === 2 }"
-    >Factory</label>
+    >Branch (Services Activity)</label>
 </div>
   </div>
 @php

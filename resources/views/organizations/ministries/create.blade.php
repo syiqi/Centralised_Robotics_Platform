@@ -113,10 +113,8 @@
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
             <label  class = "mx-8" for="workplaceCategory"> Workplace Category</label>
-            <select class="mx-8 mt-1 p-2 block w-1/6  border rounded-md" id="workplaceCategory" name="workplaceCategory">
-                <option value="M">Main</option>
-                <option value="B">Branch</option>
-                <option value="F">Factory</option>
+            <select class="mx-8 mt-1 p-2 block w-1/3  border rounded-md" id="workplaceCategory" name="workplaceCategory">
+                <option value="M"> Main (incl. Manufacturing & Services Activity)</option>
             </select>
             </div>
 

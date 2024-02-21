@@ -181,7 +181,7 @@ Current: {{$association['subCategory']}}
       @click="activeTab = 0"
       class="tab-control "
       :class="{ 'active': activeTab === 0 }"
-    >Main</label>
+    >Main (incl. Manufacturing & Services Activity)</label>
 </div>
   </div>
 @php
