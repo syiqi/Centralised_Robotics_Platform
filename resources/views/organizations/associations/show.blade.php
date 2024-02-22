@@ -35,7 +35,9 @@
         <div>
             <input type="hidden" id="category" name="category" value='A'>
         </div>
-
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Update</button>    
+        </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">Detailed Overview</span>

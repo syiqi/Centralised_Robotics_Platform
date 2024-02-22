@@ -139,7 +139,7 @@ use App\Models\Workplace;
             @method('DELETE')
 
             <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-            <button class="text-3xl" type="button" onclick="confirmWorkplaceDelete('{{ $workplace['id'] }}')" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">ⓧ</button>
+            <button class="mb-2"type="button" onclick="confirmWorkplaceDelete('{{ $workplace['id'] }}')" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 10px 23px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Delete</button>
         </form>
 </div>
     @endif

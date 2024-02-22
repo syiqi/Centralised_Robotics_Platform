@@ -23,18 +23,17 @@ div.dataTables_wrapper {
 <p class="font-bold"> SEARCH FILTER</p>
            <p class="font-semibold"> Main Sector </p>
         <label class="checkbox-container">
-            <input type="checkbox" class="mainSectorCheckbox" value="Primary Agriculture"> Primary Agriculture
+            <input type="checkbox" class="mainSectorCheckbox" value="agro"><a title="Manufacturing(including agro-based)"> MFG ⓘ</a>
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" class="mainSectorCheckbox" value="agro"> Manufacturing (including agro-based)
+            <input type="checkbox" class="mainSectorCheckbox" value="(MRS)"><a title="Manufacturing-Related-Services(MRS)"> MRS ⓘ</a>
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" class="mainSectorCheckbox" value="(MRS)"> Manufacturing-Related-Services (MRS)
+            <input type="checkbox" class="mainSectorCheckbox" value="Services/Mining & Quarrying/Construction"><a title="Services/Mining & Quarrying/Construction"> Services ⓘ</a>
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" class="mainSectorCheckbox" value="Services/Mining & Quarrying/Construction"> Services / Mining & Quarrying / Construction
+            <input type="checkbox" class="mainSectorCheckbox" value="Primary Agriculture"><a title="Primary Agriculture"> Agriculture ⓘ</a>
         </label>
-
 
 
         <!-- Add more checkboxes for other main sectors as needed -->
