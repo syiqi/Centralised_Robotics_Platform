@@ -415,28 +415,28 @@ $type="F";
       @click="activeTab = 3"
       class="tab-control "
       :class="{ 'active': activeTab === 3 }"
-    >C-Level</label> 
+    >Top Management</label> 
 </div>
 <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 4"
       class="tab-control "
       :class="{ 'active': activeTab === 4 }"
-    >M-Level</label>
+    >Middle Management</label>
 </div>
 <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 5"
       class="tab-control "
       :class="{ 'active': activeTab === 5 }"
-    >E-Level</label>
+    >Executive</label>
 </div>
 <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 6"
       class="tab-control "
       :class="{ 'active': activeTab === 6 }"
-    >Staff Level</label>
+    >Support (Administrative/Clerical)</label>
 </div>
   </div>
 

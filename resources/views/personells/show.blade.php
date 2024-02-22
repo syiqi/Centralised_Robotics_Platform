@@ -67,25 +67,25 @@ use App\Models\Organization;
             @else
             <option value="">Unemployed</option>
             @endif
-            @if(str_contains($personell['personPosition'],"Staff"))
-            <option value="Staff" selected>Staff Level</option>
+            @if(str_contains($personell['personPosition'],"C"))
+            <option value="C" selected>Top Management</option>
             @else
-            <option value="Staff">Staff Level</option>
-            @endif
-            @if(str_contains($personell['personPosition'],"E"))
-            <option value="E" selected>Executive Level(E-Level)</option>
-            @else
-            <option value="E">Executive Level(E-Level)</option>
+            <option value="C">Top Management</option>
             @endif
             @if(str_contains($personell['personPosition'],"M"))
-            <option value="M" selected>Managerial Level(M-Level)</option>
+            <option value="M" selected>Middle Management</option>
             @else
-            <option value="M">Managerial Level(M-Level)</option>
+            <option value="M">Middle Management</option>
             @endif
-            @if(str_contains($personell['personPosition'],"C"))
-            <option value="C" selected>Chief Level(C-Level)</option>
+            @if(str_contains($personell['personPosition'],"E"))
+            <option value="E" selected>Executive</option>
             @else
-            <option value="C">Chief Level(C-Level)</option>
+            <option value="E">Executive</option>
+            @endif
+            @if(str_contains($personell['personPosition'],"Staff"))
+            <option value="Staff" selected>Support (Administrative/Clerical)</option>
+            @else
+            <option value="Staff">Support (Administrative/Clerical)</option>
             @endif
             </select>
         </div>
@@ -100,7 +100,19 @@ use App\Models\Organization;
         <img src="{{url('/images/phoneicon.png')}}" width="50" height ="50" alt="Phone Number" style="float: left; margin-right: 10px;" />
             <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber" value="{{ $personell['personNumber']}}" >
         </div>
-        
+                
+        <div class="flex mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            @if($personell['personGender']=="Male")
+            <label> <input type="radio" id="personGender" name="personGender" value="Male" checked> Male</label>
+            <label> <input type="radio" id="personGender" name="personGender" value="Female">Female</label>
+            @elseif($personell['personGender']=="Female")
+                <label> <input type="radio" id="personGender" name="personGender" value="Male"> Male</label>
+                <label> <input type="radio" id="personGender" name="personGender" value="Female" checked>Female</label>
+            @else
+                <label> <input type="radio" id="personGender" name="personGender" value="Male"> Male</label>
+                 <label> <input type="radio" id="personGender" name="personGender" value="Female">Female</label>
+            @endif
+        </div>
         <div>
                 <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">UPDATE</button>
             </div>

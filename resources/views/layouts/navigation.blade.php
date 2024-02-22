@@ -8,6 +8,9 @@
 
     <!-- Navigation Links -->
     <div class="text-sm font-medium">
+        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="p-2">
+            {{ __('Dashboard') }}
+        </x-nav-link><br><br>
         <label class="text-xs font-medium text-gray-500 uppercase dark:text-gray-400">DATA REGISTRATION</label>
 
         <x-nav-link :href="route('personells.create')" :active="request()->routeIs('personells.create')" class="p-2">
@@ -21,10 +24,8 @@
             </x-nav-link><br>
             <x-nav-link :href="route('ministries.create')" :active="request()->routeIs('ministries.create')" class="p-2">
                 {{ __('Register Ministry') }}
-            </x-nav-link><br>
-        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="p-2">
-            {{ __('Dashboard') }}
-        </x-nav-link><br><br>
+            </x-nav-link><br><br>
+
         <label class="text-xs text-gray-500 uppercase dark:text-gray-400">REPORTING&MANAGING</label>
         <br>
         <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.index')" class="p-2">

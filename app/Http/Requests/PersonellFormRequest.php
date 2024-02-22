@@ -29,6 +29,7 @@ class PersonellFormRequest extends FormRequest
             'personDeptDiv' => 'nullable',
             'personEmail' => 'nullable',
             'personNumber' => 'nullable',
+            'personGender' => 'nullable',
             'organizationID' => 'nullable',
         ];
     }
@@ -42,6 +43,7 @@ class PersonellFormRequest extends FormRequest
             'personDeptDiv' => strip_tags($this['personDeptDiv']),
             'personEmail' => strip_tags($this['personEmail']),
             'personNumber' => strip_tags($this['personNumber']),
+            'personGender' => strip_tags($this['personGender']),
             'organizationID' => strip_tags($this['organizationID']),
         ]);
     }

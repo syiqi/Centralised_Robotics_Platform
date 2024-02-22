@@ -39,6 +39,9 @@ class PersonellController extends Controller
         if ($data['personPosition'] == '') {
             $data['personPosition'] = null;
         }
+        if ($data['personGender'] == '') {
+            $data['personGender'] = null;
+        }
         Personell::create($data);
 
         return redirect()->route('personells.create');
@@ -80,6 +83,9 @@ class PersonellController extends Controller
         }
         if ($data['personPosition'] == '') {
             $data['personPosition'] = null;
+        }
+        if ($data['personGender'] == '') {
+            $data['personGender'] = null;
         }
         $personell->update($data);
 

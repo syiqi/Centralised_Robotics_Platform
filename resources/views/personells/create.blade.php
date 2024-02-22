@@ -96,10 +96,10 @@ use App\Models\Organization;
             <label  for="personPosition"> Position</label>
             <select class="mt-1 p-2 block w-full border rounded-md" id="personPosition" name="personPosition">
             <option value="">Unemployed</option>
-            <option value="Staff">Staff Level</option>
-            <option value="E">Executive Level(E-Level)</option>
-            <option value="M">Managerial Level(M-Level)</option>
-            <option value="C">Chief Level(C-Level)</option>
+            <option value="C">Top Management</option>
+            <option value="M">Middle Management</option>
+            <option value="E">Executive</option>
+            <option value="Staff">Support (Administrative/Clerical)</option>
             </select>
         </div>
         </div>
@@ -115,7 +115,10 @@ use App\Models\Organization;
             <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber">
         </div>
         
-        
+        <div class="flex mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label> <input type="radio" id="personGender" name="personGender" value="Male" > Male</label>
+                <label> <input type="radio" id="personGender" name="personGender" value="Female" >Female</label>
+        </div>
         <div>
             <!-- there's probably a css file conflicting, cuz can't use tailwind class to style -syamir to taash -->
             <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>    

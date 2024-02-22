@@ -1,6 +1,6 @@
 <style>
 div.dataTables_wrapper {
-        width: 1130px;
+        width: 1080px;
         margin: 10;
         
     }
@@ -24,16 +24,16 @@ div.dataTables_wrapper {
 <p class="font-semibold"> Position Level </p>
 <div class="border-b-2">
         <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="C"> Chief
+            <input type="checkbox" class="positionCheckbox" value="C"> Top Management
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="M"> Managerial
+            <input type="checkbox" class="positionCheckbox" value="M"> Middle Management
         </label>
         <label class="checkbox-container">
             <input type="checkbox" class="positionCheckbox" value="E"> Executive
         </label>
         <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="Staff"> Staff
+            <input type="checkbox" class="positionCheckbox" value="Staff"> Support
         </label>
 </div>
 </div>
@@ -47,6 +47,7 @@ div.dataTables_wrapper {
             <th>Department / Division</th>
             <th>Email</th>
             <th>Phone Number</th>
+            <th>Gender</th>
             <th>Employed At</th>
             <th></th>
 
@@ -61,6 +62,7 @@ div.dataTables_wrapper {
                 <td>{{$personell->personDeptDiv ?? 'Unknown' }}</td>
                 <td>{{$personell->personEmail ?? 'Unknown' }}</td>
                 <td>{{$personell->personNumber ?? 'Unknown' }}</td>
+                <td>{{$personell->personGender ?? 'Unknown' }}</td>
                 <td>{{$personell->organization->name ?? 'Unemployed' }}</td>
                 <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">UPDATE/DELETE</a></td>
             </tr>
