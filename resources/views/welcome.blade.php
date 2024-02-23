@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Centralised Robotics Platform</title>
+    <title>MARii Business Data Registration Module</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -78,10 +78,12 @@
 <body>
 
 <div class="hero">
-    <div class="overlay"></div>
-    <h1 style="font-size: 6rem; color: #FF0000; font-weight: bold; text-align: center; margin: 20px;">Centralised Robotics Platform</h1>
-
+    <br><h1 style="font-size: 6rem; color: #FF0000; font-weight: bold; text-align: center; margin: 0;">
+        MARii Business Data<br>Registration Module
+    </h1>
 </div>
+
+
 
 <div class="auth-links">
     @if (Route::has('login'))
