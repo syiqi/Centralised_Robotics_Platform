@@ -91,17 +91,20 @@ use App\Models\Organization;
         </div>
         </div>
 
-
+    <div class="flex">
+        <div class="mb-2 w-1/2">
         <div class="mb-4">
         <img src="{{url('/images/emailicon.png')}}" width="50" height ="50" alt="Email"  style="float: left; margin-right: 10px;"/>
-            <input class="mt-1 p-2 w-1/2 border rounded-md" type="email" id="personEmail" name="personEmail" value="{{ $personell['personEmail']}}" >
+            <input class="mt-1 p-2 min-w-96 border rounded-md" type="email" id="personEmail" name="personEmail" value="{{ $personell['personEmail']}}" >
         </div>
         <div class="mb-4">
         <img src="{{url('/images/phoneicon.png')}}" width="50" height ="50" alt="Phone Number" style="float: left; margin-right: 10px;" />
-            <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber" value="{{ $personell['personNumber']}}" >
+            <input class="mt-1 p-2 min-w-96 border rounded-md" type="tel" id="personNumber" name="personNumber" value="{{ $personell['personNumber']}}" >
+        </div>
         </div>
                 
-        <div class="flex mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+        <div class="mb-2 w-1/2">
+            Gender:
             @if($personell['personGender']=="Male")
             <label> <input type="radio" id="personGender" name="personGender" value="Male" checked> Male</label>
             <label> <input type="radio" id="personGender" name="personGender" value="Female">Female</label>
@@ -113,6 +116,8 @@ use App\Models\Organization;
                  <label> <input type="radio" id="personGender" name="personGender" value="Female">Female</label>
             @endif
         </div>
+
+    </div>
         <div>
                 <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">UPDATE</button>
             </div>
