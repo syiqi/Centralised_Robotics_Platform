@@ -103,7 +103,8 @@ use App\Models\Organization;
             </select>
         </div>
         </div>
-  
+        <div class="flex">
+        <div class="mb-2 w-1/2">
         <div class="mb-4">
             <img src="{{url('/images/emailicon.png')}}" width="50" height ="50" alt="Email"  style="float: left; margin-right: 10px;"/>
             <input class="mt-1 p-2 w-1/2 border rounded-md" type="email" id="personEmail" name="personEmail">
@@ -114,10 +115,12 @@ use App\Models\Organization;
             <img src="{{url('/images/phoneicon.png')}}" width="50" height ="50" alt="Phone Number" style="float: left; margin-right: 10px;" />
             <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber">
         </div>
-        
-        <div class="flex mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label> <input type="radio" id="personGender" name="personGender" value="Male" > Male</label>
+        </div>
+                
+                <div class="mb-2 w-1/2">
+               <label> <input type="radio" id="personGender" name="personGender" value="Male" > Male</label>
                 <label> <input type="radio" id="personGender" name="personGender" value="Female" >Female</label>
+        </div>
         </div>
         <div>
             <!-- there's probably a css file conflicting, cuz can't use tailwind class to style -syamir to taash -->

@@ -2,7 +2,7 @@
     <!-- Logo -->
     <div class="shrink-0 flex items-center p-4">
         <a href="{{ route('dashboard') }}" class="text-lg font-bold text-blue-900 light:text-blue-900">
-            {{ __('Centralised Robotics Platform') }}
+            {{ __('Business Data Registration Module') }}
         </a>
     </div>
 
