@@ -1,7 +1,7 @@
 @php
 use App\Models\Workplace;
 @endphp
-
+<!-- Workplace list and details of each organization -->
 @foreach(Workplace::all() as $workplace)
 <div class="shadow">
     @if($workplace['organizationID']==$organization['id'] && $workplace['workplaceCategory']==$type)

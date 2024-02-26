@@ -34,7 +34,7 @@ class MinistryController extends Controller
      */
     public function store(MinistryFormRequest $request)
     {
-        //
+        //create organization model
         $data = $request->validated();
         $organization = Organization::create([
             'name' => $data['name'],
@@ -45,9 +45,12 @@ class MinistryController extends Controller
 
         ]);
 
+        //create ministry that FK's linked to organization model above
         Ministry::create([
             'id' => $organization['id'],
         ]);
+
+        //If address field is not empty then it will create a workplace model that linked to the created organization model above
 
         if ($data['address'] != null | $data['address'] != '') {
 
@@ -66,7 +69,7 @@ class MinistryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource. redirected to an update/delete views
      */
     public function show($ministry)
     {
@@ -77,7 +80,7 @@ class MinistryController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified resource. same2
      */
     public function edit($ministry)
     {

@@ -8,24 +8,9 @@
     </x-slot>
 
 <div>
-
+<!-- Register a new Ministry-->
     <form method="POST" action="{{ route('ministries.store') }}">
     @csrf
-
-  <!--<style>
-    input[type="text"] {
-        border-radius: 6px; /* you can adjust this value to make the input box more or less rounded */
-    }
-    input[type="email"] {
-        border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-    }
-    input[type="tel"] {
-        border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-    }
-    input[type="url"] {
-        border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-    }
-</style>-->
 
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl text-white">
     <p class="text-2xl font-bold text-center">
@@ -120,7 +105,6 @@
 
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <!-- there's probably a css file conflicting, cuz can't use tailwind class to style -syamir to taash -->
             <button class = "mx-8" type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>    
         </div>
         

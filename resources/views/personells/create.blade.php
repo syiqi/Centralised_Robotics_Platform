@@ -21,6 +21,7 @@ use App\Models\Organization;
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <!-- Register Business Card Form"-->
         <form method="POST" action="{{ route('organizations.store') }}">
         @csrf
           <div class="mb-3">
@@ -116,14 +117,13 @@ use App\Models\Organization;
             <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber">
         </div>
         </div>
-                
+                Gender: 
                 <div class="mb-2 w-1/2">
                <label> <input type="radio" id="personGender" name="personGender" value="Male" > Male</label>
                 <label> <input type="radio" id="personGender" name="personGender" value="Female" >Female</label>
         </div>
         </div>
         <div>
-            <!-- there's probably a css file conflicting, cuz can't use tailwind class to style -syamir to taash -->
             <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>    
         </div>
 

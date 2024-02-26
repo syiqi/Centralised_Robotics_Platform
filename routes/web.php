@@ -1,10 +1,12 @@
 <?php
-use App\Http\Controllers\OrganizationController;
-use App\Http\Controllers\CompanyController;
+
 use App\Http\Controllers\AssociationController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\MinistryController;
-use App\Http\Controllers\WorkplaceController;
+use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\PersonellController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WorkplaceController;
 use Illuminate\Support\Facades\Route;
 
 /*

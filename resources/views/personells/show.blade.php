@@ -17,6 +17,7 @@ use App\Models\Organization;
     </p>
 </div>
 <div class="max-w-7xl mx-auto mt-4 p-4">
+    <!-- Personell update form -->
     <form method="POST" action="{{ route('personells.update',['personell'=> $personell['id']]) }}">
 
         @csrf

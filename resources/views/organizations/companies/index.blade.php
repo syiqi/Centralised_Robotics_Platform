@@ -134,7 +134,7 @@ div.dataTables_wrapper {
 </div> 
 <div class="border-y-2"> 
 <div x-data="{ showCheckboxes: false }">
-
+                 <!-- Checkboxes for VCD Ecosystem -->
         <button class="my-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #D3D3D3; color: #00000; font-weight: 550; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">VCD Ecosystem</button>
                <div x-show="showCheckboxes"> 
                 <label class="checkbox-container">
@@ -155,7 +155,7 @@ div.dataTables_wrapper {
 
 <div class="border-y-2"> 
 <div x-data="{ showCheckboxes: false }">
-
+                 <!-- Checkboxes for SPD Ecosystem -->
         <button class="my-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #D3D3D3; color: #00000; font-weight: 550; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">SPD Ecosystem</button>
                <div x-show="showCheckboxes"> 
                 <label class="checkbox-container">
@@ -177,7 +177,7 @@ div.dataTables_wrapper {
 </div>
 </div>
 </div>
-        <!-- Add more checkboxes for other STA ecosystems as needed -->
+        <!-- Add more checkboxes for other ecosystems as needed -->
 
 <table id="companyTable" class="display nowrap" style="width:100%">
     <thead>

@@ -68,6 +68,9 @@ class CompanyController extends Controller
         if ($data['latestNoEmployee'] == '') {
             $data['latestNoEmployee'] = null;
         }
+
+        //create company model that FK's linked to organization model above
+
         Company::create([
             'id' => $organization['id'],
             'registrationNo' => $data['registrationNo'],
@@ -84,6 +87,7 @@ class CompanyController extends Controller
             'spdEcosystem' => $data['spdEcosystem'],
             'productAndService' => $data['productAndService'],
         ]);
+        //If address field is not empty then it will create a workplace model that linked to the created organization model above
 
         if ($data['address'] != null | $data['address'] != '') {
 
@@ -136,6 +140,9 @@ class CompanyController extends Controller
             'email' => $data['email'],
             'website' => $data['website'],
         ]);
+
+        //condition, to fit with MySQL and standardize the null value
+
         if ($data['companyMainSector'] == 'null') {
             $data['companyMainSector'] = null;
         }

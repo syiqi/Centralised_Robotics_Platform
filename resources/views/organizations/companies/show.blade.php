@@ -5,6 +5,7 @@
             {{$company->organization->name}}'s Details
         </h2>
     </x-slot>
+                     <!-- Update Company Form -->
     <form method="POST" action="{{ route('companies.update',['company'=> $company['id']]) }}">
     @csrf
     @method('PUT')
@@ -54,6 +55,7 @@
         <div  class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
         <label> Main Sector</label><br>
         <div class="flex mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+                             <!-- Condition to automatically checked checkbox that is tagged with the model -->
         @if(str_contains($company->companyMainSector,"Primary Agriculture"))
         <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" checked>Primary Agriculture
         @else
@@ -127,6 +129,8 @@
 
 
         <div class="flex mb-2">
+                                         <!-- Condition to automatically checked checkbox that is tagged with the model -->
+
             @if(str_contains($company->staEcosystem,"Robotics&Automation"))
             <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation" checked>Robotics & Automation
             @else
@@ -269,8 +273,8 @@
                 </a>
                 <div x-show.transition="show"
                     class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
+                                                 <!-- Condition to automatically checked checkbox that is tagged with the model -->
 
-            <!-- Row 1 -->
             <div class="flex mb-2">
             @if(str_contains($company->vcdEcosystem,"VCD1"))
             <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1" checked>VCD1  
@@ -309,7 +313,8 @@
                 <div x-show.transition="show"
                     class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
 
-            <!-- Row 1 -->
+                                       <!-- Condition to automatically checked checkbox that is tagged with the model -->
+
             <div class="flex mb-2">
             @if(str_contains($company->spdEcosystem,"SPD1"))
             <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1" checked>SPD1  
@@ -359,21 +364,21 @@
         </div>  
 <div class="tab-wrapper" x-data="{ activeTab:  0 }">
   <div class="flex font-bold text-center text-white">
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label 
       @click="activeTab = 0"
       class="tab-control "
       :class="{ 'active': activeTab === 0 }"
     >Main (incl. Manufacturing & Services Activity)</label>
 </div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 1"
       class="tab-control "
       :class="{ 'active': activeTab === 1 }"
     >Branch (Manufacturing Activity)</label>
 </div>
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 2"
       class="tab-control "
@@ -410,28 +415,28 @@ $type="F";
         </div> 
 <div class="tab-wrapper" x-data="{ activeTab:  3 }">
   <div class="flex font-bold text-center text-white">
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 3"
       class="tab-control "
       :class="{ 'active': activeTab === 3 }"
     >Top Management</label> 
 </div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 4"
       class="tab-control "
       :class="{ 'active': activeTab === 4 }"
     >Middle Management</label>
 </div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 5"
       class="tab-control "
       :class="{ 'active': activeTab === 5 }"
     >Executive</label>
 </div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 6"
       class="tab-control "
@@ -482,11 +487,11 @@ $type="F";
 
 </div>
 <script type="text/javascript">
-    // JavaScript function to show confirmation dialog for ministries
+    // JavaScript function to show confirmation dialog for company
     function confirmCompanyDelete() {
         var isConfirmed = confirm("Are you sure you want to delete?");
         if (isConfirmed) {
-            // If confirmed, submit the ministry delete form
+            // If confirmed, submit the company delete form
             document.getElementById('deleteCompanyForm').submit();
         }
     }

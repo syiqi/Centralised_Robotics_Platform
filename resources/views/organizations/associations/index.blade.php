@@ -11,15 +11,17 @@ div.dataTables_wrapper {
     }
 
 </style>
-
+            <!-- JQuery Datatable for Associations in MySQL Database to retrieve information-->
 <x-app-layout>
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
             {{ __('Manage Associations') }}
         </h2>
     </x-slot>
+
+            <!-- Filtering below uses jQuery search on datatable by using js-->
 <div class="flex flex-row">
-<div class="mx-1">
+<div class="mx-1"> 
 <p class="font-bold"> SEARCH FILTER</p>
 <p class="font-semibold"> Main Category </p>
         <label class="checkbox-container">

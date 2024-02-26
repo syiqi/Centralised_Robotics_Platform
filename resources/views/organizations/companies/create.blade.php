@@ -5,30 +5,10 @@
         </h2>
     </x-slot>
 <div>
+            <!-- Register Company Form -->
 
     <form method="POST" action="{{ route('companies.store') }}">
     @csrf
-
-         <!--<style>
-            input[type="text"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-            input[type="email"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-            input[type="tel"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-            input[type="url"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-            input[type="number"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-            input[type="date"] {
-                border-radius: 25px; /* you can adjust this value to make the input box more or less rounded */
-            }
-        </style>-->
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
@@ -220,8 +200,8 @@
                 <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3"
                        class="inline-block mr-2">VCD3
                 <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4" class="inline-block mr-2">VCD4
-        </div>
-        </div>
+                </div>
+            </div>
         </div>       
      </div>
 
@@ -248,11 +228,12 @@
                        class="inline-block mr-2">SPD3
                 <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4" class="inline-block mr-2">SPD4
 
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
+    </div>        
 </div>
-</div>        </div>
 
 
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
@@ -318,7 +299,6 @@
         </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <!-- there's probably a css file conflicting, cuz can't use tailwind class to style -syamir to taash -->
             <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>    
         </div>
         

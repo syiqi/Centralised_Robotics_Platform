@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OrganizationFormRequest;
-use App\Models\Organization;
-use App\Models\Company;
 use App\Models\Association;
+use App\Models\Company;
 use App\Models\Ministry;
+use App\Models\Organization;
 
 class OrganizationController extends Controller
 {
@@ -15,9 +15,7 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        return view('organizations.index', [
-            'organizations' => organization::all(),
-        ]);
+        //
     }
 
     /**
@@ -30,7 +28,7 @@ class OrganizationController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. used on registering new organization by modal popup
      */
     public function store(OrganizationFormRequest $request)
     {
@@ -38,30 +36,29 @@ class OrganizationController extends Controller
         $organization = Organization::create([
             'name' => $data['name'],
             'category' => $data['category'],
-            'phoneNo' => "",
-            'email' => "",
-            'website' => "",
+            'phoneNo' => '',
+            'email' => '',
+            'website' => '',
         ]);
-         
-        if($data['category']=="M") {
-        Ministry::create([
-            'id' => $organization['id']
-        ]);
-    }
-        elseif($data['category']=="C") {
-        Company::create([
-            'id' => $organization['id']
-        ]);
-    }
-        elseif($data['category']=="A") {
-        Association::create([
-            'id' => $organization['id'],
-            'registrationNo'=>"",
-            'natureOfActivity'=>"",
-            'mainCategory'=>"",
-            'subCategory'=>""
-        ]);
-    }
+
+        if ($data['category'] == 'M') {
+            Ministry::create([
+                'id' => $organization['id'],
+            ]);
+        } elseif ($data['category'] == 'C') {
+            Company::create([
+                'id' => $organization['id'],
+            ]);
+        } elseif ($data['category'] == 'A') {
+            Association::create([
+                'id' => $organization['id'],
+                'registrationNo' => '',
+                'natureOfActivity' => '',
+                'mainCategory' => '',
+                'subCategory' => '',
+            ]);
+        }
+
         return back()->withInput();
 
     }
@@ -72,9 +69,6 @@ class OrganizationController extends Controller
     public function show($organization)
     {
         //
-        return view('organizations.show', [
-            'organization' => Organization::findOrFail($organization),
-        ]);
 
     }
 
@@ -84,9 +78,7 @@ class OrganizationController extends Controller
     public function edit($organization)
     {
         //
-        return view('organizations.show', [
-            'organization' => Organization::findOrFail($organization),
-        ]);
+
     }
 
     /**
@@ -95,10 +87,6 @@ class OrganizationController extends Controller
     public function update(OrganizationFormRequest $request, Organization $organization)
     {
         //
-        $data = $request->validated();
-        $organization->update($data);
-
-        return redirect()->route('organizations.show', $organization['id']);
     }
 
     /**
@@ -107,8 +95,5 @@ class OrganizationController extends Controller
     public function destroy(Organization $organization)
     {
         //
-        $organization = Organization::where('id', $organization['id'])->firstOrFail()->delete();
-
-        return redirect()->route('organizations.index');
     }
 }

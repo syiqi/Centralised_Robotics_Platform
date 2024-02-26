@@ -6,7 +6,7 @@
         </a>
     </div>
 
-    <!-- Navigation Links -->
+    <!-- SideBar Navigation Menu Links -->
     <div class="text-sm font-medium">
         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="p-2">
             {{ __('Dashboard') }}

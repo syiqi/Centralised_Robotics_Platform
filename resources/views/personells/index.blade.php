@@ -18,6 +18,7 @@ div.dataTables_wrapper {
             {{ __('Manage Personnels') }}
         </h2>
     </x-slot>
+    <!--Business Card/Personnel Datatable-->
 <div class="flex flex-row">
 <div class="mx-1">
 <p class="font-bold"> SEARCH FILTER</p>

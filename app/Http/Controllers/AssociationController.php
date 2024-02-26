@@ -47,6 +47,7 @@ class AssociationController extends Controller
 
         ]);
 
+        //create association model that FK's linked to organization model above
         Association::create([
             'id' => $organization['id'],
             'registrationNo' => $data['registrationNo'],
@@ -54,6 +55,7 @@ class AssociationController extends Controller
             'mainCategory' => $data['mainCategory'],
             'subCategory' => $data['subCategory'],
         ]);
+        //If address field is not empty then it will create a workplace model that linked to the created organization model above
 
         if ($data['address'] != null | $data['address'] != '') {
 

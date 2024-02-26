@@ -6,6 +6,7 @@
     </x-slot>
 
 <div>
+            <!-- Association Create Form-->
 
     <form method="POST" action="{{ route('associations.store') }}">
     @csrf
@@ -182,7 +183,6 @@
         </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <!-- there's probably a css file conflicting, cuz can't use tailwind class to style -syamir to taash -->
             <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>    
         </div>
 
@@ -193,11 +193,3 @@
 </div>
 
 </x-app-layout>
-
-<!-- Note:-
-1) Error Messages if want
-2) For Taashwin, can css now.
-3) Hello.
-4. LESGOOOOOOOOO 
-5) Lets do it one more time
--->

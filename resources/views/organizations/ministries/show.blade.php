@@ -2,7 +2,7 @@
 <x-app-layout>
 
 <div>
-
+<!-- Ministry update form-->
     <form method="POST" action="{{ route('ministries.update',['ministry'=> $ministry['id']]) }}">
     @csrf
     @method('PUT')
@@ -59,21 +59,21 @@
         </div> 
 <div class="tab-wrapper" x-data="{ activeTab:  0 }">
   <div class="flex font-bold text-center text-white">
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 0"
       class="tab-control "
       :class="{ 'active': activeTab === 0 }"
     > Main (incl. Manufacturing & Services Activity)</label>
   </div>
-  <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+  <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 1"
       class="tab-control "
       :class="{ 'active': activeTab === 1 }"
     >Branch (Manufacturing Activity)</label>
   </div>
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 2"
       class="tab-control "
@@ -110,7 +110,7 @@ $type="F";
         </div> 
 <div class="tab-wrapper" x-data="{ activeTab:  3 }">
 <div class="flex font-bold text-center text-white">
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 3"
       class="tab-control "
@@ -118,7 +118,7 @@ $type="F";
     >Top Management</label>  
   </div>
 
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 4"
       class="tab-control "
@@ -126,7 +126,7 @@ $type="F";
     >Middle Management</label>  
   </div>
 
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
     <label
       @click="activeTab = 5"
       class="tab-control "
@@ -134,7 +134,7 @@ $type="F";
     >Executive</label>  
   </div>
 
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
     <label
       @click="activeTab = 6"

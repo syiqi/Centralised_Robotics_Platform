@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class PersonellController extends Controller
 {
+    //Datatable
     public function index(Request $request)
     {
         $personells = Personell::all();
@@ -21,7 +22,7 @@ class PersonellController extends Controller
      */
     public function create()
     {
-        //
+        //Register business card view
         return view('personells.create');
 
     }
@@ -31,7 +32,7 @@ class PersonellController extends Controller
      */
     public function store(PersonellFormRequest $request)
     {
-        //
+        // null value for MySQL and Stardardize them.
         $data = $request->validated();
         if ($data['organizationID'] == '') {
             $data['organizationID'] = null;

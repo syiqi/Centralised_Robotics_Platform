@@ -12,6 +12,7 @@ class Company extends Model
 
     protected $guarded = [];
 
+    //explain the relations of model, look at ERD Diagram for more info
     public function organization(): BelongsTo
     {
         return $this->belongsTo(Organization::class, 'id');

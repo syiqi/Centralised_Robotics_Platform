@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Association extends Model
 {
     use HasFactory;
+    //explain the relations of model, look at ERD Diagram for more info
 
-    //belongs to method??
     protected $guarded = [];
 
     public function organization(): BelongsTo

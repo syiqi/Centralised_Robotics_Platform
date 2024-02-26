@@ -21,11 +21,10 @@ class WorkplaceController extends Controller
     public function create()
     {
         //
-        return view('workplaces.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. used when adding a new address by popup modal
      */
     public function store(WorkplaceFormRequest $request)
     {

@@ -1,7 +1,7 @@
 <x-app-layout>
 
 <div>
-
+            <!-- Association Update Form-->
     <form method="POST" action="{{ route('associations.update',['association'=> $association['id']]) }}">
     @csrf
     @method('PUT')
@@ -49,7 +49,7 @@
             <label class = "mx-4" for="registrationNo"> Registration No (ROS) </label>
             <input class="mt-1 p-2 block w-1/6 border rounded-md" type="text" id="registrationNo" name="registrationNo" value="{{$association->registrationNo}}">
 
-       
+                   <!--Update Association Form-->
 <label class = "mx-4" for="mainCategory"> Main Category</label>
 <select class="mt-1 p-2 block w-1/6 border rounded-md" id="mainCategory" name="mainCategory">
 @if(empty($association['mainCategory']))
@@ -170,6 +170,8 @@ Current: {{$association['subCategory']}}
     // Bind the updateSub function to the change event of the Main select
     $('#mainCategory').on('change', updateSub);
 </script>
+
+            <!-- Address -->
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">Address Information</span>
@@ -177,7 +179,7 @@ Current: {{$association['subCategory']}}
         </div>  
 <div class="tab-wrapper" x-data="{ activeTab:  0 }">
 <div class="flex font-bold text-center text-white">
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
     <label
       @click="activeTab = 0"
@@ -196,6 +198,7 @@ $type="M";
     @include('layouts.workplace')
   </div>
 </div>
+            <!-- Data Table for Personell, based on position-->
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">List of Personnel</span>
@@ -203,7 +206,7 @@ $type="M";
         </div> 
 <div class="tab-wrapper" x-data="{ activeTab:  3 }">
 <div class="flex font-bold text-center text-white">
-  <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+  <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
     <label
       @click="activeTab = 3"
@@ -211,7 +214,7 @@ $type="M";
       :class="{ 'active': activeTab === 3 }"
     >Top Management</label>
 </div>
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
     <label
       @click="activeTab = 4"
@@ -219,14 +222,14 @@ $type="M";
       :class="{ 'active': activeTab === 4 }"
     >Middle Management</label>
 </div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
     <label
       @click="activeTab = 5"
       class="tab-control "
       :class="{ 'active': activeTab === 5 }"
     >Executive</label></div>
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-blue-500 via-grey-500 to-black-500 shadow-2xl rounded-3xl">
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
     <label
       @click="activeTab = 6"
@@ -272,11 +275,11 @@ $type="M";
 
 </div>
 <script type="text/javascript">
-    // JavaScript function to show confirmation dialog for ministries
+    // JavaScript function to show confirmation dialog for association
     function confirmAssociationDelete() {
         var isConfirmed = confirm("Are you sure you want to delete?");
         if (isConfirmed) {
-            // If confirmed, submit the ministry delete form
+            // If confirmed, submit the association delete form
             document.getElementById('deleteAssociationForm').submit();
         }
     }

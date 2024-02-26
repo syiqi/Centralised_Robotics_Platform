@@ -10,7 +10,8 @@ class Organization extends Model
 {
     use HasFactory;
 
-    // protected $fillable = ['providerName'];
+    //explain the relations of model, look at ERD Diagram for more info
+
     protected $guarded = [];
 
     public function association(): HasMany

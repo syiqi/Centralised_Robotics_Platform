@@ -6,7 +6,7 @@
             {{ __('Manage Ministries') }}
         </h2>
     </x-slot>
-
+<!-- Ministry Datatable-->
 <div class="container mt-5">
 <table id="ministryTable" class="display nowrap" style="width:100%" >
     <thead>
