@@ -57,21 +57,89 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
             <label> Main Sector</label><br>
 
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 grid grid-cols-2 gap-4">
 
-            <!-- Row 1 -->
-            <div class="flex mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" > Primary Agriculture</label>
-                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing(including agro-based)" > Manufacturing(including agro-based)</label>
-                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)" > Manufacturing-Related-Services (MRS)</label>
-                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction" > Services / Mining & Quarrying / Construction</label>
-            </div> 
+                
 
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-                <label  for="primaryMSIC2008"> MSIC2008 [5-digits Activity Code]</label>
-                <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="primary" type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ old('primaryMSIC2008')}}">
-                <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="secondary" type="number" id="secondaryMSIC2008" name="secondaryMSIC2008" value="{{ old('secondaryMSIC2008')}}">
-                <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="tertiary" type="number" id="tertiaryMSIC2008" name="tertiaryMSIC2008" value="{{ old('tertiaryMSIC2008')}}">
+                <div class="flex items-center">
+
+                    <label class="mr-2">
+
+                        <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing(including agro-based)">
+
+                        Manufacturing(including agro-based)
+
+                    </label>
+
+                </div>
+
+                <div class="flex items-center">
+
+                    <label class="mr-2">
+
+                        <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)">
+
+                        Manufacturing-Related-Services (MRS)
+
+                    </label>
+
+                </div>
+
+                <div class="flex items-center">
+
+                    <label>
+
+                        <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction">
+
+                        Services / Mining & Quarrying / Construction
+
+                    </label>
+
+                </div>
+
+                <div class="flex items-center">
+
+                    <label class="mr-2">
+
+                        <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture">
+
+                        Primary Agriculture
+
+                    </label>
+
+                </div>
+
             </div>
+
+
+
+
+
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex items-center">
+
+                <label for="primaryMSIC2008"> MSIC2008 [5-digits Code Item Level] </label>
+
+                <input class="my-8 placeholder-gray-500 border rounded-md" placeholder="Primary Activity" type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ old('primaryMSIC2008')}}">
+
+                <input class="my-4 placeholder-gray-500 border rounded-md ml-2" placeholder="Secondary Activity" type="number" id="secondaryMSIC2008" name="secondaryMSIC2008" value="{{ old('secondaryMSIC2008')}}">
+
+                <input class="my-4 placeholder-gray-500 border rounded-md ml-2" placeholder="Tertiary Activity" type="number" id="tertiaryMSIC2008" name="tertiaryMSIC2008" value="{{ old('tertiaryMSIC2008')}}">
+
+                <a href="https://msic.stats.gov.my/bi/" class="flex items-center justify-center w-8 h-8 bg-blue-500 rounded-full ml-2" target="_blank">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                        <path d="M12 19V12M12 8H12M12 6a2 2 0 100-4 2 2 0 000 4z"></path>
+
+                        <circle cx="12" cy="12" r="10"></circle>
+
+                    </svg>
+
+                </a>
+
+            </div>
+
+
 
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
                 <label for="natureOfActivity"> Nature of Business</label>
