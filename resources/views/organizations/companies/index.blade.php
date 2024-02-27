@@ -153,29 +153,28 @@ div.dataTables_wrapper {
 </div>
 </div>
 
-<div class="border-y-2"> 
-<div x-data="{ showCheckboxes: false }">
-                 <!-- Checkboxes for SPD Ecosystem -->
-        <button class="my-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #D3D3D3; color: #00000; font-weight: 550; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">SPD Ecosystem</button>
-               <div x-show="showCheckboxes"> 
-                <label class="checkbox-container">
-            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD1"> SPD1
-        </label>
-        <label class="checkbox-container">
-            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD2"> SPD2 
-        </label>
-        <label class="checkbox-container">
-            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD3"> SPD3
-        </label>
-        <label class="checkbox-container">
-            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD4"> SPD4
-        </label>
-</div>
-</div>
-</div>
-
-</div>
-</div>
+            <div class="border-y-2"> 
+                <div x-data="{ showCheckboxes: false }">
+                            <!-- Checkboxes for SPD Ecosystem -->
+                    <button class="my-2" @click="showCheckboxes = !showCheckboxes" style="background-color: #D3D3D3; color: #00000; font-weight: 550; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">SPD Ecosystem</button>
+                    <div x-show="showCheckboxes"> 
+                        <label class="checkbox-container">
+                        <input type="checkbox" class="spdEcosystemCheckbox" value="SPD1"> SPD1
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD2"> SPD2 
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD3"> SPD3
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="spdEcosystemCheckbox" value="SPD4"> SPD4
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
         <!-- Add more checkboxes for other ecosystems as needed -->
 

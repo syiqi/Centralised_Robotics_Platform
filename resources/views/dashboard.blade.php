@@ -24,6 +24,8 @@ $labuanA = 0; $labuanC = 0; $labuanM = 0;
 $putrajayaA = 0; $putrajayaC = 0; $putrajayaM = 0;
 $staCount = 0; $spdCount = 0; $vcdCount = 0;
 @endphp
+<!-- variable to retrieve value for graph -->
+
 
 <body class="min-h-screen bg-gradient-to-b from-blue-900 to-red-700">
 
@@ -169,6 +171,8 @@ $staCount = 0; $spdCount = 0; $vcdCount = 0;
     </a>
 </div>
 @endif
+
+<!-- variable to retrieve value for graph -->
 @php
 foreach(Workplace::all() as $workplace){
 if($workplace->state=="Johor"){
@@ -307,11 +311,13 @@ foreach(Company::all() as $company){
 
 
 @endphp
+<!-- variable to retrieve value for graph -->
+
 <div class="m-8 group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105 ">
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 </div>
 <div class="m-8 group bg-white hover: bg-blue-900 overflow-hidden shadow-xl sm:rounded-lg p-6 text-gray-900 light:text-gray-100 cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105 ">
-<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+    <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
 </div>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 

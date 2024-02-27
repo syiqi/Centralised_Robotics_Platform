@@ -1,9 +1,9 @@
 <x-app-layout>
 <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
-            {{ __(' Register Company') }}
-        </h2>
-    </x-slot>
+    <h2 class="font-semibold text-xl text-gray-800 light:text-gray-200 leading-tight">
+        {{ __(' Register Company') }}
+    </h2>
+</x-slot>
 <div>
             <!-- Register Company Form -->
 
@@ -16,25 +16,25 @@
             </p>
         </div>   
 
-     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">    
-            <label for="name"> Company Name</label>
-            <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="name" name="name" value="{{ old('name')}}" class="w-full">
-    </div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">    
+                <label for="name"> Company Name</label>
+                <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="name" name="name" value="{{ old('name')}}" class="w-full">
+        </div>
     
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
-    <div class="flex-1 mr-4">
-        <label  for="phoneNo"> Phone No </label>
-        <input class="mt-1 p-2 block w-full  border rounded-md" type="tel" id="phoneNo" name="phoneNo" value="{{ old('phoneNo')}}">
+        <div class="flex-1 mr-4">
+            <label  for="phoneNo"> Phone No </label>
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="tel" id="phoneNo" name="phoneNo" value="{{ old('phoneNo')}}">
+        </div>
+        <div class="flex-1 mr-4">
+            <label  for="email"> Email </label>
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="email" id="email" name="email" value="{{ old('email')}}">
+        </div>
+        <div class="flex-1">
+            <label  for="website"> Website </label>
+            <input class="mt-1 p-2 block w-full  border rounded-md" type="url" id="website" name="website" value="{{ old('website')}}">
+        </div>
     </div>
-    <div class="flex-1 mr-4">
-        <label  for="email"> Email </label>
-        <input class="mt-1 p-2 block w-full  border rounded-md" type="email" id="email" name="email" value="{{ old('email')}}">
-    </div>
-    <div class="flex-1">
-        <label  for="website"> Website </label>
-        <input class="mt-1 p-2 block w-full  border rounded-md" type="url" id="website" name="website" value="{{ old('website')}}">
-    </div>
-</div>
 
 
 
@@ -55,29 +55,28 @@
         </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-        <label> Main Sector</label><br>
+            <label> Main Sector</label><br>
 
 
             <!-- Row 1 -->
             <div class="flex mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" > Primary Agriculture</label>
+                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Primary Agriculture" > Primary Agriculture</label>
                 <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing(including agro-based)" > Manufacturing(including agro-based)</label>
-                <label>  <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)" > Manufacturing-Related-Services (MRS)</label>
-            <label>    <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction" > Services / Mining & Quarrying / Construction</label>
-
+                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Manufacturing-Related-Services(MRS)" > Manufacturing-Related-Services (MRS)</label>
+                <label> <input type="radio" id="companyMainSector" name="companyMainSector" value="Services/Mining & Quarrying/Construction" > Services / Mining & Quarrying / Construction</label>
             </div> 
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  for="primaryMSIC2008"> MSIC2008 [5-digits Activity Code]</label>
-            <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="primary" type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ old('primaryMSIC2008')}}">
-            <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="secondary" type="number" id="secondaryMSIC2008" name="secondaryMSIC2008" value="{{ old('secondaryMSIC2008')}}">
-            <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="tertiary" type="number" id="tertiaryMSIC2008" name="tertiaryMSIC2008" value="{{ old('tertiaryMSIC2008')}}">
-        </div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+                <label  for="primaryMSIC2008"> MSIC2008 [5-digits Activity Code]</label>
+                <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="primary" type="number" id="primaryMSIC2008" name="primaryMSIC2008" value="{{ old('primaryMSIC2008')}}">
+                <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="secondary" type="number" id="secondaryMSIC2008" name="secondaryMSIC2008" value="{{ old('secondaryMSIC2008')}}">
+                <input class="my-4 placeholder-gray-500 border rounded-md" placeholder="tertiary" type="number" id="tertiaryMSIC2008" name="tertiaryMSIC2008" value="{{ old('tertiaryMSIC2008')}}">
+            </div>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label for="natureOfActivity"> Nature of Business</label>
-            <input class = "mt-1 p-2 block w-full border rounded-md" type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}" class="w-full">
-        </div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+                <label for="natureOfActivity"> Nature of Business</label>
+                <input class = "mt-1 p-2 block w-full border rounded-md" type="text" id="natureOfActivity" name="natureOfActivity" value="{{ old('natureOfActivity')}}" class="w-full">
+            </div>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
         <div class="flex-1 mr-4">
@@ -115,67 +114,67 @@
                     class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
 
             <!-- Row 1 -->
-            <div class="flex mb-2">
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation"
-                       class="inline-block mr-2">Robotics & Automation
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I."
-                       class="inline-block mr-2">S.I.
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Developers"
-                       class="inline-block mr-2">Developers
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="IT" class="inline-block mr-2">IT
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Infrastructure"
-                       class="inline-block mr-2">Infrastructure
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="ERP"
-                       class="inline-block mr-2">ERP
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MOM" 
-                       class="inline-block mr-2">MOM
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MES" 
-                       class="inline-block mr-2">MES
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="CRM" 
-                       class="inline-block mr-2">CRM
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="SRM" 
-                       class="inline-block mr-2">SRM
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Sales" 
-                       class="inline-block mr-2">Sales
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AGV" 
-                       class="inline-block mr-2">AGV
-            </div>
+                <div class="flex mb-2">
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Robotics&Automation"
+                        class="inline-block mr-2">Robotics & Automation
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="S.I."
+                        class="inline-block mr-2">S.I.
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Developers"
+                        class="inline-block mr-2">Developers
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="IT" class="inline-block mr-2">IT
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Infrastructure"
+                        class="inline-block mr-2">Infrastructure
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="ERP"
+                        class="inline-block mr-2">ERP
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MOM" 
+                        class="inline-block mr-2">MOM
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="MES" 
+                        class="inline-block mr-2">MES
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="CRM" 
+                        class="inline-block mr-2">CRM
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="SRM" 
+                        class="inline-block mr-2">SRM
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Sales" 
+                        class="inline-block mr-2">Sales
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AGV" 
+                        class="inline-block mr-2">AGV
+                </div>
 
             <!-- Row 2 -->
-            <div class="flex mb-2">
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AMR" 
-                    class="inline-block mr-2">AMR            
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Social" 
-                    class="inline-block mr-2">Social
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Edutainment" 
-                    class="inline-block mr-2">Edutainment
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Service Robot" 
-                    class="inline-block mr-2">Service Robot
+                <div class="flex mb-2">
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AMR" 
+                        class="inline-block mr-2">AMR            
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Social" 
+                        class="inline-block mr-2">Social
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Edutainment" 
+                        class="inline-block mr-2">Edutainment
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Service Robot" 
+                        class="inline-block mr-2">Service Robot
 
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="OEM-Arm,COBOT,Sensor,Actuator" 
-                    class="inline-block mr-2">OEM - Arm, COBOT, Sensor, Actuator 
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Talent" 
-                    class="inline-block mr-2">Talent
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Skills Dev" 
-                    class="inline-block mr-2">Skills Dev
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AS/RS" 
-                    class="inline-block mr-2">AS/RS
-            </div>
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="OEM-Arm,COBOT,Sensor,Actuator" 
+                        class="inline-block mr-2">OEM - Arm, COBOT, Sensor, Actuator 
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Talent" 
+                        class="inline-block mr-2">Talent
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Skills Dev" 
+                        class="inline-block mr-2">Skills Dev
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AS/RS" 
+                        class="inline-block mr-2">AS/RS
+                </div>
 
             <!-- Row 3 -->
-            <div class="flex mb-2">
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="3DP" 
-                    class="inline-block mr-2">3DP
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AddMfg" 
-                    class="inline-block mr-2">AddMfg
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="UAV" 
-                    class="inline-block mr-2">UAV
-                <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Drone" 
-                    class="inline-block mr-2">Drone  
+                <div class="flex mb-2">
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="3DP" 
+                        class="inline-block mr-2">3DP
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="AddMfg" 
+                        class="inline-block mr-2">AddMfg
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="UAV" 
+                        class="inline-block mr-2">UAV
+                    <input type="checkbox" id="staEcosystem" name="staEcosystem[]" value="Drone" 
+                        class="inline-block mr-2">Drone  
+                </div>
+
+
             </div>
-
-
-        </div>
         </div>        
     </div>
         <div class="ml-8 mt-8">
@@ -192,14 +191,14 @@
                     class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
 
             <!-- Row 1 -->
-            <div class="flex mb-2">
-                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1"
-                       class="inline-block mr-2">VCD1
-                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2"
-                       class="inline-block mr-2">VCD2
-                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3"
-                       class="inline-block mr-2">VCD3
-                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4" class="inline-block mr-2">VCD4
+                <div class="flex mb-2">
+                    <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1"
+                        class="inline-block mr-2">VCD1
+                    <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2"
+                        class="inline-block mr-2">VCD2
+                    <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3"
+                        class="inline-block mr-2">VCD3
+                    <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4" class="inline-block mr-2">VCD4
                 </div>
             </div>
         </div>       
@@ -219,14 +218,14 @@
                     class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
 
             <!-- Row 1 -->
-            <div class="flex mb-2">
-                <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1"
-                       class="inline-block mr-2">SPD1
-                <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2"
-                       class="inline-block mr-2">SPD2
-                <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3"
-                       class="inline-block mr-2">SPD3
-                <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4" class="inline-block mr-2">SPD4
+                    <div class="flex mb-2">
+                        <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1"
+                            class="inline-block mr-2">SPD1
+                        <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2"
+                            class="inline-block mr-2">SPD2
+                        <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3"
+                            class="inline-block mr-2">SPD3
+                        <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4" class="inline-block mr-2">SPD4
 
                     </div>
                 </div>
@@ -236,10 +235,10 @@
 </div>
 
 
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-    <label for="productAndService"> Product And Service</label>
-    <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="productAndService" name="productAndService" value="{{ old('productAndService')}}" class="w-full">
-</div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <label for="productAndService"> Product And Service</label>
+            <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="productAndService" name="productAndService" value="{{ old('productAndService')}}" class="w-full">
+        </div>
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
@@ -256,44 +255,44 @@
             </div>
 
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
-    <div class="flex-1 mr-4">
-        <label  for="postCode"> Post Code </label>
-        <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">
-    </div>
-    <div class="flex-1 mr-4">
-        <label  for="city"> City </label>
-        <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="city" name="city" value="{{ old('city')}}">
-    </div>
-    <div class="flex-1 mr-4">
-        <label  for="state"> State </label>
-        <select class="mt-1 p-2 block w-full  border rounded-md" id="state" name="state">
-            <option value="Johor">Johor</option>
-            <option value="Kedah">Kedah</option>
-            <option value="Kelantan">Kelantan</option>
-            <option value="Malacca">Malacca</option>
-            <option value="Negeri Sembilan">Negeri Sembilan</option>
-            <option value="Pahang">Pahang</option>
-            <option value="Penang">Penang</option>
-            <option value="Perak">Perak</option>
-            <option value="Perlis">Perlis</option>
-            <option value="Sabah">Sabah</option>
-            <option value="Sarawak">Sarawak</option>
-            <option value="Selangor">Selangor</option>
-            <option value="Kuala Lumpur">Kuala Lumpur</option>
-            <option value="Labuan">Labuan</option>
-            <option value="Putrajaya">Putrajaya</option>
-        </select>
-    </div>
-    <div class="flex-1">
-        <label  for="country"> Country </label>
-        <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="country" name="country" value="Malaysia" readonly>
-    </div>
-</div>
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  class = "mx-8" for="workplaceCategory"> Workplace Category</label>
-            <select class="mx-8 mt-1 p-2 block w-1/3  border rounded-md" id="workplaceCategory" name="workplaceCategory">
-                <option value="M"> Main (incl. Manufacturing & Services Activity)</option>
-            </select>
+                <div class="flex-1 mr-4">
+                    <label  for="postCode"> Post Code </label>
+                    <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="postCode" name="postCode" value="{{ old('postCode')}}">
+                </div>
+                <div class="flex-1 mr-4">
+                    <label  for="city"> City </label>
+                    <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="city" name="city" value="{{ old('city')}}">
+                </div>
+                <div class="flex-1 mr-4">
+                    <label  for="state"> State </label>
+                    <select class="mt-1 p-2 block w-full  border rounded-md" id="state" name="state">
+                        <option value="Johor">Johor</option>
+                        <option value="Kedah">Kedah</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Malacca">Malacca</option>
+                        <option value="Negeri Sembilan">Negeri Sembilan</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Perlis">Perlis</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Sarawak">Sarawak</option>
+                        <option value="Selangor">Selangor</option>
+                        <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Labuan">Labuan</option>
+                        <option value="Putrajaya">Putrajaya</option>
+                    </select>
+                </div>
+                <div class="flex-1">
+                    <label  for="country"> Country </label>
+                    <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="country" name="country" value="Malaysia" readonly>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+                <label  class = "mx-8" for="workplaceCategory"> Workplace Category</label>
+                <select class="mx-8 mt-1 p-2 block w-1/3  border rounded-md" id="workplaceCategory" name="workplaceCategory">
+                    <option value="M"> Main (incl. Manufacturing & Services Activity)</option>
+                </select>
             </div>
     
         </div>

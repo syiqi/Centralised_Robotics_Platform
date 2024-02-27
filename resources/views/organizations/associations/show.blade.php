@@ -6,16 +6,16 @@
     @csrf
     @method('PUT')
 
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
-    <p class="text-2xl font-bold text-center text-white">
-    <span class="inline-block align-middle">General Information</span>
-    </p>
-</div>    
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
+            <p class="text-2xl font-bold text-center text-white">
+            <span class="inline-block align-middle">General Information</span>
+            </p>
+        </div>    
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
             <label  for="name"> Association Name </label>
             <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="name" name="name" value="{{$association->organization->name}}" required>
         </div> 
-       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 flex justify-between">
 
         <div class="flex-1 mr-4">
             <label  for="phoneNo"> Phone Number </label>
@@ -45,90 +45,92 @@
         </div>  
         
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 my-8">
-        <div class="flex flex-row">
-            <label class = "mx-4" for="registrationNo"> Registration No (ROS) </label>
-            <input class="mt-1 p-2 block w-1/6 border rounded-md" type="text" id="registrationNo" name="registrationNo" value="{{$association->registrationNo}}">
+                <div class="flex flex-row">
+                    <label class = "mx-4" for="registrationNo"> Registration No (ROS) </label>
+                    <input class="mt-1 p-2 block w-1/6 border rounded-md" type="text" id="registrationNo" name="registrationNo" value="{{$association->registrationNo}}">
 
-                   <!--Update Association Form-->
-<label class = "mx-4" for="mainCategory"> Main Category</label>
-<select class="mt-1 p-2 block w-1/6 border rounded-md" id="mainCategory" name="mainCategory">
-@if(empty($association['mainCategory']))
-    <option value="" selected>Unknown</option>
-@else
-    <option value="">Unknown</option>
-@endif
-@if($association['mainCategory']=="Political")
-    <option value="Political" selected>Political</option>
-@else
-    <option value="Political">Political</option>
-@endif
-@if($association['mainCategory']=="Shared Benefits")
-    <option value="Shared Benefits" selected>Shared Benefits</option>
-    @else
-    @endif
-@if($association['mainCategory']=="Human Rights")
-    <option value="Human Rights" selected>Human Rights</option>
-    @else
-    <option value="Human Rights">Human Rights</option>
-    @endif
-@if($association['mainCategory']=="Religious")
-    <option value="Religious" selected>Religious</option>
-    @else
-    <option value="Religious" >Religious</option>
-    @endif
-@if($association['mainCategory']=="Professionalism")
-    <option value="Professionalism" selected>Professionalism</option>
-    @else
-    <option value="Professionalism" >Professionalism</option>
-    @endif
-@if($association['mainCategory']=="Welfare")
-    <option value="Welfare" selected>Welfare</option>
-    @else
-    <option value="Welfare">Welfare</option>
-    @endif
-@if($association['mainCategory']=="Art & Cultural")
-    <option value="Art & Cultural" selected>Art & Cultural</option>
-    @else
-    <option value="Art & Cultural">Art & Cultural</option>
-    @endif
-@if($association['mainCategory']=="Security")
-    <option value="Security" selected>Security</option>
-    @else
-    <option value="Security">Security</option>
-    @endif
-@if($association['mainCategory']=="Trade")
-    <option value="Trade" selected>Trade</option>
-    @else
-    <option value="Trade" >Trade</option>
-    @endif
-@if($association['mainCategory']=="Recreation")
-    <option value="Recreation" selected>Recreation</option>
-    @else
-    <option value="Recreation">Recreation</option>
-    @endif
-@if($association['mainCategory']=="Social")
-    <option value="Social" selected>Social</option>
-    @else
-    <option value="Social">Social</option>
-    @endif
-    <!-- Add other options as needed -->
-</select>
+                        <!--Update Association Form-->
+                    <label class = "mx-4" for="mainCategory"> Main Category</label>
+                        <select class="mt-1 p-2 block w-1/6 border rounded-md" id="mainCategory" name="mainCategory">
+                        @if(empty($association['mainCategory']))
+                            <option value="" selected>Unknown</option>
+                        @else
+                            <option value="">Unknown</option>
+                        @endif
+                        @if($association['mainCategory']=="Political")
+                            <option value="Political" selected>Political</option>
+                        @else
+                            <option value="Political">Political</option>
+                        @endif
+                        @if($association['mainCategory']=="Shared Benefits")
+                            <option value="Shared Benefits" selected>Shared Benefits</option>
+                            @else
+                            @endif
+                        @if($association['mainCategory']=="Human Rights")
+                            <option value="Human Rights" selected>Human Rights</option>
+                            @else
+                            <option value="Human Rights">Human Rights</option>
+                            @endif
+                        @if($association['mainCategory']=="Religious")
+                            <option value="Religious" selected>Religious</option>
+                            @else
+                            <option value="Religious" >Religious</option>
+                            @endif
+                        @if($association['mainCategory']=="Professionalism")
+                            <option value="Professionalism" selected>Professionalism</option>
+                            @else
+                            <option value="Professionalism" >Professionalism</option>
+                            @endif
+                        @if($association['mainCategory']=="Welfare")
+                            <option value="Welfare" selected>Welfare</option>
+                            @else
+                            <option value="Welfare">Welfare</option>
+                            @endif
+                        @if($association['mainCategory']=="Art & Cultural")
+                            <option value="Art & Cultural" selected>Art & Cultural</option>
+                            @else
+                            <option value="Art & Cultural">Art & Cultural</option>
+                            @endif
+                        @if($association['mainCategory']=="Security")
+                            <option value="Security" selected>Security</option>
+                            @else
+                            <option value="Security">Security</option>
+                            @endif
+                        @if($association['mainCategory']=="Trade")
+                            <option value="Trade" selected>Trade</option>
+                            @else
+                            <option value="Trade" >Trade</option>
+                            @endif
+                        @if($association['mainCategory']=="Recreation")
+                            <option value="Recreation" selected>Recreation</option>
+                            @else
+                            <option value="Recreation">Recreation</option>
+                            @endif
+                        @if($association['mainCategory']=="Social")
+                            <option value="Social" selected>Social</option>
+                            @else
+                            <option value="Social">Social</option>
+                            @endif
+                            <!-- Add other options as needed -->
+                        </select>
 
-<!-- Your Sub select -->
-<br><label  for="subCategory"> Sub Category</label>
-<select class="mt-1 p-2 block w-1/6 border rounded-md" id="subCategory" name="subCategory">
-    <!-- This select will be populated dynamically based on the selected country -->
-</select>
-Current: {{$association['subCategory']}}
-</div></div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <label  for="natureOfActivity"> Nature of Activity</label>
-            <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="natureOfActivity" name="natureOfActivity" value="{{$association->natureOfActivity}}">
+                    <!-- Your Sub select -->
+                    <br>
+                    <label  for="subCategory"> Sub Category</label>
+                    <select class="mt-1 p-2 block w-1/6 border rounded-md" id="subCategory" name="subCategory">
+                        <!-- This select will be populated dynamically based on the selected country -->
+                    </select>
+                    Current: {{$association['subCategory']}}
+            </div>
         </div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
-            <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Update</button>    
-        </div>
-</form>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+                <label  for="natureOfActivity"> Nature of Activity</label>
+                <input class = "mt-1 p-2 block w-full  border rounded-md" type="text" id="natureOfActivity" name="natureOfActivity" value="{{$association->natureOfActivity}}">
+            </div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+                <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Update</button>    
+            </div>
+    </form>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
@@ -176,101 +178,103 @@ Current: {{$association['subCategory']}}
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">Address Information</span>
             </p>
-        </div>  
-<div class="tab-wrapper" x-data="{ activeTab:  0 }">
-<div class="flex font-bold text-center text-white">
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
-
-    <label
-      @click="activeTab = 0"
-      class="tab-control "
-      :class="{ 'active': activeTab === 0 }"
-    >Main (incl. Manufacturing & Services Activity)</label>
 </div>
-  </div>
-@php
-$organization=$association;
-@endphp
-  <div class="tab-panel" :class="{ 'active': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0">
-  @php
-$type="M";
-@endphp
+
+<div class="tab-wrapper" x-data="{ activeTab:  0 }">
+    <div class="flex font-bold text-center text-white">
+        <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+
+            <label
+            @click="activeTab = 0"
+            class="tab-control "
+            :class="{ 'active': activeTab === 0 }"
+            >Main (incl. Manufacturing & Services Activity)</label>
+        </div>
+    </div>
+    @php
+    $organization=$association;
+    @endphp
+    <div class="tab-panel" :class="{ 'active': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0">
+    @php
+    $type="M";
+    @endphp
     @include('layouts.workplace')
-  </div>
+    </div>
 </div>
             <!-- Data Table for Personell, based on position-->
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">List of Personnel</span>
             </p>
-        </div> 
-<div class="tab-wrapper" x-data="{ activeTab:  3 }">
-<div class="flex font-bold text-center text-white">
-  <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+</div> 
+    <div class="tab-wrapper" x-data="{ activeTab:  3 }">
+        <div class="flex font-bold text-center text-white">
+            <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
-    <label
-      @click="activeTab = 3"
-      class="tab-control "
-      :class="{ 'active': activeTab === 3 }"
-    >Top Management</label>
-</div>
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+                <label
+                @click="activeTab = 3"
+                class="tab-control "
+                :class="{ 'active': activeTab === 3 }"
+                >Top Management</label>
+            </div>
+            <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
-    <label
-      @click="activeTab = 4"
-      class="tab-control "
-      :class="{ 'active': activeTab === 4 }"
-    >Middle Management</label>
-</div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+                <label
+                @click="activeTab = 4"
+                class="tab-control "
+                :class="{ 'active': activeTab === 4 }"
+                >Middle Management</label>
+            </div>
+            <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
-    <label
-      @click="activeTab = 5"
-      class="tab-control "
-      :class="{ 'active': activeTab === 5 }"
-    >Executive</label></div>
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+                <label
+                @click="activeTab = 5"
+                class="tab-control "
+                :class="{ 'active': activeTab === 5 }"
+                >Executive</label>
+            </div>
+            <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
 
-    <label
-      @click="activeTab = 6"
-      class="tab-control "
-      :class="{ 'active': activeTab === 6 }"
-    >Support (Administrative/Clerical)</label>
-  </div>
-</div>
+                <label
+                @click="activeTab = 6"
+                class="tab-control "
+                :class="{ 'active': activeTab === 6 }"
+                >Support (Administrative/Clerical)</label>
+            </div>
+        </div>
 
-  <div class="tab-panel" :class="{ 'active': activeTab === 3 }" x-show.transition.in.opacity.duration.600="activeTab === 3">
-    @php
-    $level="C";
-    @endphp
-    @include('layouts.level')
-  </div>
-  <div class="tab-panel" :class="{ 'active': activeTab === 4 }" x-show.transition.in.opacity.duration.600="activeTab === 4">
-    @php
-    $level="M";
-    @endphp
-    @include('layouts.level')
-  </div>
-  <div class="tab-panel" :class="{ 'active': activeTab === 5 }" x-show.transition.in.opacity.duration.600="activeTab === 5">
-    @php
-    $level="E";
-    @endphp
-    @include('layouts.level')
-  </div>
-  <div class="tab-panel" :class="{ 'active': activeTab === 6 }" x-show.transition.in.opacity.duration.600="activeTab === 6">
-    @php
-    $level="Staff";
-    @endphp
-    @include('layouts.level')
+        <div class="tab-panel" :class="{ 'active': activeTab === 3 }" x-show.transition.in.opacity.duration.600="activeTab === 3">
+            @php
+            $level="C";
+            @endphp
+            @include('layouts.level')
+        </div>
+        <div class="tab-panel" :class="{ 'active': activeTab === 4 }" x-show.transition.in.opacity.duration.600="activeTab === 4">
+            @php
+            $level="M";
+            @endphp
+            @include('layouts.level')
+        </div>
+        <div class="tab-panel" :class="{ 'active': activeTab === 5 }" x-show.transition.in.opacity.duration.600="activeTab === 5">
+            @php
+            $level="E";
+            @endphp
+            @include('layouts.level')
+        </div>
+        <div class="tab-panel" :class="{ 'active': activeTab === 6 }" x-show.transition.in.opacity.duration.600="activeTab === 6">
+            @php
+            $level="Staff";
+            @endphp
+            @include('layouts.level')
+        </div>
     </div>
-</div>
 
-<form id="deleteAssociationForm" action="{{ route('associations.destroy',['association'=> $association['id']]) }}" method="POST" >
-        @csrf
-        @method('DELETE')
+    <form id="deleteAssociationForm" action="{{ route('associations.destroy',['association'=> $association['id']]) }}" method="POST" >
+            @csrf
+            @method('DELETE')
 
-        <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-        <button  type="button" onclick="confirmAssociationDelete()" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">DELETE ASSOCITAION RECORDS</button>
+            <!-- Add a JavaScript onclick event to show the confirmation dialog -->
+            <button  type="button" onclick="confirmAssociationDelete()" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">DELETE ASSOCITAION RECORDS</button>
     </form>
 
 </div>

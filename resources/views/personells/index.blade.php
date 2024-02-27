@@ -20,58 +20,57 @@ div.dataTables_wrapper {
     </x-slot>
     <!--Business Card/Personnel Datatable-->
 <div class="flex flex-row">
-<div class="mx-1">
-<p class="font-bold"> SEARCH FILTER</p>
-<p class="font-semibold"> Position Level </p>
-<div class="border-b-2">
-        <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="C"> Top Management
-        </label>
-        <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="M"> Middle Management
-        </label>
-        <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="E"> Executive
-        </label>
-        <label class="checkbox-container">
-            <input type="checkbox" class="positionCheckbox" value="Staff"> Support
-        </label>
-</div>
-</div>
-<table id="personellTable" class="display nowrap" style="width:100%">
-    <thead>
-        <tr>
-            <th>Entry</th>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Job Title</th>
-            <th>Department / Division</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Gender</th>
-            <th>Employed At</th>
-            <th></th>
-
-        </tr>
-        <tbody>
-            @foreach($personells as $personell)
+    <div class="mx-1">
+    <p class="font-bold"> SEARCH FILTER</p>
+    <p class="font-semibold"> Position Level </p>
+        <div class="border-b-2">
+                <label class="checkbox-container">
+                    <input type="checkbox" class="positionCheckbox" value="C"> Top Management
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" class="positionCheckbox" value="M"> Middle Management
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" class="positionCheckbox" value="E"> Executive
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" class="positionCheckbox" value="Staff"> Support
+                </label>
+        </div>
+    </div>
+    <table id="personellTable" class="display nowrap" style="width:100%">
+        <thead>
             <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$personell->personName ?? 'Unavailable' }}</td>
-                <td>{{$personell->personPosition ?? 'Unemployed' }}</td>
-                <td>{{$personell->personJobTitle ?? 'Unknown' }}</td>
-                <td>{{$personell->personDeptDiv ?? 'Unknown' }}</td>
-                <td>{{$personell->personEmail ?? 'Unknown' }}</td>
-                <td>{{$personell->personNumber ?? 'Unknown' }}</td>
-                <td>{{$personell->personGender ?? 'Unknown' }}</td>
-                <td>{{$personell->organization->name ?? 'Unemployed' }}</td>
-                <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">UPDATE/DELETE</a></td>
-            </tr>
-            @endforeach
-        </tbody>
-    </thead>
+                <th>Entry</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Job Title</th>
+                <th>Department / Division</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Gender</th>
+                <th>Employed At</th>
+                <th></th>
 
-</table>
+            </tr>
+            <tbody>
+                @foreach($personells as $personell)
+                <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$personell->personName ?? 'Unavailable' }}</td>
+                    <td>{{$personell->personPosition ?? 'Unemployed' }}</td>
+                    <td>{{$personell->personJobTitle ?? 'Unknown' }}</td>
+                    <td>{{$personell->personDeptDiv ?? 'Unknown' }}</td>
+                    <td>{{$personell->personEmail ?? 'Unknown' }}</td>
+                    <td>{{$personell->personNumber ?? 'Unknown' }}</td>
+                    <td>{{$personell->personGender ?? 'Unknown' }}</td>
+                    <td>{{$personell->organization->name ?? 'Unemployed' }}</td>
+                    <td><a href="{{ route('personells.show', ['personell' => $personell['id']])}}" style="background-color: #008000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">UPDATE/DELETE</a></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </thead>
+    </table>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 

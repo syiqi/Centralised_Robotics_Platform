@@ -258,47 +258,48 @@
 
 
         </div>
+    </div>
+</div>
+
+        <div class="mt-8">
+                <div x-data="{show: true}">
+                    <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
+                        <span class="inline-block">Select VCD Ecosystem</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="stroke-current inline-block w-4 h-4 transform transition duration-150"
+                            x-bind:class="{ 'rotate-180': show }">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </a>
+                    <div x-show.transition="show"
+                        class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
+                                                    <!-- Condition to automatically checked checkbox that is tagged with the model -->
+
+                <div class="flex mb-2">
+                @if(str_contains($company->vcdEcosystem,"VCD1"))
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1" checked>VCD1  
+                @else
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1">VCD1
+                @endif
+                @if(str_contains($company->vcdEcosystem,"VCD2"))
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2" checked>VCD2  
+                @else
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2">VCD2
+                @endif
+                @if(str_contains($company->vcdEcosystem,"VCD3"))
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3" checked>VCD3  
+                @else
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3">VCD3
+                @endif
+                @if(str_contains($company->vcdEcosystem,"VCD4"))
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4" checked>VCD4  
+                @else
+                <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4">VCD4
+                @endif
+            </div>
         </div>
     </div>
-
-    <div class="mt-8">
-            <div x-data="{show: true}">
-                <a href="#" x-on:click.prevent="show = !show" class="relative z-10 border border-gray-600 rounded px-4 py-2 bg-white">
-                    <span class="inline-block">Select VCD Ecosystem</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        class="stroke-current inline-block w-4 h-4 transform transition duration-150"
-                        x-bind:class="{ 'rotate-180': show }">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </a>
-                <div x-show.transition="show"
-                    class="relative z-20 mt-1 flex flex-col w-full px-4 py-8 whitespace-nowrap border border-gray-600 rounded bg-white">
-                                                 <!-- Condition to automatically checked checkbox that is tagged with the model -->
-
-            <div class="flex mb-2">
-            @if(str_contains($company->vcdEcosystem,"VCD1"))
-            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1" checked>VCD1  
-            @else
-            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD1">VCD1
-            @endif
-            @if(str_contains($company->vcdEcosystem,"VCD2"))
-            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2" checked>VCD2  
-            @else
-            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD2">VCD2
-            @endif
-            @if(str_contains($company->vcdEcosystem,"VCD3"))
-            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3" checked>VCD3  
-            @else
-            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD3">VCD3
-            @endif
-            @if(str_contains($company->vcdEcosystem,"VCD4"))
-            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4" checked>VCD4  
-            @else
-            <input type="checkbox" id="vcdEcosystem" name="vcdEcosystem[]" value="VCD4">VCD4
-            @endif
-        </div>
-        </div>
-        </div></div>
+</div>
 
         <div class="mt-8">
             <div x-data="{show: true}">
@@ -315,32 +316,31 @@
 
                                        <!-- Condition to automatically checked checkbox that is tagged with the model -->
 
-            <div class="flex mb-2">
-            @if(str_contains($company->spdEcosystem,"SPD1"))
-            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1" checked>SPD1  
-            @else
-            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1">SPD1
-            @endif
-            @if(str_contains($company->spdEcosystem,"SPD2"))
-            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2" checked>SPD2  
-            @else
-            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2">SPD2
-            @endif
-            @if(str_contains($company->spdEcosystem,"SPD3"))
-            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3" checked>SPD3  
-            @else
-            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3">SPD3
-            @endif
-            @if(str_contains($company->spdEcosystem,"SPD4"))
-            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4" checked>SPD4  
-            @else
-            <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4">SPD4
-            @endif
-
+                <div class="flex mb-2">
+                    @if(str_contains($company->spdEcosystem,"SPD1"))
+                    <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1" checked>SPD1  
+                    @else
+                    <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD1">SPD1
+                    @endif
+                    @if(str_contains($company->spdEcosystem,"SPD2"))
+                    <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2" checked>SPD2  
+                    @else
+                    <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD2">SPD2
+                    @endif
+                    @if(str_contains($company->spdEcosystem,"SPD3"))
+                    <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3" checked>SPD3  
+                    @else
+                    <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD3">SPD3
+                    @endif
+                    @if(str_contains($company->spdEcosystem,"SPD4"))
+                    <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4" checked>SPD4  
+                    @else
+                    <input type="checkbox" id="spdEcosystem" name="spdEcosystem[]" value="SPD4">SPD4
+                    @endif
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
-        </div>
+    </div>
 </div>
 
 
@@ -354,14 +354,15 @@
             <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Update</button>    
         </div>
 
-    </form>
+</form>
 
              
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8 h-9 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-2xl rounded-3xl">  
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">Address Information</span>
             </p>
-        </div>  
+    </div>
+
 <div class="tab-wrapper" x-data="{ activeTab:  0 }">
   <div class="flex font-bold text-center text-white">
     <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
@@ -370,41 +371,41 @@
       class="tab-control "
       :class="{ 'active': activeTab === 0 }"
     >Main (incl. Manufacturing & Services Activity)</label>
-</div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
-    <label
-      @click="activeTab = 1"
-      class="tab-control "
-      :class="{ 'active': activeTab === 1 }"
-    >Branch (Manufacturing Activity)</label>
-</div>
+    </div>
     <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
-    <label
-      @click="activeTab = 2"
-      class="tab-control "
-      :class="{ 'active': activeTab === 2 }"
-    >Branch (Services Activity)</label>
-</div>
+        <label
+        @click="activeTab = 1"
+        class="tab-control "
+        :class="{ 'active': activeTab === 1 }"
+        >Branch (Manufacturing Activity)</label>
+    </div>
+    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+        <label
+        @click="activeTab = 2"
+        class="tab-control "
+        :class="{ 'active': activeTab === 2 }"
+        >Branch (Services Activity)</label>
+    </div>
   </div>
-@php
-$organization=$company;
-@endphp
+    @php
+    $organization=$company;
+    @endphp
   <div class="tab-panel" :class="{ 'active': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0">
-  @php
-$type="M";
-@endphp
+    @php
+    $type="M";
+    @endphp
     @include('layouts.workplace')
   </div>
   <div class="tab-panel" :class="{ 'active': activeTab === 1 }" x-show.transition.in.opacity.duration.600="activeTab === 1">
-  @php
-$type="B";
-@endphp
+    @php
+    $type="B";
+    @endphp
     @include('layouts.workplace')
   </div>
   <div class="tab-panel" :class="{ 'active': activeTab === 2 }" x-show.transition.in.opacity.duration.600="activeTab === 2">
-  @php
-$type="F";
-@endphp
+    @php
+    $type="F";
+    @endphp
     @include('layouts.workplace')
   </div>
 </div>
@@ -412,62 +413,62 @@ $type="F";
             <p class="text-2xl font-bold text-center text-white">
             <span class="inline-block align-middle">List of Personnel</span>
             </p>
-        </div> 
+</div> 
 <div class="tab-wrapper" x-data="{ activeTab:  3 }">
-  <div class="flex font-bold text-center text-white">
-    <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
-    <label
-      @click="activeTab = 3"
-      class="tab-control "
-      :class="{ 'active': activeTab === 3 }"
-    >Top Management</label> 
-</div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
-    <label
-      @click="activeTab = 4"
-      class="tab-control "
-      :class="{ 'active': activeTab === 4 }"
-    >Middle Management</label>
-</div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
-    <label
-      @click="activeTab = 5"
-      class="tab-control "
-      :class="{ 'active': activeTab === 5 }"
-    >Executive</label>
-</div>
-<div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
-    <label
-      @click="activeTab = 6"
-      class="tab-control "
-      :class="{ 'active': activeTab === 6 }"
-    >Support (Administrative/Clerical)</label>
-</div>
-  </div>
+    <div class="flex font-bold text-center text-white">
+        <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+        <label
+        @click="activeTab = 3"
+        class="tab-control "
+        :class="{ 'active': activeTab === 3 }"
+        >Top Management</label> 
+        </div>
+        <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+            <label
+            @click="activeTab = 4"
+            class="tab-control "
+            :class="{ 'active': activeTab === 4 }"
+            >Middle Management</label>
+        </div>
+        <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+            <label
+            @click="activeTab = 5"
+            class="tab-control "
+            :class="{ 'active': activeTab === 5 }"
+            >Executive</label>
+        </div>
+        <div class="sm:px-6 lg:px-8 my-8 h-9 bg-blue-900 shadow-2xl rounded-3xl">
+            <label
+            @click="activeTab = 6"
+            class="tab-control "
+            :class="{ 'active': activeTab === 6 }"
+            >Support (Administrative/Clerical)</label>
+        </div>
+    </div>
 
-  <div class="tab-panel" :class="{ 'active': activeTab === 3 }" x-show.transition.in.opacity.duration.600="activeTab === 3">
-    @php
-    $level="C";
-    @endphp
-    @include('layouts.level')
-  </div>
-  <div class="tab-panel" :class="{ 'active': activeTab === 4 }" x-show.transition.in.opacity.duration.600="activeTab === 4">
-    @php
-    $level="M";
-    @endphp
-    @include('layouts.level')
-  </div>
-  <div class="tab-panel" :class="{ 'active': activeTab === 5 }" x-show.transition.in.opacity.duration.600="activeTab === 5">
-    @php
-    $level="E";
-    @endphp
-    @include('layouts.level')
-  </div>
-  <div class="tab-panel" :class="{ 'active': activeTab === 6 }" x-show.transition.in.opacity.duration.600="activeTab === 6">
-    @php
-    $level="Staff";
-    @endphp
-    @include('layouts.level')
+    <div class="tab-panel" :class="{ 'active': activeTab === 3 }" x-show.transition.in.opacity.duration.600="activeTab === 3">
+        @php
+        $level="C";
+        @endphp
+        @include('layouts.level')
+    </div>
+    <div class="tab-panel" :class="{ 'active': activeTab === 4 }" x-show.transition.in.opacity.duration.600="activeTab === 4">
+        @php
+        $level="M";
+        @endphp
+        @include('layouts.level')
+    </div>
+    <div class="tab-panel" :class="{ 'active': activeTab === 5 }" x-show.transition.in.opacity.duration.600="activeTab === 5">
+        @php
+        $level="E";
+        @endphp
+        @include('layouts.level')
+    </div>
+    <div class="tab-panel" :class="{ 'active': activeTab === 6 }" x-show.transition.in.opacity.duration.600="activeTab === 6">
+        @php
+        $level="Staff";
+        @endphp
+        @include('layouts.level')
     </div>
 </div>
 
@@ -476,12 +477,12 @@ $type="F";
 
 
 
-<form id="deleteCompanyForm" action="{{ route('companies.destroy',['company'=> $company['id']]) }}" method="POST" >
-        @csrf
-        @method('DELETE')
+    <form id="deleteCompanyForm" action="{{ route('companies.destroy',['company'=> $company['id']]) }}" method="POST" >
+            @csrf
+            @method('DELETE')
 
-        <!-- Add a JavaScript onclick event to show the confirmation dialog -->
-        <button  type="button" onclick="confirmCompanyDelete()" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">!DELETE COMPANY RECORDS!</button>
+            <!-- Add a JavaScript onclick event to show the confirmation dialog -->
+            <button  type="button" onclick="confirmCompanyDelete()" style="background-color: #FF0000; color: #ffffff; font-weight: bold; padding: 1px 5px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">!DELETE COMPANY RECORDS!</button>
     </form>
 
 

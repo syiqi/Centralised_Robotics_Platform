@@ -59,19 +59,19 @@ use App\Models\Organization;
     <form method="POST" action="{{ route('personells.store') }}">
         @csrf
         <div class="flex flex-nowrap">
-        <div class="w-full mr-2 mb-4">
-            <label  for="personName"> Name </label>
-            <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="personName" name="personName" value="{{ old('personName')}}" required>
-        </div>
+            <div class="w-full mr-2 mb-4">
+                <label  for="personName"> Name </label>
+                <input class="mt-1 p-2 block w-full  border rounded-md" type="text" id="personName" name="personName" value="{{ old('personName')}}" required>
+            </div>
         <div class="w-full mb-4">
             <label  for="organizationID"> Organization Name </label>
             <div class="select2-container w-full">
-            <select class="organization-select-input w-full" id="organizationID" name="organizationID">
-                <option value="">Unemployed</option>
-            @foreach(Organization::all() as $organization) 
-                <option value="{{$organization['id']}}">{{$organization['name']}}</option>
-            @endforeach
-            </select>
+                <select class="organization-select-input w-full" id="organizationID" name="organizationID">
+                    <option value="">Unemployed</option>
+                @foreach(Organization::all() as $organization) 
+                    <option value="{{$organization['id']}}">{{$organization['name']}}</option>
+                @endforeach
+                </select>
             </div>
             <script type="text/javascript">
 
@@ -105,23 +105,23 @@ use App\Models\Organization;
         </div>
         </div>
         <div class="flex">
-        <div class="mb-2 w-1/2">
-        <div class="mb-4">
-            <img src="{{url('/images/emailicon.png')}}" width="50" height ="50" alt="Email"  style="float: left; margin-right: 10px;"/>
-            <input class="mt-1 p-2 w-1/2 border rounded-md" type="email" id="personEmail" name="personEmail">
-        </div>
+            <div class="mb-2 w-1/2">
+                <div class="mb-4">
+                    <img src="{{url('/images/emailicon.png')}}" width="50" height ="50" alt="Email"  style="float: left; margin-right: 10px;"/>
+                    <input class="mt-1 p-2 w-1/2 border rounded-md" type="email" id="personEmail" name="personEmail">
+                </div>
 
-        <div class="mb-4">
+                <div class="mb-4">
 
-            <img src="{{url('/images/phoneicon.png')}}" width="50" height ="50" alt="Phone Number" style="float: left; margin-right: 10px;" />
-            <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber">
-        </div>
-        </div>
+                    <img src="{{url('/images/phoneicon.png')}}" width="50" height ="50" alt="Phone Number" style="float: left; margin-right: 10px;" />
+                    <input class="mt-1 p-2 w-1/2 border rounded-md" type="tel" id="personNumber" name="personNumber">
+                </div>
+            </div>
                 Gender: 
                 <div class="mb-2 w-1/2">
-               <label> <input type="radio" id="personGender" name="personGender" value="Male" > Male</label>
-                <label> <input type="radio" id="personGender" name="personGender" value="Female" >Female</label>
-        </div>
+                    <label> <input type="radio" id="personGender" name="personGender" value="Male" > Male</label>
+                    <label> <input type="radio" id="personGender" name="personGender" value="Female" >Female</label>
+                </div>
         </div>
         <div>
             <button  type="submit" style="background-color: #3490dc; color: #ffffff; font-weight: bold; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Submit</button>    
