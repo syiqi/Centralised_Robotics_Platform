@@ -490,7 +490,7 @@
 <script type="text/javascript">
     // JavaScript function to show confirmation dialog for company
     function confirmCompanyDelete() {
-        var isConfirmed = confirm("Are you sure you want to delete?");
+        var isConfirmed = confirm("Are you sure you want to delete the entire company's record?");
         if (isConfirmed) {
             // If confirmed, submit the company delete form
             document.getElementById('deleteCompanyForm').submit();
@@ -499,7 +499,7 @@
 
     // JavaScript function to show confirmation dialog for workplaces
     function confirmWorkplaceDelete(workplaceId) {
-        var isConfirmed = confirm("Are you sure you want to delete?");
+        var isConfirmed = confirm("Are you sure you want to delete the workplace?");
         if (isConfirmed) {
             // If confirmed, submit the form with the specific workplace ID
             document.getElementById('deleteForm_' + workplaceId).submit();
